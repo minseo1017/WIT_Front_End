@@ -12,104 +12,107 @@
 
 <body>
     <!-- 공통영역 -->
-    <div class="sidebar">
-        <div class="top">
-            <div class="logo">
-                <i class="bx bxl-codepen"></i>
-                <span>Wit Works </span>
+    <div class="container">
+        <div class="sidebar">
+            <div class="top">
+                <div class="logo">
+                    <i class="bx bxl-codepen"></i>
+                    <span>Wit Works </span>
+                </div>
+                <i class="bx bx-menu" id="btn"></i>
             </div>
-            <i class="bx bx-menu" id="btn"></i>
+            <div class="user">
+                <img src="메인게임.webp" alt="me" class="user-img">
+                <div class="nickname">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="nav-item">홈</span>
+                    </a>
+                    <span class="tooltip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="nav-item">주소록</span>
+                    </a>
+                    <span class="tooltip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="nav-item">게시판</span>
+                    </a>
+                    <span class="tooltip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="nav-item">캘린더</span>
+                    </a>
+                    <span class="tooltip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="nav-item">메신저</span>
+                    </a>
+                    <span class="tooltip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="nav-item">전자결재</span>
+                    </a>
+                    <span class="tooltip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="nav-item">근태관리</span>
+                    </a>
+                    <span class="tooltip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="nav-item">예약</span>
+                    </a>
+                    <span class="tooltip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="nav-item">조직도</span>
+                    </a>
+                    <span class="tooltip">조직도</span>
+                </li>
+
+            </ul>
         </div>
-        <div class="user">
-            <img src="메인게임.webp" alt="me" class="user-img">
-            <div class="nickname">
-                <p class="bold">Wit Works</p>
-                <p></p>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
+                <span class="logout"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">공통 세부 사이드 영역</div>
+                <div class="sideContents">개인 영역</div>
             </div>
         </div>
-
-        <ul>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-home-alt-2'></i>
-                    <span class="nav-item">홈</span>
-                </a>
-                <span class="tooltip">홈</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-paperclip'></i>
-                    <span class="nav-item">주소록</span>
-                </a>
-                <span class="tooltip">주소록</span>
-            </li>
-            <li>
-                <a href="board2.html">
-                    <i class="bx bxs-grid-alt"></i>
-                    <span class="nav-item">게시판</span>
-                </a>
-                <span class="tooltip">게시판</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-calendar-alt'></i>
-                    <span class="nav-item">캘린더</span>
-                </a>
-                <span class="tooltip">캘린더</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-message-dots'></i>
-                    <span class="nav-item">메신저</span>
-                </a>
-                <span class="tooltip">메신저</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-clipboard'></i>
-                    <span class="nav-item">전자결재</span>
-                </a>
-                <span class="tooltip">전자결재</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-briefcase-alt-2'></i>
-                    <span class="nav-item">근태관리</span>
-                </a>
-                <span class="tooltip">근태관리</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-check-square'></i>
-                    <span class="nav-item">예약</span>
-                </a>
-                <span class="tooltip">예약</span>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-sitemap'></i>
-                    <span class="nav-item">조직도</span>
-                </a>
-                <span class="tooltip">조직도</span>
-            </li>
-
-        </ul>
     </div>
-    <!-- 공통역역 끝 -->
 
-    <div class="main-content">
-        <div class="header">
-            <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
-            <!--마이페이지로 이동-->
-            <span class="myName">
-                <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
-            <span class="logout"><a href="#">LogOut</a></span>
-        </div>
-        <div class="contents">
-            <div class="sideAbout">공통 세부 사이드 영역</div>
-            <div class="sideContents">개인 영역</div>
-        </div>
-    </div>
 </body>
 <!-- sidebar 공통요소 script -->
 <script>
