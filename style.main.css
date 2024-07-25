@@ -3,6 +3,12 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     list-style-type: none;
+     text-decoration: none;
+ }
+
+ a {
+     text-decoration: none;
  }
 
  div {
@@ -19,56 +25,74 @@
      font-display: block;
  }
 
- .container {
-     width: 100%;
-     height: 100%;
-     padding: 20px;
-     display: flex;
+ body {
      background-color: #eeeff6;
-     gap: 20px;
+     height: 100vh;
  }
 
- .user-img {
+ .container {
+     width: 100%;
+     padding: 20px;
+     display: flex;
+     gap: 20px;
+     height: 100%;
+ }
+
+ .userImg {
      width: 70px;
      border-radius: 100%;
      border: 3px solid #eee;
-     margin-top: 50px;
+     \: 50px;
      transition: all 0.5s ease;
  }
 
- .sidebar {
+ .sideBar {
      width: 100px;
      background-color: #558BCF;
-     padding: .4rem 0.8rem;
+     padding: 0.8rem;
      transition: all 0.5s ease;
      border-radius: 25px;
      position: relative;
+     display: flex;
+     flex-direction: column;
+     align-content: center;
  }
 
- .sidebar.active~.main-content {
+ .sideBar.active~.main-content {
      width: 100%;
  }
 
- .sidebar.active {
+ .sideBar.active {
      width: 300px;
  }
 
- .sidebar #btn {
-     position: absolute;
-     top: 2rem;
-     left: 50%;
+ .sideBar #btn {
      font-size: 2.5rem;
      line-height: 50px;
-     transform: translateX(-50%);
      cursor: pointer;
      color: white;
+     transition: all 0.5s ease;
+     display: inline-block;
  }
 
- .sidebar.active #btn {
-     left: 10%;
+ .sideBar.active .top {
+     justify-content: flex-start;
+     transition: all 0.5s ease;
  }
 
- .sidebar .top .logo {
+ .sideBar.active #btn {
+     /* left: 10%; */
+ }
+
+ .sideBar .top {
+     margin-bottom: 35px;
+     display: flex;
+     width: 100%;
+     justify-content: center;
+     transition: all 0.5s ease;
+ }
+
+ .sideBar .top .logo {
      color: #fff;
      display: flex;
      height: 50px;
@@ -78,7 +102,7 @@
      opacity: 0;
  }
 
- .sidebar.active .top .logo {
+ .sideBar.active .top .logo {
      /* opacity: 1; */
  }
 
@@ -93,7 +117,7 @@
      /* margin: 1rem 0; */
      display: flex;
      flex-direction: column;
-     margin-bottom: 50px;
+     margin-bottom: 30px;
  }
 
  .user p {
@@ -106,75 +130,96 @@
      font-weight: 600;
  }
 
- .sidebar p {
+ .sideBar p {
      opacity: 0;
      transition: all 0.5s ease;
  }
 
- .sidebar.active p {
+ .sideBar.active p {
      opacity: 1;
      font-size: 30px;
      margin-top: 10px;
      /* transition: all 0.5s ease; */
  }
 
- .sidebar.active .user-img {
+ .sideBar.active .userImg {
      width: 150px;
  }
 
- .sidebar ul li {
-     position: relative;
-     list-style-type: none;
-     height: 50px;
-     width: 90%;
-     margin: 2rem auto;
-     line-height: 50px;
+ .sideBar ul {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+     width: 100%;
  }
 
- .sidebar ul li a {
+ .sideBar ul li {
+     display: flex;
+     width: 100%;
+     position: relative;
+ }
+
+ .sideBar ul li a {
      color: #fff;
      display: flex;
      align-items: center;
-     text-decoration: none;
      border-radius: 0.8rem;
      font-size: 21px;
-     padding: 10px 20px;
+     /* padding: 10px 20px; */
+     /* line-height: 50px; */
+     width: 100%;
+     flex-wrap: wrap;
+     height: 100%;
  }
 
- .sidebar ul li a:hover {
+ .sideBar.active ul li a {
+     flex-wrap: nowrap;
+     gap: 20px;
+     padding: 0 20px;
+ }
+
+ .sideBar ul li a:hover {
      background-color: #1b6dd461;
      width: 100%;
      color: white;
  }
 
- .sidebar ul li a i {
-     min-width: 50px;
-     /* text-align: center; */
+ .sideBar ul li a i {
      height: 50px;
      border-radius: 12px;
      line-height: 50px;
+     width: 100%;
+     display: flex;
+     justify-content: center;
  }
 
- .sidebar .nav-item {
+ .sideBar.active ul li a i {
+     width: auto;
+ }
+
+ .sideBar .navItem {
      opacity: 0;
      /* 한글이 세로로 출력되서 추가함 */
      white-space: nowrap;
      transition: all 0.5s ease;
+     width: 0;
+     height: 0;
  }
 
- .sidebar.active .nav-item {
+ .sideBar.active .navItem {
      opacity: 1;
+     width: auto;
+     height: auto;
  }
 
- .nickname {
+ .nickName {
      border: none;
  }
 
- .sidebar ul li .tooltip {
+ .sideBar ul li .toolTip {
      position: absolute;
-     left: 140px;
-     top: 70%;
-     transform: translate(-50%, -50%);
+     left: 92px;
+     top: calc((100% - 45px)/2);
      box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
      border-radius: .6rem;
      padding: .5rem .6rem;
@@ -187,11 +232,11 @@
      font-size: 20px;
  }
 
- .sidebar ul li:hover .tooltip {
+ .sideBar ul li:hover .toolTip {
      opacity: 1;
  }
 
- .sidebar.active ul li .tooltip {
+ .sideBar.active ul li .toolTip {
      display: none;
  }
 
@@ -233,7 +278,7 @@
  }
 
  .alert,
- .logout,
+ .logOut,
  .myName {
      font-size: 20px;
      font-weight: bold;
