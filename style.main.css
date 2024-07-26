@@ -350,10 +350,50 @@
  }
 
  /* sideBar 오른쪽에 sub sideBar */
+ /* 사이드 영역 CSS */
  .sideAbout {
      flex: 1;
-     background-color: #a6a9c096;
+     padding: 40px 30px;
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     height: 100%;
+     background-color: #fff;
      border-radius: 25px;
+     color: #333;
+     border: 3px solid #558BCF;
+ }
+
+ /* 사이드 타이틀 */
+ .sideAbout .sideTit {
+     font-size: 26px;
+     padding-bottom: 30px;
+     color: #333;
+ }
+
+ /* 사이드 버튼 */
+ .sideAbout .sideBtnBox {
+     padding-bottom: 30px;
+ }
+
+ .sideAbout .sideBtn {
+     width: 100%;
+     padding: 15px 30px;
+     background-color: #fff;
+     border: 3px solid #558BCF;
+     border-radius: 10px;
+     font-size: 18px;
+     font-weight: 600;
+     color: #333;
+ }
+
+ /* 버튼 효과 */
+ .sideAbout .sideBtn:hover,
+ .sideAbout .sideBtn:focus,
+ .sideAbout .sideBtn:active {
+     background-color: #558BCF;
+     color: #fff;
+     box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
  }
 
  .sideContents {
