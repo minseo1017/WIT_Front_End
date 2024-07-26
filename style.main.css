@@ -1,44 +1,42 @@
- /* 공통css */
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
-     list-style-type: none;
-     text-decoration: none;
- }
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
 
- a {
-     text-decoration: none;
-     color: #333;
- }
+a {
+    text-decoration: none;
+    color: #333;
+}
 
- div {
-     /* border: 1px solid black; */
-     font-family: 'Interop';
- }
+div {
+    font-family: Interop;
+}
 
- @font-face {
-     font-family: 'Interop';
-     src: url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2') format('woff2'),
-         url('https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
-     font-display: block;
- }
+@font-face {
+    font-family: Interop;
+    src: url("https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff2") format("woff2"), url("https://raw.githubusercontent.com/payw-org/Interop/main/web/fonts/Interop-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
 
- body {
-     background-color: #eeeff6;
-     height: 100vh;
- }
+body {
+    background-color: rgb(247, 251, 255);
+    height: 100vh;
+}
 
- .container {
-     width: 100%;
-     padding: 20px;
-     display: flex;
-     gap: 20px;
-     height: 100%;
- }
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
 
+<<<<<<< HEAD
  .userImg {
      width: 70px;
      border-radius: 100%;
@@ -46,321 +44,380 @@
      /* \: 50px; */
      transition: all 0.5s ease;
  }
+=======
+.userImg {
+    width: 70px;
+    border-radius: 100%;
+    border: 3px solid rgb(238, 238, 238);
+    transition: all 0.5s ease 0s;
+}
+>>>>>>> 7f1d6d368ff4139251e1a182e56100a79e123c88
 
- .sideBar {
-     width: 100px;
-     background-color: #558BCF;
-     padding: 0.8rem;
-     transition: all 0.5s ease;
-     border-radius: 25px;
-     position: relative;
-     display: flex;
-     flex-direction: column;
-     align-content: center;
- }
+.sideBar {
+    width: 100px;
+    background-color: rgb(85, 139, 207);
+    padding: 0.8rem;
+    transition: all 0.5s ease 0s;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
 
- .sideBar.active~.main-content {
-     width: 100%;
- }
+.sideBar.active~.main-content {
+    width: 100%;
+}
 
- .sideBar.active {
-     width: 300px;
- }
+.sideBar.active {
+    width: 300px;
+}
 
- .sideBar #btn {
-     font-size: 2.5rem;
-     line-height: 50px;
-     cursor: pointer;
-     color: white;
-     transition: all 0.5s ease;
-     display: inline-block;
- }
+.sideBar #btn {
+    font-size: 2.5rem;
+    line-height: 50px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s ease 0s;
+    display: inline-block;
+}
 
- .sideBar.active .top {
-     justify-content: flex-start;
-     transition: all 0.5s ease;
- }
+.sideBar.active .top {
+    justify-content: flex-start;
+    transition: all 0.5s ease 0s;
+}
 
- .sideBar.active #btn {
-     /* left: 10%; */
- }
+.sideBar.active #btn {}
 
- .sideBar .top {
-     margin-bottom: 35px;
-     display: flex;
-     width: 100%;
-     justify-content: center;
-     transition: all 0.5s ease;
- }
+.sideBar .top {
+    margin-bottom: 35px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.5s ease 0s;
+}
 
- .sideBar .top .logo {
-     color: #fff;
-     display: flex;
-     height: 50px;
-     width: 100%;
-     align-items: center;
-     pointer-events: none;
-     opacity: 0;
- }
+.sideBar .top .logo {
+    color: rgb(255, 255, 255);
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
 
- .sideBar.active .top .logo {
-     /* opacity: 1; */
- }
+.sideBar.active .top .logo {}
 
- .top .logo i {
-     font-size: 2rem;
-     margin-right: 5px;
- }
+.top .logo i {
+    font-size: 2rem;
+    margin-right: 5px;
+}
 
- .user {
-     align-items: center;
-     justify-content: center;
-     /* margin: 1rem 0; */
-     display: flex;
-     flex-direction: column;
-     margin-bottom: 30px;
- }
+.user {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
 
- .user p {
-     color: #fff;
-     opacity: 1;
-     margin-left: 1rem;
- }
+.user p {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    margin-left: 1rem;
+}
 
- .bold {
-     font-weight: 600;
- }
+.bold {
+    font-weight: 600;
+}
 
- .sideBar p {
-     opacity: 0;
-     transition: all 0.5s ease;
- }
+.sideBar p {
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+}
 
- .sideBar.active p {
-     opacity: 1;
-     font-size: 30px;
-     margin-top: 10px;
-     /* transition: all 0.5s ease; */
- }
+.sideBar.active p {
+    opacity: 1;
+    font-size: 30px;
+    margin-top: 10px;
+}
 
- .sideBar.active .userImg {
-     width: 150px;
- }
+.sideBar.active .userImg {
+    width: 150px;
+}
 
- .sideBar ul {
-     display: flex;
-     flex-direction: column;
-     gap: 5px;
-     width: 100%;
- }
+.sideBar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
 
- .sideBar ul li {
-     display: flex;
-     width: 100%;
-     position: relative;
- }
+.sideBar ul li {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
 
- .sideBar ul li a {
-     color: #fff;
-     display: flex;
-     align-items: center;
-     border-radius: 0.8rem;
-     font-size: 21px;
-     /* padding: 10px 20px; */
-     /* line-height: 50px; */
-     width: 100%;
-     flex-wrap: wrap;
-     height: 100%;
- }
+.sideBar ul li a {
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    border-radius: 0.8rem;
+    font-size: 21px;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100%;
+}
 
- .sideBar.active ul li a {
-     flex-wrap: nowrap;
-     gap: 20px;
-     padding: 0 20px;
- }
+.sideBar.active ul li a {
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0px 20px;
+}
 
- .sideBar ul li a:hover {
-     background-color: #1b6dd461;
-     width: 100%;
-     color: white;
- }
+.sideBar ul li a:hover {
+    background-color: rgba(27, 109, 212, 0.38);
+    width: 100%;
+    color: white;
+}
 
- .sideBar ul li a i {
-     height: 50px;
-     border-radius: 12px;
-     line-height: 50px;
-     width: 100%;
-     display: flex;
-     justify-content: center;
- }
+.sideBar ul li a i {
+    height: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
- .sideBar.active ul li a i {
-     width: auto;
- }
+.sideBar.active ul li a i {
+    width: auto;
+}
 
- .sideBar .navItem {
-     opacity: 0;
-     /* 한글이 세로로 출력되서 추가함 */
-     white-space: nowrap;
-     transition: all 0.5s ease;
-     width: 0;
-     height: 0;
- }
+.sideBar .navItem {
+    opacity: 0;
+    white-space: nowrap;
+    transition: all 0.5s ease 0s;
+    width: 0px;
+    height: 0px;
+}
 
- .sideBar.active .navItem {
-     opacity: 1;
-     width: auto;
-     height: auto;
- }
+.sideBar.active .navItem {
+    opacity: 1;
+    width: auto;
+    height: auto;
+}
 
- .nickName {
-     border: none;
- }
+.nickName {
+    border: none;
+}
 
- .sideBar ul li .toolTip {
-     position: absolute;
-     left: 92px;
-     top: calc((100% - 45px)/2);
-     box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
-     border-radius: .6rem;
-     padding: .5rem .6rem;
-     line-height: 1.8rem;
-     z-index: 20;
-     opacity: 0;
-     /* 한글이 세로로 출력되서 추가함 */
-     white-space: nowrap;
-     background-color: white;
-     font-size: 20px;
- }
+.sideBar ul li .toolTip {
+    position: absolute;
+    left: 92px;
+    top: calc(50% - 22.5px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0.5rem 0.8rem;
+    border-radius: 0.6rem;
+    padding: 0.5rem 0.6rem;
+    line-height: 1.8rem;
+    z-index: 20;
+    opacity: 0;
+    white-space: nowrap;
+    background-color: white;
+    font-size: 20px;
+}
 
- .sideBar ul li:hover .toolTip {
-     opacity: 1;
- }
+.sideBar ul li:hover .toolTip {
+    opacity: 1;
+}
 
- .sideBar.active ul li .toolTip {
-     display: none;
- }
+.sideBar.active ul li .toolTip {
+    display: none;
+}
 
- /* 공통영역 css 끝 */
+.main-content {
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0px;
+}
 
+.header {
+    height: 70px;
+    padding: 10px 40px;
+    background-color: #558BCF;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 25px;
+    gap: 30px;
+    align-items: center;
+}
 
- .main-content {
-     transition: all 0.5s ease;
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     gap: 20px 0;
- }
+.header span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
- .header {
-     height: 90px;
-     background-color: white;
-     /* border-top-left-radius: 20px;
-     border-top-right-radius: 20px; */
-     padding: 20px 40px;
-     background-color: #558BCF;
-     display: flex;
-     justify-content: flex-end;
-     border-radius: 25px;
-     gap: 30px;
-     align-items: center;
- }
+.header span a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
 
- .header span {
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
+.alert,
+.logOut,
+.myName {
+    font-size: 20px;
+    font-weight: bold;
+}
 
- .header span a {
-     text-decoration: none;
-     color: #fff;
-     font-size: 20px;
- }
+.header .myName {
+    gap: 10px;
+}
 
- .alert,
- .logOut,
- .myName {
-     font-size: 20px;
-     font-weight: bold;
- }
+.header .myName img {
+    max-height: 50px;
+    border-radius: 100%;
+}
 
- .header .myName {
-     gap: 10px;
- }
+.contents {
+    flex: 4 1 0%;
+    display: flex;
+    gap: 20px;
+}
 
- .header .myName img {
-     max-height: 50px;
-     border-radius: 100%;
- }
+.left {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
- .contents {
-     flex: 4;
-     /* flex:4까지 공통요소 */
-     display: flex;
-     /* border-bottom-left-radius: 20px;
-     border-bottom-right-radius: 20px; */
-     gap: 20px;
- }
+.leftTop {
+    border-radius: 20px;
+    flex: 1 1 0%;
+    background-color: rgb(255, 255, 255);
+}
 
+.leftBottom {
+    flex: 1 1 0%;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+}
 
+.center {
+    flex: 2 1 0%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+}
 
- .left {
-     flex: 1;
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
- }
+.right {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
- .leftTop {
-     border-radius: 20px;
-     flex: 1;
-     background-color: #fff;
- }
+.rightTop {
+    flex: 1 1 0%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
 
- .leftBottom {
-     flex: 1;
-     border-radius: 20px;
-     background-color: #fff;
- }
+.rightBottom {
+    flex: 1 1 0%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
 
- .center {
-     flex: 2;
-     background-color: #fff;
-     border-radius: 25px;
- }
+.sideAbout {
+    flex: 1 1 0%;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid rgb(85, 139, 207);
+    border-radius: 25px;
+}
 
- .right {
-     flex: 1;
-     display: flex;
-     flex-direction: column;
-     gap: 20px;
- }
+.sideContents {
+    flex: 6 1 0%;
+    border-radius: 25px;
+    border: 3px solid #558BCF;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    gap: 20px;
+}
 
- .rightTop {
-     flex: 1;
-     background-color: #fff;
-     border-radius: 20px;
- }
+.sideContents .mainTitle {
+    flex: 1;
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    /* padding-left: 10px; */
+}
 
- .rightBottom {
-     flex: 1;
-     background-color: #fff;
-     border-radius: 20px;
- }
+.rightTop {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 20px;
+}
 
- /* sideBar 오른쪽에 sub sideBar */
- .sideAbout {
-     flex: 1;
-     background-color: #a6a9c096;
-     border-radius: 25px;
- }
+.rightBottom {
+    flex: 1;
+    background-color: #fff;
+    border-radius: 20px;
+}
 
- .sideContents {
-     flex: 6;
-     background-color: #dfdfdf;
-     border-radius: 25px;
- }
+/* sideBar 오른쪽에 sub sideBar */
+/* 사이드 영역 CSS */
+.sideAbout {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    color: #333;
+    border: 3px solid #558BCF;
+}
 
+/* 사이드 타이틀 */
+.sideAbout .sideTit {
+    font-size: 26px;
+    padding-bottom: 30px;
+    color: #333;
+}
 
- /* 게시판 css start */
+/* 사이드 버튼 */
+.sideAbout .sideBtnBox {
+    padding-bottom: 30px;
+}
+
+.sideAbout .sideBtn {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #fff;
+    border: 3px solid #558BCF;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 버튼 효과 */
+.sideAbout .sideBtn:hover,
+.sideAbout .sideBtn:focus,
+.sideAbout .sideBtn:active {
+    background-color: #558BCF;
+    color: #fff;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
+/* 게시판 css start */
