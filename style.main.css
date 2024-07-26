@@ -9,6 +9,7 @@
 
  a {
      text-decoration: none;
+     color: #333;
  }
 
  div {
@@ -256,7 +257,7 @@
      background-color: white;
      /* border-top-left-radius: 20px;
      border-top-right-radius: 20px; */
-     padding: 20px;
+     padding: 20px 40px;
      background-color: #558BCF;
      display: flex;
      justify-content: flex-end;
