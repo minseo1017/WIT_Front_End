@@ -99,3 +99,89 @@
     text-align: center;
 }
 
+/*마이페이지*/
+
+.form-container {
+    padding: 5%;
+    margin-left: 10%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: auto;
+}
+
+.form-group label {
+    width: 100px;
+}
+
+.form-group input {
+    padding: 7px;
+    border-radius: 5px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.form-group-photo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group-photo label {
+    width: 100px;
+}
+
+.form-group-photo img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    position: relative;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-right: 11%;
+    gap: 10px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+    width: 60%;
+    height: 120%;
+}
+
+.hidden {
+    display: none;
+}
+
+.edit-nickname-button {
+    position: absolute;
+    top: -55px;
+    right: 120px;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
