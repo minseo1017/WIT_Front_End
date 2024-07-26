@@ -36,22 +36,13 @@ body {
     height: 100%;
 }
 
-<<<<<<< HEAD
- .userImg {
-     width: 70px;
-     border-radius: 100%;
-     border: 3px solid #eee;
-     /* \: 50px; */
-     transition: all 0.5s ease;
- }
-=======
 .userImg {
     width: 70px;
     border-radius: 100%;
-    border: 3px solid rgb(238, 238, 238);
-    transition: all 0.5s ease 0s;
+    border: 3px solid #eee;
+    /* \: 50px; */
+    transition: all 0.5s ease;
 }
->>>>>>> 7f1d6d368ff4139251e1a182e56100a79e123c88
 
 .sideBar {
     width: 100px;
