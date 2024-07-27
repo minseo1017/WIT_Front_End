@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="hsh.css">
+</head>
+
+<body>
+    <!-- 공통영역 -->
+    <div class="container">
+        <div class="sideBar">
+            <div class="top">
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="메인게임.webp" alt="me" class="userImg">
+                <div class="nickName">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="navItem">홈</span>
+                    </a>
+                    <span class="toolTip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="navItem">주소록</span>
+                    </a>
+                    <span class="toolTip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="navItem">게시판</span>
+                    </a>
+                    <span class="toolTip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="navItem">캘린더</span>
+                    </a>
+                    <span class="toolTip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="navItem">메신저</span>
+                    </a>
+                    <span class="toolTip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="navItem">전자결재</span>
+                    </a>
+                    <span class="toolTip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="navItem">근태관리</span>
+                    </a>
+                    <span class="toolTip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="navItem">예약</span>
+                    </a>
+                    <span class="toolTip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="navItem">조직도</span>
+                    </a>
+                    <span class="toolTip">조직도</span>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
+                <span class="logOut"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">전자 결재</h2>
+                    </div>
+                    <div class="sideBtnBox">
+                        <button class="plusBtn sideBtn">새 결재 진행</button>
+                    </div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">결재하기</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">결재 대기 문서</a></li>
+                                    <li><a href="javascript:;">결재 수신 문서</a></li>
+                                    <li><a href="javascript:;">참조 / 열람 대기 문서</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">개인 문서함</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">기안 문서함</a></li>
+                                    <li><a href="javascript:;">임시 저장함</a></li>
+                                    <li><a href="javascript:;">결재 문서함</a></li>
+                                    <li><a href="javascript:;">참조 / 열람 문서함</a></li>
+                                    <li><a href="javascript:;">수신 문서함</a></li>
+                                    <li><a href="javascript:;">발송 문서함</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sideContents eApprWrite">
+                    <div class="mainTitle">문서 작성 (업무 기안)</div>
+
+                    <div class="document">
+                        <div class="choiBox">
+                            <button>결재 요청</button>
+                            <button>임시 저장</button>
+                            <button>취소</button>
+                            <button>결재선</button>
+                        </div>
+                        <div class="docuCont">
+                            <div class="docuInfo">
+                                <div class="infoTable">
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <th>기안자</th>
+                                                <td>이름</td>
+                                            </tr>
+                                            <tr>
+                                                <th>소속</th>
+                                                <td>부서</td>
+                                            </tr>
+                                            <tr>
+                                                <th>기안일</th>
+                                                <td>2024-07-27</td>
+                                            </tr>
+                                            <tr>
+                                                <th>문서번호</th>
+                                                <td>몰랑 ~~</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="apprTable">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>결재 순서</th>
+                                                <th>최초</th>
+                                                <th>중간</th>
+                                                <th>최종</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>직급</th>
+                                                <td>팀장</td>
+                                                <td>과장</td>
+                                                <td>부장</td>
+                                            </tr>
+                                            <tr>
+                                                <th>결재자</th>
+                                                <td>김00</td>
+                                                <td>이00</td>
+                                                <td>박00</td>
+                                            </tr>
+                                            <tr>
+                                                <th>결재일</th>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="docuWrite docuLeave">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>휴가 종류</th>
+                                            <td>
+                                                <select name="" id="">
+                                                    <option value="">연차</option>
+                                                    <option value="">지각</option>
+                                                    <option value="">조퇴</option>
+                                                    <option value="">경조사</option>
+                                                    <option value="">병가</option>
+                                                </select>
+                                            </td>
+                                            <th>기간 및 일시</th>
+                                            <td>
+                                                <input type="date" min="2024-07-27">
+                                                <span>~</span>
+                                                <input type="date" min="2024-07-27">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>반차 여부</th>
+                                            <td colspan="3">
+                                                <span>
+                                                    <input type="checkbox"> 시작일
+                                                </span> ( <span><input type="checkbox"> 오전</span>
+                                                <span><input type="checkbox"> 오후</span> )
+                                                <br>
+                                                <span>
+                                                    <input type="checkbox"> 종료일
+                                                </span> ( <span><input type="checkbox"> 오전</span>
+                                                <span><input type="checkbox"> 오후</span> )
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>연차 일수</th>
+                                            <td colspan="3">
+                                                <span>
+                                                    잔여 연차 :&nbsp;&nbsp;<input type="text" readonly>
+                                                </span>
+                                                <span>
+                                                    신청 연차 :&nbsp;&nbsp;<input type="text" readonly>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th>휴가 사유</th>
+                                            <td colspan="3">
+                                                <textarea name="" id=""></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="docuFiles">
+                                <span>파일 첨부</span>
+                                <label for="file">파일 선택</label>
+                                <input type="file" id="file" multiple>
+                                <span class="uploadFiles">
+                                    <span>파일 1
+                                        <span class="delFileBtn">X</span>
+                                    </span>
+                                    <span>파일 2
+                                        <span class="delFileBtn">X</span>
+                                    </span>
+
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- sidebar 공통요소 script -->
+<script>
+    let btn = document.querySelector("#btn")
+    let sideBar = document.querySelector(".sideBar")
+
+    btn.onclick = function () {
+        sideBar.classList.toggle("active")
+    };
+
+    const toggleItems = document.querySelectorAll('.toggleItem');
+
+    toggleItems.forEach(function (toggleItem) {
+        const toggleTit = toggleItem.querySelector('.toggleTit');
+        const subList = toggleItem.querySelector('.subList');
+
+        toggleTit.addEventListener('click', function () {
+            subList.classList.toggle('active');
+            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+        });
+    });
+</script>
+
+</html>
