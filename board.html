@@ -7,12 +7,12 @@
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="minseo.css">
+    <link rel="stylesheet" href="bmj.css">
 </head>
 
 <body>
+    <!-- 공통영역 -->
     <div class="container">
-        <!-- 공통영역 -->
         <div class="sideBar">
             <div class="top">
                 <i class="bx bx-menu" id="btn"></i>
@@ -103,21 +103,55 @@
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
-                <div class="left">
-                    <div class="leftTop">
-                        user
-                    </div>
-                    <div class="leftBottom">
-                        <h3 id="date"></h3>
-                        <div id="clock"></div>
-                        <button class="clockIn">출근</button>
-                        <button class="clockOut">퇴근</button>
-                    </div>
+                <div class="sideAbout">
+                    공통영역
                 </div>
-                <div class="center">게시판영역</div>
-                <div class="right">
-                    <div class="rightTop">전자결재영역</div>
-                    <div class="rightBottom">캘린더영역</div>
+                <div class="sideContents">
+                    <div class="boardCont">
+                        <div class="title">공지사항 홈</div>
+                        <div class="tools">
+                            <div class="search">검색</div>
+                            <div class="sort">정렬</div>
+                        </div>
+                        <div class="list">
+                            <div class="listCont">
+                                <div class="listTitle">
+                                    <div class="boardNum">x</div>
+                                    <div class="boardTitle">글 제목</div>
+                                    <div class="boardDate">날짜</div>
+                                    <div class="boardView">조회수</div>
+                                    <div class="boardBM">북마크</div>
+                                </div>
+                                <div class="listAbout">
+                                    <div class="listDetail">
+
+                                        <div class="boardNum">x</div>
+                                        <div class="boardTitle">글 제목</div>
+                                        <div class="boardDate">날짜</div>
+                                        <div class="boardView">조회수</div>
+                                        <div class="boardBM">북마크</div>
+                                    </div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <!-- <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div>
+                                    <div class="listDetail">1</div> -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navi">navi</div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -132,31 +166,6 @@
     btn.onclick = function () {
         sideBar.classList.toggle("active")
     };
-
-    // 근태관리 날짜 및 시간 스크립트
-    function updateClock() {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        const date = now.getDate();
-        const day = now.getDay();
-        const days = ["일", "월", "화", "수", "목", "금", "토"];
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-
-        const formattedDate = `${month}월 ${date}일 (${days[day]})`;
-        const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-        document.getElementById('date').textContent = formattedDate;
-        document.getElementById('clock').textContent = formattedTime;
-    }
-
-    // 매초마다 updateClock 함수를 호출
-    setInterval(updateClock, 1000);
-
-    // 페이지가 로드될 때 처음으로 시계를 업데이트
-    updateClock();
 </script>
 
 </html>

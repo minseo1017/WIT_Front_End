@@ -39,8 +39,9 @@ body {
 .userImg {
     width: 70px;
     border-radius: 100%;
-    border: 3px solid rgb(238, 238, 238);
-    transition: all 0.5s ease 0s;
+    border: 3px solid #eee;
+    /* \: 50px; */
+    transition: all 0.5s ease;
 }
 
 .sideBar {
@@ -338,8 +339,7 @@ body {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 30px 40px;
-    gap: 20px;
+    padding: 20px 40px;
 }
 
 .sideContents .mainTitle {
@@ -348,7 +348,6 @@ body {
     font-weight: 700;
     display: flex;
     align-items: center;
-    /* padding-left: 10px; */
 }
 
 .rightTop {
@@ -405,6 +404,7 @@ body {
 .sideAbout .sideBtn:hover,
 .sideAbout .sideBtn:focus,
 .sideAbout .sideBtn:active {
+    cursor: pointer;
     background-color: #558BCF;
     color: #fff;
     box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);

@@ -2,6 +2,64 @@
     border: 1px solid black;
 } */
 
+/* 사이드 메뉴 토글 효과 */
+.sideAbout .addressListPrivate {
+    padding-bottom: 30px;
+}
+
+/* 공통 스타일 */
+.toggleItem .toggleTit {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggleItem .toggleTit::after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 23px;
+    background-image: url(../images/icon/toggle.png);
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.2s ease;
+    transform: rotate(0deg);
+}
+
+.toggleItem .toggleTit.active::after {
+    transform: rotate(180deg);
+}
+
+.subList {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.2s ease, opacity 0.2s ease;
+    padding-left: 20px;
+}
+
+.subList.active {
+    max-height: 500px;
+    /* 적당히 큰 값으로 설정 */
+    opacity: 1;
+}
+
+.subList li:not(:last-child) {
+    padding-bottom: 8px;
+}
+
+.subList li a.active {
+    color: #558BCF;
+    font-weight: 600;
+}
+
+/* 전자 결제 메인 화면 */
+.eApproval {
+    gap: 10px;
+}
 
 .eApproval .docuList {
     flex: 4.5;
@@ -65,7 +123,7 @@
 }
 
 .eApproval .docuList .listBox .rows .cols {
-    padding: 9px 0;
+    padding: 7px 0;
     display: flex;
     justify-content: center;
 }
@@ -110,10 +168,317 @@
 
 .eApproval .docuList .listBox.progList .rows:not(.listHeader) .cols:last-child span {
     background-color: rgb(255 232 42);
-    width: 30%;
+    width: max-content;
     border-radius: 5px;
     color: #fff;
     display: inline-block;
     padding: 5px;
     text-align: center;
+}
+
+/* 전자 결재 작성 */
+.eApprWrite .choiBox {
+    flex: 1;
+}
+
+.eApprWrite .choiBox button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #add2ffcc;
+}
+
+.eApprWrite .choiBox button:hover,
+button:active {
+    cursor: pointer;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+.eApprWrite .document {
+    flex: 9;
+}
+
+.eApprWrite .document .choiBox {
+    height: 8%;
+}
+
+.eApprWrite .document .docuCont {
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.eApprWrite .document .docuCont table,
+tr,
+th,
+td {
+    border: 1px solid #888888;
+}
+
+.eApprWrite .document .docuCont .docuInfo {
+    flex: 3;
+    display: flex;
+}
+
+.eApprWrite .document .docuCont .docuInfo .infoTable {
+    flex: 4;
+}
+
+.eApprWrite .document .docuCont .docuInfo .infoTable table {
+    width: 90%;
+    height: 100%;
+}
+
+.eApprWrite .document .docuCont .docuInfo .infoTable table td {
+    padding-left: 5px;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable {
+    display: flex;
+    justify-content: end;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable table {
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable table thead tr th:first-child {
+    width: 20%;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable table tbody tr:nth-child(2) {
+    height: 70%;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable {
+    flex: 6;
+}
+
+.eApprWrite .document .docuCont .docuWrite {
+    flex: 6;
+}
+
+.eApprWrite .document .docuCont .docuWrite table {
+    width: 100%;
+    height: 100%;
+}
+
+/* .docuWrite.docuProp => 업무 기안 문서 작성 양식 */
+.eApprWrite .document .docuCont .docuWrite.docuProp table thead {
+    height: 20%;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuProp table thead td input {
+    width: 100%;
+    padding: 5px;
+}
+
+.eApprWrite .document .docuCont .docuWrite table tbody td textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+}
+
+/* .docuWrite.docuLeave => 휴가 신청서 문서 작성 양식 */
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead {
+    height: 50%;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead td {
+    padding-left: 10px;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead td select {
+    height: 70%;
+    width: 60%;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead td input:not([type="checkbox"]) {
+    height: 70%;
+    width: 23%;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead td span {
+    padding: 0 15px;
+}
+
+/* .docuWrite.docuLateness => 지각 사유서 문서 작성 양식 */
+.eApprWrite .document .docuCont .docuWrite.docuLateness table thead th {
+    width: 15%;
+    padding: 15px 0;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLateness table thead td input {
+    margin-left: 10px;
+    height: 80%;
+    width: 20%;
+}
+
+.eApprWrite .document .docuCont .docuFiles {
+    flex: 1;
+}
+
+.eApprWrite .document .docuCont .docuFiles input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.eApprWrite .document .docuCont .docuFiles label {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    height: 40px;
+    margin: 5px 10px;
+    border-radius: 5px;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles>span {
+    margin: 0 5px;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles .delFileBtn {
+    color: #c1c1c1;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles .delFileBtn:hover {
+    cursor: pointer;
+}
+
+/* 전자 결재 모달창 ( 새 결재 진행 ) */
+.eApprModal {
+    display: none;
+    /* display: flex; */
+    border: 1px solid black;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    width: 800px;
+    height: 500px;
+    padding: 30px 25px;
+    flex-wrap: wrap;
+}
+
+.eApprModal>div:not(.modalBtnBox) {
+    height: 85%;
+}
+
+.eApprModal>div:first-child {
+    width: 35%;
+}
+
+.eApprModal>div:nth-child(2) {
+    width: 65%;
+}
+
+.eApprModal .modalBtnBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.eApprModal .modalBtnBox button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #add2ffcc;
+}
+
+.eApprModal .modalBtnBox button:hover,
+button:active {
+    cursor: pointer;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+.eApprModal .eApprModalTitle {
+    font-size: 22px;
+    height: 15%;
+}
+
+.eApprModal .choiCont {
+    height: 88%;
+}
+
+.eApprModal .choiCont ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.eApprModal .choiCont.docuChoi ul li {
+    margin-bottom: 10px;
+}
+
+.eApprModal .choiCont.apprChoi ul li {
+    flex: 1;
+}
+
+/* JS 적용 ( 모달창 띄우기 ) 후 수정할 코드 */
+.plusBtn.sideBtn:hover~.eApprModal {
+    display: flex;
+}
+
+/* 전자 결재 문서함 */
+.eApproval .docuBox {
+    flex: 9;
+    gap: 7px;
+}
+
+.eApproval .docuBox .choiBox {
+    flex: .5;
+}
+
+.eApproval .docuBox .choiBox button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #add2ffcc;
+}
+
+.eApproval .docuBox .choiBox button:hover,
+button:active {
+    cursor: pointer;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+.eApproval .docuList.docuBox .listBox {
+    flex: 9;
+}
+
+.eApproval .docuList.docuBox .listBox .rows .cols {
+    width: 12%;
+}
+
+.eApproval .docuList.docuBox .listBox .rows .cols:nth-child(4) {
+    width: 30%;
+}
+
+.eApproval .docuBox .docuBoxNavi {
+    flex: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
