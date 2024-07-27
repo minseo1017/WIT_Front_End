@@ -116,12 +116,12 @@
 
 .form-group label {
     width: 100px;
+    font-size: 18px;
 }
 
 .form-group input {
     padding: 7px;
-    border-radius: 5px;
-    height: 30px;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 
@@ -133,6 +133,7 @@
 
 .form-group-photo label {
     width: 100px;
+    font-size: 18px;
 }
 
 .form-group-photo img {
@@ -141,6 +142,7 @@
     border: 1px solid #000;
     margin-left: 10px;
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .form-row {
@@ -165,6 +167,8 @@
 .form-actions button {
     padding: 10px 20px;
     border-radius: 10px;
+    background-color: #558BCF;
+    color: white;
 }
 
 .form-container input[type="text"],
@@ -183,5 +187,7 @@
     right: 120px;
     padding: 10px 10px;
     border-radius: 10px;
+    background-color: #558BCF;
+    color: white;
 }
 
