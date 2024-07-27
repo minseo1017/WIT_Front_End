@@ -343,7 +343,7 @@ body {
 }
 
 .sideContents .mainTitle {
-    /* flex: 1; */
+    flex: 1;
     font-size: 28px;
     font-weight: 700;
     display: flex;
