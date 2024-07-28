@@ -1,3 +1,47 @@
+/* 사이드 영역 CSS */
+.sideAbout {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 25px;
+    color: #333;
+}
+
+/* 사이드 타이틀 */
+.sideAbout .sideTit {
+    font-size: 26px;
+    padding-bottom: 30px;
+    color: #333;
+}
+
+/* 사이드 버튼 */
+.sideAbout .sideBtnBox {
+    padding-bottom: 30px;
+}
+
+.sideAbout .sideBtn {
+    width: 100%;
+    padding: 15px 30px;
+    background-color: #fff;
+    border: 3px solid #558BCF;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* 버튼 효과 */
+.sideAbout .sideBtn:hover,
+.sideAbout .sideBtn:focus,
+.sideAbout .sideBtn:active {
+    background-color: #558BCF;
+    color: #fff;
+    box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.2);
+}
+
 /* 사이드 메뉴 토글 효과 */
 .sideAbout .addressListPrivate {
     padding-bottom: 30px;
@@ -53,7 +97,548 @@
 }
 
 /* 주소록 메인 콘텐츠 */
-.sideContents {
-    background-color: #fff;
+.sideContents.addressCont {
+    gap: 30px;
+}
 
+.sideContents.addressCont .mainTitle {
+    flex: unset;
+    color: #333;
+    height: 5%;
+}
+
+/* 주소록 검색창 */
+.searchBox {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 5%;
+}
+
+.searchBox input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.searchBox button.searchBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.searchBox button.searchBtn:hover {
+    background: #f0f0f0;
+}
+
+/*  */
+.tableCont {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 주소록 툴바  */
+.toolBar {
+    padding-bottom: 10px;
+    flex: 1;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.toolBar ul {
+    flex: 9;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    border-bottom: 2px solid #c1c1c1;
+}
+
+.toolBar li {
+    margin-right: 15px;
+}
+
+.toolBar a {
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    position: relative;
+    color: #333;
+}
+
+.toolBar a.active {
+    font-weight: 600;
+}
+
+.toolBar a.active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #888888;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.deleteBtn {
+    display: block;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: unset;
+}
+
+.deleteBtn i {
+    margin-right: 5px;
+}
+
+/* 주소록 테이블 */
+.listBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    color: #333;
+}
+
+.listBox .rows {
+    flex: 1;
+    display: flex;
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.listBox .rows:last-child {
+    border-bottom: 2px solid #888888;
+}
+
+.listBox .rows.listHeader {
+    border-radius: 15px;
+    background-color: #555;
+    color: #fff;
+}
+
+.listBox .rows .cols {
+    padding: 7px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.listBox .rows .cols:nth-child(1),
+.cols:nth-child(2),
+.cols:nth-child(5) {
+    width: 10%;
+}
+
+.listBox .rows .cols:nth-child(3) {
+    width: 35%;
+}
+
+.listBox .rows .cols:nth-child(4) {
+    width: 35%;
+}
+
+.listBox .rows .cols span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.listBox .rows .cols span.emer {
+    color: rgb(245, 115, 115);
+    width: 45%;
+    border: 1px solid rgb(245, 115, 115);
+    border-radius: 25px;
+}
+
+/* 페이지네이션 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    height: 5%;
+}
+
+.pagination button {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #558BCF;
+    color: white;
+}
+
+.pagination button.prev,
+.pagination button.next {
+    background-color: #f4f4f4;
+}
+
+/* 주소록 수정/등록 */
+.addressForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.formGroup label {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="file"] {
+    width: 50%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.formGroup .photoWrapper {
+    display: flex;
+    align-items: center;
+}
+
+.photoWrapper img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+.photoWrapper button {
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.photoWrapper input[type="file"] {
+    display: none;
+}
+
+.photoWrapper label {
+    background-color: #558BCF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions button.save {
+    background-color: #558BCF;
+    color: white;
+    border: none;
+}
+
+.actions button.delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+}
+
+/* 메신저 */
+
+/* 메신저 사이드 바 */
+.chatChangeBox {
+    display: flex;
+    justify-content: end;
+    padding-bottom: 10px;
+}
+
+.sideTit {
+    margin: 0;
+    font-size: 24px;
+}
+
+.toggleBtn,
+.createChatBtn,
+.createChatConfirmBtn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #558BCF;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.addressList li:first-child {
+    display: flex;
+    justify-content: end;
+}
+
+.createChatBtn {
+    margin-left: 0px;
+    margin-bottom: 15px;
+}
+
+.toggleBtn.active,
+.createChatBtn:hover,
+.createChatConfirmBtn:hover {
+    background-color: #558BCF;
+}
+
+.chatList,
+.addressList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 600px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.chatList li,
+.addressList li:not(:first-child) {
+    padding: 20px;
+    border-bottom: 1px solid #c1c1c1;
+}
+
+.chatList li:hover,
+.addressList li:not(:first-child):hover {
+    background-color: #f0f0f0;
+}
+
+.chatList li a,
+.addressList li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatList .notiBox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.notificationCount {
+    color: #333;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.exitBtn {
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.exitBtn i {
+    font-size: 24px;
+    margin-left: 5px;
+}
+
+/* 채팅 콘텐츠  */
+.chatContainer {
+    background-color: #fff;
+    position: relative;
+    height: 90vh;
+}
+
+.chatHeader {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatHeader .title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.chatBody {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: rgb(220, 236, 252);
+    border-radius: 25px;
+    position: relative;
+    transition: padding-bottom 0.3s;
+}
+
+.message {
+    margin-bottom: 10px;
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    clear: both;
+}
+
+.message.sent {
+    background-color: #558BCF;
+    color: white;
+    float: right;
+    text-align: right;
+    border-top-right-radius: 0;
+}
+
+.message.sent a {
+    color: white;
+}
+
+.message.received {
+    background-color: #fff;
+    float: left;
+    text-align: left;
+    border-top-left-radius: 0;
+}
+
+.message img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+}
+
+.chatFooter {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    z-index: 1001;
+}
+
+.chatFooter .messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    margin-right: 10px;
+    min-height: 40px;
+    overflow-y: auto;
+}
+
+.chatFooter button {
+    background-color: #558BCF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatFooter .icon {
+    font-size: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.fileInput {
+    display: none;
+}
+
+.emojiContainer {
+    display: none;
+    flex-wrap: wrap;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    gap: 10px;
+}
+
+.emojiContainer img {
+    cursor: pointer;
+    max-width: 100px;
+}
+
+.closeBtn {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.filePopup {
+    display: none;
+    position: fixed;
+    top: calc(100% /2);
+    left: calc(100% /2);
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupContent {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popupContent button {
+    background-color: #558BCF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popupContent p {
+    margin-bottom: 20px;
 }
