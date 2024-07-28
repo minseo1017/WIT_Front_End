@@ -24,14 +24,12 @@
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .vacation_container{
     width: 40%;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .status_row, .hours_row{
@@ -91,7 +89,6 @@
     width: 100%;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
 }
 
