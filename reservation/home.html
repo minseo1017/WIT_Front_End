@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="reserv.css">
+</head>
+
+<body>
+    <!-- 공통영역 -->
+    <div class="container">
+        <div class="sideBar">
+            <div class="top">
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="메인게임.webp" alt="me" class="userImg">
+                <div class="nickName">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="navItem">홈</span>
+                    </a>
+                    <span class="toolTip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="navItem">주소록</span>
+                    </a>
+                    <span class="toolTip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="navItem">게시판</span>
+                    </a>
+                    <span class="toolTip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="navItem">캘린더</span>
+                    </a>
+                    <span class="toolTip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="navItem">메신저</span>
+                    </a>
+                    <span class="toolTip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="navItem">전자결재</span>
+                    </a>
+                    <span class="toolTip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="navItem">근태관리</span>
+                    </a>
+                    <span class="toolTip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="navItem">예약</span>
+                    </a>
+                    <span class="toolTip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="navItem">조직도</span>
+                    </a>
+                    <span class="toolTip">조직도</span>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
+                <span class="logOut"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">예약관리</h2>
+                    </div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">회의실</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">1층 회의실 예약</a></li>
+                                    <li><a href="javascript:;">2층 회의실 예약</a></li>
+                                    <li><a href="javascript:;">3층 회의실 예약</a></li>
+                                    <li><a href="javascript:;">4층 회의실 예약</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">차량</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">차량 예약</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sideContents reservation">
+                    <div class="mainTitle">예약 관리 홈</div>
+                    <div class="reservList">
+                        <div class="subTitle">나의 예약 현황</div>
+                        <div class="listBox">
+                            <div class="rows listHeader">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>회의실</span>
+                                </div>
+                                <div class="cols">
+                                    <span>1층 회의실 회의실1</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>2024-07-27 10:00 ~ 2024-07-27 11:00</span>
+                                </div>
+                                <div class="cols">
+                                    <span>미반납</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span>분류</span>
+                                </div>
+                                <div class="cols">
+                                    <span>항목</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 목적</span>
+                                </div>
+                                <div class="cols">
+                                    <span>예약 기간</span>
+                                </div>
+                                <div class="cols">
+                                    <span>반납 여부</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reservBoxNavi">
+                            <&nbsp;&nbsp;1 2 3 4 5 6 7 8 9 10&nbsp;&nbsp;>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- sidebar 공통요소 script -->
+<script>
+    let btn = document.querySelector("#btn")
+    let sideBar = document.querySelector(".sideBar")
+
+    btn.onclick = function () {
+        sideBar.classList.toggle("active")
+    };
+
+    const toggleItems = document.querySelectorAll('.toggleItem');
+
+    toggleItems.forEach(function (toggleItem) {
+        const toggleTit = toggleItem.querySelector('.toggleTit');
+        const subList = toggleItem.querySelector('.subList');
+
+        toggleTit.addEventListener('click', function () {
+            subList.classList.toggle('active');
+            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+        });
+    });
+</script>
+
+</html>
