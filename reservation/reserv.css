@@ -146,17 +146,84 @@
     flex: 9;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
 }
 
 .reservation .reservBox>div {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 .reservation .reservBox .reservInfo {
     flex: 4;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #c1c1c14c;
+}
+
+.reservation .reservBox .reservInfo .infoTitle {
+    font-size: 22px;
+    height: 20%;
+}
+
+.reservation .reservBox .reservInfo .infoCont {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation .reservBox .reservInfo .infoCont .infoList {
+    flex: 1;
 }
 
 .reservation .reservBox .reservChoice {
     flex: 6;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(1),
+.cols:nth-child(5) {
+    width: 10%;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) {
+    width: 35%;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) {
+    width: 40%;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(4) {
+    width: 5%;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols input {
+    height: 70%;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) span {
+    padding: 0 10px;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) span {
+    flex: 1;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) input {
+    width: 90%;
+    padding: 5px 10px;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #add2ffcc;
+}
+
+.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button:hover,
+button:active {
+    cursor: pointer;
+    background-color: #558BCF;
+    color: #fff;
 }
