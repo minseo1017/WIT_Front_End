@@ -136,16 +136,6 @@
                     <div class="addressListGroup">
                         <ul class="GroupList">
                             <li class="toggleItem">
-                                <h3 class="toggleTit">북마크한 게시물</h3>
-                                <ul class="subList">
-                                    <li><a href="javascript:;">이동하기</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="addressListGroup">
-                        <ul class="GroupList">
-                            <li class="toggleItem">
                                 <h3 class="toggleTit">신고현황</h3>
                                 <ul class="subList">
                                     <li><a href="javascript:;">이동하기</a></li>
@@ -160,7 +150,7 @@
                         <div class="detail">
                             <div class="detailTop">
                                 <div class="top">
-                                    <div class="topTitle">[공지] 집에 가고 싶어요 춥고 배고파요</div>
+                                    <div class="topTitle">집에 가고 싶어요 춥고 배고파요</div>
                                     <div class="topFile">파일 첨부 영역입니다<i class='bx bx-message-square-x'></i>
                                     </div>
                                 </div>
@@ -169,13 +159,14 @@
                                     <span>2024-07-28</span>
                                     <span>300</span>
                                 </div>
+                                <div class="top"><i class='bx bx-star'></i></div>
 
                             </div>
                             <div class="detailCen">
                                 게시판 글 내용 영역입니다.
                             </div>
                             <div class="detailBott">
-                                <button type="button" class="btn btn-outline-danger">신고하기</button>
+                                <button type="button" class="btn btn-outline-danger" id="reportBtn">신고하기</button>
                                 <button type="button" class="btn btn-outline-success">수정</button>
                                 <button type="button" class="btn btn-outline-success">삭제</button>
                                 <button type="button" class="btn btn-outline-primary">목록으로</button>
@@ -184,6 +175,7 @@
 
                         </div>
                         <div class="replyWrapper">
+                            <div class="replyCount"><span>댓글 수 : </span><span>0</span></div>
                             <div class="reply">
                                 <div class="replyCont">
                                     <div class="writeRly">댓글 작성칸</div>
@@ -200,6 +192,7 @@
                                     </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
+                                        <button type="button" class="btn btn-outline-success">수정</button>
                                         <button type="button" class="btn btn-outline-success">삭제</button>
                                     </div>
                                 </div>
@@ -210,6 +203,7 @@
                                     </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
+                                        <button type="button" class="btn btn-outline-success">수정</button>
                                         <button type="button" class="btn btn-outline-success">삭제</button>
                                     </div>
                                 </div>
@@ -220,6 +214,7 @@
                                     </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
+                                        <button type="button" class="btn btn-outline-success">수정</button>
                                         <button type="button" class="btn btn-outline-success">삭제</button>
                                     </div>
                                 </div>
@@ -230,6 +225,7 @@
                                     </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
+                                        <button type="button" class="btn btn-outline-success">수정</button>
                                         <button type="button" class="btn btn-outline-success">삭제</button>
                                     </div>
                                 </div>
@@ -240,6 +236,7 @@
                                     </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
+                                        <button type="button" class="btn btn-outline-success">수정</button>
                                         <button type="button" class="btn btn-outline-success">삭제</button>
                                     </div>
                                 </div>
@@ -252,6 +249,43 @@
                         </div>
 
                     </div>
+                </div>
+
+                <div id="modal" class="dialog">
+                    <div class="tb">
+                        <div class="inner">
+                            <div class=" top">
+                                <div class="title">신고하기</div>
+                            </div>
+                            <div class="ct">
+                                <div class="reporter">
+                                    <div class="reportNick">신고자 닉네임</div>
+                                    <input class="reportInput"></input>
+                                </div>
+                                <div class="reportSort">
+                                    <div class="sort">신고 사유</div>
+                                    <div class="selectSort">
+                                        <select class="form-select form-select-sm" aria-label="Small select example">
+                                            <option selected>욕설 및 비방</option>
+                                            <option value="1">스팸 및 광고</option>
+                                            <option value="2">음란물 및 부적절한 콘텐츠</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="replyControls">
+                                <a href="#" class="rClose">
+                                    <button type="button" class="btn btn-primary">닫기</button>
+                                </a>
+                                <a href="#">
+                                    <button type="button" class="btn btn-danger">신고하기</button>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -278,6 +312,20 @@
             toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
         });
     });
+
+    // modal script
+    const modal = document.querySelector("#modal");
+    const reportBtn = document.querySelector("#reportBtn");
+    const close = document.querySelector(".rClose");
+    // 모달창 열기
+    reportBtn.onclick = function () {
+        modal.style.display = "block"
+    }
+    // 모달창 닫기
+    close.onclick = function () {
+        modal.style.display = "none"
+    }
+
 </script>
 
 </html>

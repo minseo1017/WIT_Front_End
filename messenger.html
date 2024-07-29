@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메신저</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.main.css">
+    <link rel="stylesheet" href="mky.css">
+    <script defer src="mky.js"></script>
+</head>
+
+<body>
+    <!-- 공통영역 -->
+    <div class="container">
+        <div class="sideBar">
+            <div class="top">
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="./images/logo/WIT_logo1.png" alt="logo" class="userImg">
+                <div class="nickName">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="navItem">홈</span>
+                    </a>
+                    <span class="toolTip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="navItem">주소록</span>
+                    </a>
+                    <span class="toolTip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="navItem">게시판</span>
+                    </a>
+                    <span class="toolTip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="navItem">캘린더</span>
+                    </a>
+                    <span class="toolTip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="navItem">메신저</span>
+                    </a>
+                    <span class="toolTip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="navItem">전자결재</span>
+                    </a>
+                    <span class="toolTip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="navItem">근태관리</span>
+                    </a>
+                    <span class="toolTip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="navItem">예약</span>
+                    </a>
+                    <span class="toolTip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="navItem">조직도</span>
+                    </a>
+                    <span class="toolTip">조직도</span>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src="./images/프로필.jpg"><a href=" #">문경원 부장</a></span>
+                <span class="logOut"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit" id="sideTitle">주소록</h2>
+                    </div>
+                    <div class="chatChangeBox">
+                        <button class="toggleBtn" onclick="toggleView('chat')"
+                            style="display: inline-block;">채팅방</button>
+                        <button class="toggleBtn" onclick="toggleView('address')" style="display: none;">주소록</button>
+                    </div>
+                    <ul class="chatList" id="chatList" style="display: none;">
+                        <li>
+                            <a href="javascript:;">
+                                채팅방 1
+                                <div class="notiBox">
+                                    <i class='bx bxs-bell'></i><span class="notificationCount">3</span>
+                                </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                채팅방 2
+                                <div class="notiBox">
+                                    <i class='bx bxs-bell'></i><span class="notificationCount">1</span>
+                                </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                채팅방 3
+                                <div class="notiBox">
+                                    <i class='bx bxs-bell'></i><span class="notificationCount">4</span>
+                                </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                채팅방 4
+                                <div class="notiBox">
+                                    <i class='bx bxs-bell'></i><span class="notificationCount">3</span>
+                                </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="addressList" id="addressList">
+                        <li>
+                            <button class="toggleBtn createChatBtn" onclick="toggleCheckboxes()"><i
+                                    class='bx bx-user-plus'></i></button>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="toggleCheckbox(event, this)">
+                                <input type="checkbox" class="addressCheckbox" style="display: none;">
+                                주소록 1
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="toggleCheckbox(event, this)">
+                                <input type="checkbox" class="addressCheckbox" style="display: none;">
+                                주소록 2
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="toggleCheckbox(event, this)">
+                                <input type="checkbox" class="addressCheckbox" style="display: none;">
+                                주소록 3
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;" onclick="toggleCheckbox(event, this)">
+                                <input type="checkbox" class="addressCheckbox" style="display: none;">
+                                주소록 4
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="createChatConfirmBtn" style="display: none;" onclick="createChat()">확인</button>
+                </div>
+                <div class="sideContents chatContainer">
+                    <div class="chatHeader">
+                        <div class="title">채팅방 제목</div>
+                    </div>
+                    <div class="chatBody" id="chatBody">
+                        <div class="message sent">오늘도 고생했어</div>
+                        <div class="message received">진짜 고생 많았다</div>
+                        <div class="message sent">내일도 화이팅이야</div>
+                        <div class="message received">내일은 좀 더 편안한 하루가 되길</div>
+                    </div>
+                    <div class="emojiContainer" id="emojiContainer">
+                        <img src="./images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
+                        <img src="./images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
+                        <button class="closeBtn" onclick="toggleEmojiContainer()">X</button>
+                    </div>
+                    <div class="chatFooter">
+                        <i class='bx bx-smile icon' onclick="toggleEmojiContainer()"></i>
+                        <i class='bx bx-file icon' onclick="triggerFileInput()"></i>
+                        <input type="file" class="fileInput" id="fileInput" onchange="handleFileInput(event)">
+                        <div id="messageInput" contenteditable="true" class="messageInput"
+                            onkeydown="handleKeyDown(event)" placeholder="메시지 입력">
+                        </div>
+                        <button onclick="sendMessage()">전송</button>
+                    </div>
+                    <div class="filePopup" id="filePopup">
+                        <div class="popupContent">
+                            <p>파일을 전송할까요?</p>
+                            <div class="popupBox">
+                                <button onclick="confirmFileSend()">네</button>
+                                <button onclick="cancelFileSend()">아니오</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profilePopup" class="profilePopup">
+                        <button class="closeButton" onclick="closeProfilePopup()">×</button>
+                        <div class="profileInfo">
+                            <div class="profileTit">
+                                <img src="images/프로필.jpg" alt="프로필 이미지">
+                                <span>문경원</span>
+                            </div>
+                            <div class="profileDetails">
+                                <div class="profileRow">
+                                    <div class="label">부서명</div>
+                                    <div class="value" id="profileCompany">개발팀</div>
+                                </div>
+                                <div class="profileRow">
+                                    <div class="label">직책</div>
+                                    <div class="value" id="profileDept">부장</div>
+                                </div>
+                                <div class="profileRow">
+                                    <div class="label">휴대전화</div>
+                                    <div class="value" id="profileDirectPhone">010-5482-9107</div>
+                                </div>
+                                <div class="profileRow">
+                                    <div class="label">이메일</div>
+                                    <div class="value" id="profilePhone">shaaa6256@naver.com</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:;" class="chatButton">1:1 채팅</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+<!-- sidebar 공통요소 script -->
+<script>
+    let btn = document.querySelector("#btn")
+    let sideBar = document.querySelector(".sideBar")
+
+    btn.onclick = function () {
+        sideBar.classList.toggle("active")
+    };
+    document.addEventListener('DOMContentLoaded', function () {
+        addPasteImageListener('messageInput');
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const addressItems = document.querySelectorAll('.addressList li a');
+        addressItems.forEach(item => {
+            item.addEventListener('click', function (event) {
+                // 체크박스 모드가 아닐 때만 프로필 팝업을 띄움
+                if (!item.querySelector('.addressCheckbox').style.display.includes('inline-block')) {
+                    showProfile(event);
+                }
+            });
+        });
+    });
+
+    document.addEventListener('click', function (event) {
+        const profilePopup = document.getElementById('profilePopup');
+        if (!event.target.closest('.addressList li') && !event.target.closest('.profilePopup')) {
+            profilePopup.style.display = 'none';
+        }
+    });
+
+</script>
+
+</html>

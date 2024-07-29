@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>주소록</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="mky.css">
+    <script defer src="mky.js"></script>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="메인게임.webp" alt="me" class="userImg">
+                <img src="./images/logo/WIT_logo1.png" alt="logo" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -99,7 +100,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src=""><a href=" #">문경원 부장</a></span>
+                    <img src="./images/프로필.jpg"><a href=" #">문경원 부장</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -136,8 +137,270 @@
                         </ul>
                     </div>
                 </div>
-                <div class="sideContents">
-
+                <div class="sideContents addressCont">
+                    <div class="mainTitle addressTit">전체 주소록</div>
+                    <div class="searchBox">
+                        <input type="text" placeholder="검색">
+                        <button class="searchBtn">
+                            <i class='bx bx-search'></i>
+                        </button>
+                    </div>
+                    <div class="tableCont">
+                        <div class="toolBar">
+                            <ul>
+                                <li>
+                                    <a href="javascript:;">전체</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㄱ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㄴ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㄷ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㄹ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅁ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅂ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅅ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅐ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅈ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅊ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅋ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅌ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅍ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">ㅎ</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">a-z</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">0-9</a>
+                                </li>
+                            </ul>
+                            <button class="deleteBtn"><i class='bx bx-trash'></i></button>
+                        </div>
+                        <div class="listBox">
+                            <div class="rows listHeader">
+                                <div class="cols">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="cols">
+                                    <span>이름</span>
+                                </div>
+                                <div class="cols">
+                                    <span>휴대폰</span>
+                                </div>
+                                <div class="cols">
+                                    <span>이메일</span>
+                                </div>
+                                <div class="cols">
+                                    <span>그룹</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>홍길동</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-1234-5678</span>
+                                </div>
+                                <div class="cols">
+                                    <span>hong@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>마케팅팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>김철수</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-2345-6789</span>
+                                </div>
+                                <div class="cols">
+                                    <span>kim@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>개발팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>홍길동</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-1234-5678</span>
+                                </div>
+                                <div class="cols">
+                                    <span>hong@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>마케팅팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>김철수</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-2345-6789</span>
+                                </div>
+                                <div class="cols">
+                                    <span>kim@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>개발팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                            <div class="rows">
+                                <div class="cols">
+                                    <span><input type="checkbox"></span>
+                                </div>
+                                <div class="cols">
+                                    <span>이영희</span>
+                                </div>
+                                <div class="cols">
+                                    <span>010-3456-7890</span>
+                                </div>
+                                <div class="cols">
+                                    <span>lee@example.com</span>
+                                </div>
+                                <div class="cols">
+                                    <span>경영팀</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination">
+                        <button class="prev">&laquo;</button>
+                        <button class="active">1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button class="next">&raquo;</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,17 +417,6 @@
     };
 
 
-    const toggleItems = document.querySelectorAll('.toggleItem');
-
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
-
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
-    });
 </script>
 
 </html>
