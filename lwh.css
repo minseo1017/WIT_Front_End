@@ -124,7 +124,7 @@
     z-index: 77;
 }
 
-.myCalendarPopup .popupClose {
+.myCalendarPopup .myPopupClose {
     color: gray;
     float: right;
     font-size: 20px;
@@ -148,19 +148,67 @@
     gap: 10px;
 }
 
-.myCalendarPopup .btns button {
+
+#sideMyCancel {
     padding: 10px 20px;
-    border-radius: 10px;
-    background-color: #86bcff;
-    border: none;
-    font-size: 12px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: #fff;
 }
 
-.myCalendarPopup .btns button:hover,
-button:active {
+#sideMyCancel:hover {
     cursor: pointer;
-    background-color: #3372be;
-    border: none;
+    background-color: #c51221;
+}
+
+.subList.calendarList {
+    overflow: visible;
+}
+
+.sideCalendarAdd {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 12px;
+    border-radius: 2px;
+    color: #777;
+    position: relative;
+}
+
+.deptCalendarPopup {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 150px;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px 15px 10px 15px;
+    background-color: #fff;
+    z-index: 77;
+}
+
+.deptCalendarPopup .myPopupClose {
+    color: gray;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: -7px;
+}
+
+.deptCalendarPopup .content {
+    padding-top: 15px;
+}
+
+.deptCalendarPopup .content input {
+    padding: 3px 5px;
+}
+
+.deptCalendarPopup .btns {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
 }
 
 /* 날짜 박스 눌렀을 시 */
@@ -254,20 +302,20 @@ button:active {
     gap: 70px;
 }
 
-.modal .calendarAdd .btns button {
+/* .modal .calendarAdd .btns button {
     padding: 10px 30px;
     border-radius: 10px;
     background-color: #86bcff;
     border: none;
     font-size: 16px;
-}
+} */
 
-.modal .calendarAdd .btns button:hover,
+/* .modal .calendarAdd .btns button:hover,
 button:active {
     cursor: pointer;
     background-color: #3372be;
     border: none;
-}
+} */
 
 
 /* 이벤트 클릭 시 */
@@ -318,7 +366,7 @@ button:active {
     gap: 70px;
 }
 
-.modal .eventCheck .btns button {
+/* .modal .eventCheck .btns button {
     padding: 10px 30px;
     border-radius: 10px;
     background-color: #86bcff;
@@ -331,14 +379,59 @@ button:active {
     cursor: pointer;
     background-color: #3372be;
     border: none;
+} */
+
+
+
+
+.cancelBtn {
+    padding: 10px 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: #fff;
 }
+
+.cancelBtn:hover {
+    cursor: pointer;
+    background-color: #c51221;
+}
+
 
 #editBtn {
     display: block;
+    padding: 10px 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #26a626;
+    color: #fff;
+}
+
+#editBtn:hover {
+    cursor: pointer;
+    background-color: #168216;
+}
+
+.okBtn {
+    padding: 10px 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+.okBtn:hover {
+    cursor: pointer;
+    background-color: #1268d4;
 }
 
 #confirmBtn {
     display: none;
+}
+
+#confirmBtn:hover {
+    cursor: pointer;
+    background-color: #1268d4;
 }
 
 
@@ -380,6 +473,7 @@ button:active {
 
 .fc .fc-button-primary {
     background-color: #558BCF;
+    border: unset;
 }
 
 .fc .fc-button-primary:hover {
@@ -392,6 +486,8 @@ button:active {
 }
 
 .fc .fc-button:focus,
-.fc-button-primary:focus {
-    box-shadow: none;
+.fc-button-primary:focus,
+.fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc-button-primary:not(:disabled):active:focus {
+    box-shadow: unset !important;
 }
