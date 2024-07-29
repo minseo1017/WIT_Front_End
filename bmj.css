@@ -198,7 +198,7 @@
 }
 
 .boardDetail .detail .detailTop {
-    flex: 2;
+    flex: 1;
     background-color: #555;
     color: white;
     border-radius: 10px;
@@ -213,12 +213,11 @@
 }
 
 .boardDetail .detail .detailTop .top {
-
     display: flex;
     margin: 20px;
     height: 2px;
     gap: 20px;
-
+    align-items: center;
 }
 
 .boardDetail .detail .detailTop .top span {
@@ -236,6 +235,10 @@
     align-items: center;
     justify-content: flex-end;
     gap: 20px;
+}
+
+.boardDetail .detail .deailTop .top .bx-str {
+    font-size: 1.5rem;
 }
 
 .boardDetail .detail .detailCen {
@@ -261,14 +264,40 @@
 
 /* detail page reply css start */
 .replyWrapper {
-    /* overflow: auto; */
-    /* gap: 10px; */
     flex: 4;
+    height: calc(100% - 60px);
+    overflow: hidden;
+}
+
+.replyWrapper .replyCount {
+    flex: 1;
+}
+
+.replyWrapper .replyCount span {
+    font-weight: bold;
 }
 
 .replyWrapper .replyList {
-    overflow-y: scroll;
-    height: 400px;
+    /* overflow-y: scroll; */
+    height: 500px;
+    overflow: auto;
+}
+
+.replyWrapper .replyList::-webkit-scrollbar {
+    width: 10px;
+}
+
+.replyWrapper .replyList::-webkit-scrollbar-thumb {
+    background-color: #2f3542;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.replyWrapper .replyList::-webkit-scrollbar-track {
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
 }
 
 .boardDetail .reply {
@@ -280,6 +309,7 @@
     border: 3px solid #555;
     border-radius: 10px;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 .boardDetail .replyCont {
@@ -300,4 +330,106 @@
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    gap: 4px
+}
+
+/* report modal css start */
+.replyControls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dialog {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.dialog .tb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog>.tb .inner {
+    width: 500px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 16px;
+    max-width: 800px;
+}
+
+.dialog .top {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.dialog .title {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.dialog .ct {
+    max-height: 60vh;
+    height: 200px;
+    overflow-y: auto;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog .ct .reporter,
+.dialog .ct .reportSort {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+}
+
+.dialog .ct .reportNick,
+.dialog .ct .sort {
+    display: flex;
+    /* justify-content: center; */
+    font-weight: 400
+}
+
+.dialog .ct .reportNick,
+.dialog .ct .sort {
+    flex: 1;
+    font-weight: 900;
+    color: #0d6efd;
+}
+
+.dialog .ct .reportInput,
+.dialog .ct .selectSort {
+    width: 350px;
+}
+
+
+
+.dialog .ct .reportInput {
+    border: 3px solid #bfd9ff;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.dialog .ct .reportSort select {
+    border: 3px solid #bfd9ff;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
