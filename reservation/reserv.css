@@ -141,190 +141,26 @@
     justify-content: center;
 }
 
-/* 회의실 예약 페이지 */
-.reservation .reservBox {
+/* 차량 & 회의실 예약 페이지 */
+.sideContents.reservation {
+    padding: 40px 30px;
+}
+
+.sideContents.reservation .mainTitle {
+    display: block;
+}
+
+.sideContents.reservation .reservBox {
+    max-height: 650px;
     flex: 9;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
 }
 
-.reservation .reservBox>div {
-    /* border: 1px solid black; */
+.sideContents.reservation .reservBox .calendar {
+    height: 100%;
 }
 
-.reservation .reservBox .reservInfo {
-    flex: 4;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #c1c1c14c;
-}
-
-.reservation .reservBox .reservInfo .infoTitle {
-    font-size: 22px;
-    height: 20%;
-}
-
-.reservation .reservBox .reservInfo .infoCont {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-}
-
-.reservation .reservBox .reservInfo .infoCont .infoList {
-    flex: 1;
-}
-
-.reservation .reservBox .reservChoice {
-    flex: 6;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(1),
-.cols:nth-child(5) {
-    width: 10%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) {
-    width: 35%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) {
-    width: 40%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(4) {
-    width: 5%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols input {
-    height: 70%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) span {
-    padding: 0 10px;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) span {
-    flex: 1;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) input {
-    width: 90%;
-    padding: 5px 10px;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button {
-    padding: 10px 20px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: #add2ffcc;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #558BCF;
-    color: #fff;
-}
-
-/* 차량 예약 페이지 */
-
-.reservation .reservBox {
-    flex: 9;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.reservation .reservBox>div {
-    /* border: 1px solid black; */
-}
-
-.reservation .reservBox .reservInfo {
-    flex: 4;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: #c1c1c14c;
-}
-
-.reservation .reservBox .reservInfo .infoTitle {
-    font-size: 22px;
-    height: 20%;
-}
-
-.reservation .reservBox .reservInfo .infoCont {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-}
-
-.reservation .reservBox .reservInfo .infoCont .infoList {
-    flex: 1;
-}
-
-.reservation .reservBox .reservChoice {
-    flex: 6;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(1),
-.cols:nth-child(5) {
-    width: 10%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) {
-    width: 35%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) {
-    width: 40%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(4) {
-    width: 5%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols input {
-    height: 70%;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(2) span {
-    padding: 0 10px;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) span {
-    flex: 1;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:nth-child(3) input {
-    width: 90%;
-    padding: 5px 10px;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button {
-    padding: 10px 20px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: #add2ffcc;
-}
-
-.reservation .reservBox .reservChoice.reservList .listBox .rows .cols:last-child button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #558BCF;
-    color: #fff;
-}
-
-.body {
-    margin: 40px 10px;
-    padding: 0;
-    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-    font-size: 14px;
-}
-
-#calendar {
-    width: 80%;
-    height: 25%;
-    margin: 0 auto;
+.sideContents.reservation .reservBox .calendar h2 {
+    padding-left: 10px;
+    font-size: 1.4rem;
+    color: #444444;
 }

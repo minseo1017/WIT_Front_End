@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../style.main.css">
-    <link rel="stylesheet" href="reserv.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="reserv.css">
 </head>
 
 <body>
@@ -107,18 +107,20 @@
             </div>
             <div class="contents">
                 <div class="sideAbout">
-                    <div class="sideTxt">
-                        <h2 class="sideTit">예약관리</h2>
+                    <div>
+                        <a href="home.html">
+                            <h2 class="sideTit">예약관리</h2>
+                        </a>
                     </div>
                     <div class="addressListPrivate">
                         <ul class="privateList">
                             <li class="toggleItem">
                                 <h3 class="toggleTit">회의실</h3>
                                 <ul class="subList">
-                                    <li><a href="javascript:;">1층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">2층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">3층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">4층 회의실 예약</a></li>
+                                    <li><a href="meetingRoom.html">회의실 1</a></li>
+                                    <li><a href="meetingRoom.html">회의실 2</a></li>
+                                    <li><a href="meetingRoom.html">회의실 3</a></li>
+                                    <li><a href="meetingRoom.html">회의실 4</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -128,155 +130,19 @@
                             <li class="toggleItem">
                                 <h3 class="toggleTit">차량</h3>
                                 <ul class="subList">
-                                    <li><a href="javascript:;">차량 예약</a></li>
+                                    <li><a href="vehicle.html">BMW X6_9688</a></li>
+                                    <li><a href="vehicle.html">싼타페_7574</a></li>
+                                    <li><a href="vehicle.html">마이바흐_1106</a></li>
+                                    <li><a href="vehicle.html">G90_9720</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="sideContents reservation">
-                    <div class="mainTitle">차량</div>
+                <div class="sideContents reservation vehicles">
+                    <div class="mainTitle">차량 [ BWM X6_9688 ]</div>
                     <div class="reservBox">
-                        <div class="calendar" id="calendar">
-
-                        </div>
-                        <div class="reservChoice reservList">
-                            <div class="listBox">
-                                <div class="rows listHeader">
-                                    <div class="cols">
-                                        <span>항목</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 일시</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 목적</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 상태</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약</span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실1</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실2</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실3</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실4</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 불가
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button disabled>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="calendar" id="calendar"></div>
                     </div>
                 </div>
             </div>
@@ -309,67 +175,67 @@
         var calendarEl = document.getElementById('calendar');
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialDate: '2023-01-12',
+            initialDate: '2024-07-29',
             editable: true,
             selectable: true,
             businessHours: true,
-            dayMaxEvents: true, // allow "more" link when too many events
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: '2023-01-01'
-                },
-                {
-                    title: 'Long Event',
-                    start: '2023-01-07',
-                    end: '2023-01-10'
-                },
-                {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2023-01-09T16:00:00'
-                },
-                {
-                    groupId: 999,
-                    title: 'Repeating Event',
-                    start: '2023-01-16T16:00:00'
-                },
-                {
-                    title: 'Conference',
-                    start: '2023-01-11',
-                    end: '2023-01-13'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2023-01-12T10:30:00',
-                    end: '2023-01-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2023-01-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2023-01-12T14:30:00'
-                },
-                {
-                    title: 'Happy Hour',
-                    start: '2023-01-12T17:30:00'
-                },
-                {
-                    title: 'Dinner',
-                    start: '2023-01-12T20:00:00'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2023-01-13T07:00:00'
-                },
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2023-01-28'
-                }
-            ]
+            dayMaxEvents: true
+            // events: [
+            //     {
+            //         title: 'All Day Event',
+            //         start: '2023-01-01'
+            //     },
+            //     {
+            //         title: 'Long Event',
+            //         start: '2023-01-07',
+            //         end: '2023-01-10'
+            //     },
+            //     {
+            //         groupId: 999,
+            //         title: 'Repeating Event',
+            //         start: '2023-01-09T16:00:00'
+            //     },
+            //     {
+            //         groupId: 999,
+            //         title: 'Repeating Event',
+            //         start: '2023-01-16T16:00:00'
+            //     },
+            //     {
+            //         title: 'Conference',
+            //         start: '2023-01-11',
+            //         end: '2023-01-13'
+            //     },
+            //     {
+            //         title: 'Meeting',
+            //         start: '2023-01-12T10:30:00',
+            //         end: '2023-01-12T12:30:00'
+            //     },
+            //     {
+            //         title: 'Lunch',
+            //         start: '2023-01-12T12:00:00'
+            //     },
+            //     {
+            //         title: 'Meeting',
+            //         start: '2023-01-12T14:30:00'
+            //     },
+            //     {
+            //         title: 'Happy Hour',
+            //         start: '2023-01-12T17:30:00'
+            //     },
+            //     {
+            //         title: 'Dinner',
+            //         start: '2023-01-12T20:00:00'
+            //     },
+            //     {
+            //         title: 'Birthday Party',
+            //         start: '2023-01-13T07:00:00'
+            //     },
+            //     {
+            //         title: 'Click for Google',
+            //         url: 'http://google.com/',
+            //         start: '2023-01-28'
+            //     }
+            // ]
         });
 
         calendar.render();
