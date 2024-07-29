@@ -1,8 +1,7 @@
-let fileToSend = null
+let fileToSend = null // 전송할 파일을 저장하는 변수
 
-// 주소록 토글 이벤트
+// 주소록 토글 이벤트 설정
 const toggleItems = document.querySelectorAll('.toggleItem')
-
 toggleItems.forEach(function (toggleItem) {
     const toggleTit = toggleItem.querySelector('.toggleTit')
     const subList = toggleItem.querySelector('.subList')
@@ -12,37 +11,34 @@ toggleItems.forEach(function (toggleItem) {
         toggleTit.classList.toggle('active') // 이미지 회전을 위해 클래스 추가
     })
 })
-// 주소록 툴바
-const links = document.querySelectorAll('.toolBar a')
 
+// 주소록 툴바 활성화
+const links = document.querySelectorAll('.toolBar a')
 links.forEach(function (link) {
     link.addEventListener('click', function () {
-        // 모든 링크에서 active 클래스 제거
         links.forEach(function (link) {
-            link.classList.remove('active')
+            link.classList.remove('active') // 모든 링크에서 active 클래스 제거
         })
-
-        // 클릭한 링크에 active 클래스 추가
-        this.classList.add('active')
+        this.classList.add('active') // 클릭한 링크에 active 클래스 추가
     })
 })
+
 // 주소록 사진 변경
 function removePhoto() {
-    document.getElementById('photo').src = 'placeholder.jpg'
+    document.getElementById('photo').src = 'placeholder.jpg' // 사진 제거
 }
 
 function previewPhoto(event) {
     const reader = new FileReader()
     reader.onload = function () {
         const output = document.getElementById('photo')
-        output.src = reader.result
+        output.src = reader.result // 사진 미리보기
     }
-    reader.readAsDataURL(event.target.files[0])
+    reader.readAsDataURL(event.target.files[0]) // 파일 읽기
 }
 
-// 채팅방 사이드 영역
+// 채팅방 사이드 영역 보기 전환
 function toggleView(view) {
-    // 각 요소를 변수에 할당
     const chatList = document.getElementById('chatList')
     const addressList = document.getElementById('addressList')
     const sideTitle = document.getElementById('sideTitle')
@@ -54,14 +50,12 @@ function toggleView(view) {
     )
 
     if (view === 'chat') {
-        // 채팅방 보기로 전환
         chatList.style.display = 'block' // 채팅방 리스트 보이기
         addressList.style.display = 'none' // 주소록 리스트 숨기기
         sideTitle.innerText = '채팅방' // 제목을 '채팅방'으로 변경
         chatButton.style.display = 'none' // '채팅방' 버튼 숨기기
         addressButton.style.display = 'inline-block' // '주소록' 버튼 보이기
     } else {
-        // 주소록 보기로 전환
         chatList.style.display = 'none' // 채팅방 리스트 숨기기
         addressList.style.display = 'block' // 주소록 리스트 보이기
         sideTitle.innerText = '주소록' // 제목을 '주소록'으로 변경
@@ -70,39 +64,49 @@ function toggleView(view) {
     }
 }
 
+// 주소록 클릭 시 프로필 팝업 표시
+function showProfile(event, element) {
+    const profilePopup = document.getElementById('profilePopup')
+    profilePopup.style.display = 'flex' // 팝업 표시
+    event.stopPropagation() // 이벤트 버블링 방지
+}
+
+// 프로필 팝업 닫기 버튼
+function closeProfilePopup() {
+    document.getElementById('profilePopup').style.display = 'none' // 팝업 숨기기
+}
+
+// 주소록 항목의 체크박스와 확인 버튼을 토글
 function toggleCheckboxes() {
-    // 주소록 항목의 체크박스와 확인 버튼을 토글
     const checkboxes = document.querySelectorAll('.addressCheckbox')
     const confirmBtn = document.querySelector('.createChatConfirmBtn')
     checkboxes.forEach(checkbox => {
-        // 체크박스의 display 속성을 토글
         checkbox.style.display =
-            checkbox.style.display === 'none' ? 'inline-block' : 'none'
+            checkbox.style.display === 'none' ? 'inline-block' : 'none' // 체크박스 토글
     })
-    // 확인 버튼의 display 속성을 토글
     confirmBtn.style.display =
-        confirmBtn.style.display === 'none' ? 'inline-block' : 'none'
+        confirmBtn.style.display === 'none' ? 'inline-block' : 'none' // 확인 버튼 토글
 }
 
-function toggleCheckbox(element) {
-    // 체크박스를 클릭하면 체크 상태를 토글
+// 주소록 항목의 체크박스를 클릭하여 선택 상태를 토글
+function toggleCheckbox(event, element) {
+    event.preventDefault()
     const checkbox = element.querySelector('.addressCheckbox')
     checkbox.checked = !checkbox.checked
 }
 
+// 선택된 주소록 항목을 수집하여 그룹 채팅 생성
 function createChat() {
-    // 선택된 주소록 항목을 수집하여 배열에 저장
     const selectedAddresses = []
     const checkboxes = document.querySelectorAll('.addressCheckbox')
     checkboxes.forEach((checkbox, index) => {
         if (checkbox.checked) {
-            // 체크된 항목의 이름을 배열에 추가
-            selectedAddresses.push(`주소록 ${index + 1}`)
+            selectedAddresses.push(`주소록 ${index + 1}`) // 체크된 항목의 이름을 배열에 추가
         }
     })
-    console.log('선택된 주소록:', selectedAddresses)
+    console.log('선택된 주소록:', selectedAddresses) // 선택된 주소록 출력
 }
-// 채팅영역
+
 // 메시지를 전송하는 함수
 function sendMessage() {
     const messageInput = document.getElementById('messageInput')
@@ -174,24 +178,26 @@ function cancelFileSend() {
 }
 
 // 클립보드에서 이미지를 붙여넣는 함수
-document
-    .getElementById('messageInput')
-    .addEventListener('paste', function (event) {
-        const items = (event.clipboardData || window.clipboardData).items
-        for (let item of items) {
-            if (item.type.indexOf('image') !== -1) {
-                const file = item.getAsFile()
-                const reader = new FileReader()
-                reader.onload = function (event) {
-                    const messageInput = document.getElementById('messageInput')
-                    messageInput.innerHTML = `<img src="${event.target.result}" alt="Pasted Image" style="max-width: 100%; max-height: 200px;">`
+function addPasteImageListener(elementId) {
+    const messageInput = document.getElementById(elementId)
+    if (messageInput) {
+        messageInput.addEventListener('paste', function (event) {
+            const items = (event.clipboardData || window.clipboardData).items
+            for (let item of items) {
+                if (item.type.indexOf('image') !== -1) {
+                    const file = item.getAsFile()
+                    const reader = new FileReader()
+                    reader.onload = function (event) {
+                        messageInput.innerHTML = `<img src="${event.target.result}" alt="Pasted Image" style="max-width: 100%; max-height: 200px;">`
+                    }
+                    reader.readAsDataURL(file)
                 }
-                reader.readAsDataURL(file)
             }
-        }
-    })
+        })
+    }
+}
 
-// 키 다운 이벤트 처리
+// 키 다운 이벤트 처리 (엔터 키로 메시지 전송)
 function handleKeyDown(event) {
     if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault()
