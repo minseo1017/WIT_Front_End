@@ -5,20 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="minseo.css">
+    <link rel="stylesheet" href="bmj.css">
 </head>
 
+
 <body>
-    <div class="container">
-        <!-- 공통영역 -->
+    <!-- 공통영역 -->
+    <div id="container">
         <div class="sideBar">
             <div class="top">
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="images/logo/WIT_logo1.png" alt="me" class="userImg">
+                <img src="메인게임.webp" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -41,7 +45,7 @@
                     <span class="toolTip">주소록</span>
                 </li>
                 <li>
-                    <a href="board.html">
+                    <a href="board2.html">
                         <i class="bx bxs-grid-alt"></i>
                         <span class="navItem">게시판</span>
                     </a>
@@ -92,39 +96,77 @@
 
             </ul>
         </div>
-        <!-- 공통역역 끝 -->
+        <!-- 공통영역 끝 -->
 
         <div class="main-content">
             <div class="header">
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="images/프로필.jpg"><a href=" #">백민주 사원</a></span>
+                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
-                <div class="left">
-                    <div class="leftTop">
-                        user
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">게시판</h2>
                     </div>
-                    <div class="leftBottom">
-                        <h3 id="date"></h3>
-                        <div id="clock"></div>
-                        <button class="clockIn">출근</button>
-                        <button class="clockOut">퇴근</button>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">공지 게시판</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">글 작성</a></li>
+                                    <li><a href="javascript:;">이동하기</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">자유 게시판</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">글 작성</a></li>
+                                    <li><a href="javascript:;">이동하기</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">신고현황</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;">이동하기</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <div class="center">게시판영역</div>
-                <div class="right">
-                    <div class="rightTop">전자결재영역</div>
-                    <div class="rightBottom">캘린더영역</div>
+                <div class="sideContents board">
+                    <div class="mainTitle">글 작성</div>
+                    <div class="writeWrapper">
+                        <div class="writeTitle">제목</div>
+                        <div class="writeFile">
+                            <input type="file">
+                        </div>
+                        <div class="writeCont">게시판 글 작성 입력</div>
+                        <div class="writeBtns">
+                            <button type="button" class="btn btn-secondary">뒤로가기</button>
+                            <button type="button" class="btn btn-primary">등록하기</button>
+
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 </body>
-<!-- sidebar 공통요소 script -->
+<!--sidebar 공통요소 script-->
 <script>
     let btn = document.querySelector("#btn")
     let sideBar = document.querySelector(".sideBar")
@@ -133,30 +175,17 @@
         sideBar.classList.toggle("active")
     };
 
-    // 근태관리 날짜 및 시간 스크립트
-    function updateClock() {
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth() + 1;
-        const date = now.getDate();
-        const day = now.getDay();
-        const days = ["일", "월", "화", "수", "목", "금", "토"];
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
+    const toggleItems = document.querySelectorAll('.toggleItem');
 
-        const formattedDate = `${month}월 ${date}일 (${days[day]})`;
-        const formattedTime = `${hours}:${minutes}:${seconds}`;
+    toggleItems.forEach(function (toggleItem) {
+        const toggleTit = toggleItem.querySelector('.toggleTit');
+        const subList = toggleItem.querySelector('.subList');
 
-        document.getElementById('date').textContent = formattedDate;
-        document.getElementById('clock').textContent = formattedTime;
-    }
-
-    // 매초마다 updateClock 함수를 호출
-    setInterval(updateClock, 1000);
-
-    // 페이지가 로드될 때 처음으로 시계를 업데이트
-    updateClock();
+        toggleTit.addEventListener('click', function () {
+            subList.classList.toggle('active');
+            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+        });
+    });
 </script>
 
 </html>

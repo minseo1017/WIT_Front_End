@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../WIT_Front_End/style.main.css">
+    <link rel="stylesheet" href="board2.css">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="lwh.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+
+</head>
+
+
+<body>
+    <!-- 공통영역 -->
+    <div class="container">
+        <div class="sideBar">
+            <div class="top">
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="메인게임.webp" alt="me" class="userImg">
+                <div class="nickName">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="navItem">홈</span>
+                    </a>
+                    <span class="toolTip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="navItem">주소록</span>
+                    </a>
+                    <span class="toolTip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="navItem">게시판</span>
+                    </a>
+                    <span class="toolTip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="navItem">캘린더</span>
+                    </a>
+                    <span class="toolTip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="navItem">메신저</span>
+                    </a>
+                    <span class="toolTip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="navItem">전자결재</span>
+                    </a>
+                    <span class="toolTip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="navItem">근태관리</span>
+                    </a>
+                    <span class="toolTip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="navItem">예약</span>
+                    </a>
+                    <span class="toolTip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="navItem">조직도</span>
+                    </a>
+                    <span class="toolTip">조직도</span>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src="메인게임.webp"><a href=" #">이원희 사원</a></span>
+                <span class="logOut"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">캘린더</h2>
+                    </div>
+                    <div class="sideBtnBox">
+                        <button class="plusBtn sideBtn">일정 등록</button>
+                    </div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">내 캘린더</h3>
+                                <ul class="subList calendarList">
+                                    <li>
+                                        <input type="checkbox" id="myCheckBox" name="myCheckBox" class="active">
+                                        <label for="myCheckBox">내 일정(기본)</label>
+                                    </li>
+                                    <li><input type="checkbox" id="travelCheckBox" name="travelCheckBox">
+                                        <label for="travelCheckBox">여행</label>
+                                    </li>
+                                    <div>
+                                        <span class="sideCalendarAdd">
+                                            <i class='bx bx-plus-medical'></i>
+                                            <span class="myCalendarAdd">내 캘린더 추가</span>
+                                            <div class="myCalendarPopup">
+                                                <header>
+                                                    <h3>내 캘린더 추가<span class="popupClose">&times</span></h3>
+                                                </header>
+                                                <div class="content">
+                                                    <input type="text">
+                                                </div>
+                                                <footer>
+                                                    <div class="btns">
+                                                        <button>확인</button><button>취소</button>
+                                                    </div>
+                                                </footer>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">부서 캘린더</h3>
+                                <ul class="subList">
+                                    <li><input type="checkbox" id="deptMeeting" name="deptMeeting">
+                                        <label for="deptMeeting">회의 일정(기본)</label>
+                                    </li>
+                                    <li><input type="checkbox" id="deptBirthday" name="deptBirthday">
+                                        <label for="deptBirthday">부서원 생일(기본)</label>
+                                    </li>
+                                    <div>
+                                        <span class="sideCalendarAdd">
+                                            <i class='bx bx-plus-medical'></i>
+                                            <span class="deptCalendarAdd">부서 캘린더 추가</span>
+                                        </span>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sideContents calendarBox">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+            </div>
+        </div>
+        <!-- 날짜 박스 눌렀을 시 모달 -->
+        <div id="calendarModal" class="modal">
+            <div class="modalContent">
+                <h1>일정등록<span class="modalClose">&times</span></h1>
+                <div class="calendarAdd">
+                    <ul>
+                        <li>
+                            <span>일정명</span>
+                            <div><input type="text"></div>
+                        </li>
+                        <li>
+                            <span>일정기간</span>
+                            <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
+                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                            </div>
+                        </li>
+                        <li>
+                            <span>내 캘린더</span>
+                            <div><select name="calendar" id="choiCalendar">
+                                    <option value="1">웡히 캘린더</option>
+                                    <option value="1">바보 캘린더</option>
+                                </select></div>
+                        </li>
+                        <li>
+                            <span>장소</span>
+                            <div><input type="text" class="eventLocation"></div>
+                        </li>
+                        <li>
+                            <span>내용</span>
+                            <div><textarea id="calendarText"></textarea></div>
+                        </li>
+                        <li>
+                            <div class="btns">
+                                <button id="addBtn">완료</button><button class="cancelBtn">취소</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- event 클릭 시 모달 -->
+        <div id="eventModal" class="modal">
+            <div class="modalContent">
+                <h1>일정 내용<span class="modalClose">&times</span></h1>
+                <div class="eventCheck">
+                    <ul>
+                        <li>
+                            <span>일정명</span>
+                            <div><input type="text" class="eventName" disabled></div>
+                        </li>
+                        <li>
+                            <span>일정기간</span>
+                            <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
+                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                            </div>
+                        </li>
+                        <li>
+                            <span>내 캘린더</span>
+                            <div><select name="calendar" id="choiEvent" disabled>
+                                    <option value="1">웡히 캘린더</option>
+                                    <option value="1">바보 캘린더</option>
+                                </select></div>
+                        </li>
+                        <li>
+                            <span>장소</span>
+                            <div><input type="text" class="eventLocation" value="1층 회의실" disabled></div>
+                        </li>
+                        <li>
+                            <span>내용</span>
+                            <div><textarea id="eventText" disabled>ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</textarea></div>
+                        </li>
+                        <li>
+                            <div class="btns">
+                                <button id="editBtn">수정</button><button id="confirmBtn">확인</button><button
+                                    class="cancelBtn">취소</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<!-- sidebar 공통요소 script -->
+<script>
+    let btn = document.querySelector("#btn")
+    let sideBar = document.querySelector(".sideBar")
+
+    btn.onclick = function () {
+        sideBar.classList.toggle("active")
+    };
+
+    const toggleItems = document.querySelectorAll('.toggleItem');
+
+    toggleItems.forEach(function (toggleItem) {
+        const toggleTit = toggleItem.querySelector('.toggleTit');
+        const subList = toggleItem.querySelector('.subList');
+
+        toggleTit.addEventListener('click', function () {
+            subList.classList.toggle('active');
+            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+        });
+    });
+
+    $('.sideCalendarAdd').on('click', function () {
+        $('.myCalendarPopup').show();
+    })
+
+    $('.popupClose').on('click', function () {
+        $('.')
+    })
+
+    // 이벤트 클릭해서 수정 버튼 눌렀을 시
+    $('#editBtn').on('click', function () {
+        var $inputs = $('.eventCheck input, .eventCheck select, .eventCheck textarea');
+        $inputs.prop('disabled', false);
+        $('#editBtn').hide();
+        $('#confirmBtn').show();
+    });
+
+    // 모달창에서 확인 버튼 눌렀을 시
+    $('#confirmBtn').on('click', function () {
+        var $inputs = $('.eventCheck input, .eventCheck select, .eventCheck textarea');
+        $inputs.prop('disabled', true);
+        $('#eventModal').hide();
+        $('#confirmBtn').hide();
+        $('#editBtn').show();
+    });
+
+    $('.cancelBtn').on('click', function () {
+        location.reload();
+    })
+
+    $('#addBtn').on('click', function () {
+        // 입력 필드값 변수에 저장
+        let eventName = $('#eventName').val();
+        let startDate = $('#startDate').val();
+        let startTime = $('#startTime').val();
+        let endDate = $('#endDate').val();
+        let endTime = $('#endTime').val();
+        let calendar = $('#choiCalendar').val();
+        let eventLocation = $('#eventLocation').val();
+        let calendarText = $('#calendarText').val();
+
+        // 입력 필드에서 가져온 값을 사용하여 이벤트 객체 생성
+        let event = {
+            eventName: eventName,
+            startDate: startDate,
+            startTime: startTime,
+            endDate: endDate,
+            endTime: endTime,
+            calendar: calendar,
+            eventLocation: eventLocation,
+            calendarText: calendarText
+        };
+
+        $('#calendarModal').hide();
+    })
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+
+            googleCalendarApiKey: "AIzaSyAnwaZWB863SwNcT5q--le6nXP51P8goCI",
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+            },
+            // '일 제거'
+            dayCellContent: function (e) {
+                return e.dayNumberText.replace('일', '');
+            },
+            locale: "ko", // 한국어로 변경
+            initialDate: new Date(), // 캘린더 처음 들어갔을 때 오늘 날짜 기준으로 지정 ex) 7월 1일이면 7월 1일에 포커스
+
+            navLinks: true, // can click day/week names to navigate views
+            businessHours: true, // display business hours
+            editable: true,
+            selectable: true,
+            dateClick: function (info) {
+                //날짜 클릭 시 발생할 이벤트
+                console.log(info.dateStr);
+                $("#calendarModal").show();
+                $(".modalClose").on("click", function () {
+                    $("#calendarModal").hide();
+                });
+            },
+            eventClick: function (info) {
+                // 이벤트 클릭 시 발생할 이벤트
+                $("#eventModal").show();
+                $(".modalClose").on("click", function () {
+                    $("#eventModal").hide();
+                });
+            },
+
+
+            droppable: true,
+            eventSources: // 한국 공휴일 ko.south_korea 추가
+                [{ googleCalendarId: 'f6eab8c8b4f8106bf35e055c7e44acd01f9e147d11483c67ed358d42a151eeec@group.calendar.google.com' }
+                    , {
+                    googleCalendarId: 'ko.south_korea#holiday@group.v.calendar.google.com'
+                    , className: 'ko_event',
+                    textColor: 'red'
+                }],
+
+
+
+            events: [
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: 'Meeting',
+                    start: '2024-07-13T11:00:00',
+                    constraint: 'availableForMeeting', // defined below
+                    color: '#257e4a'
+                },
+                {
+                    title: 'Conference',
+                    start: '2024-07-18',
+                    end: '2024-07-20'
+                },
+                {
+                    title: 'Party',
+                    start: '2024-07-29T20:00:00'
+                },
+
+                // areas where "Meeting" must be dropped
+                {
+                    groupId: 'availableForMeeting',
+                    start: '2024-07-11T10:00:00',
+                    end: '2024-07-11T16:00:00',
+                    display: 'background'
+                },
+                {
+                    groupId: 'availableForMeeting',
+                    start: '2024-07-13T10:00:00',
+                    end: '2024-07-13T16:00:00',
+                    display: 'background'
+                },
+
+                // red areas where no events can be dropped
+                {
+                    start: '2024-07-24',
+                    end: '2024-07-28',
+                    overlap: false,
+                    display: 'background',
+                    color: '#ff9f89'
+                },
+                {
+                    start: '2024-07-06',
+                    end: '2024-07-08',
+                    overlap: false,
+                    display: 'background',
+                    color: '#ff9f89'
+                },
+            ]
+
+
+        });
+
+        calendar.render();
+    });
+</script>
+
+</html>
