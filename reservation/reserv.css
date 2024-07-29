@@ -72,6 +72,80 @@
     flex: .5;
 }
 
+.reservation .reservList .toolBar {
+    flex: .5;
+    padding-bottom: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid #c1c1c1;
+}
+
+.reservation .reservList .toolBar ul {
+    flex: 8;
+    display: flex;
+}
+
+.reservation .reservList .toolBar ul a {
+    padding: 10px 0;
+    position: relative;
+    bottom: -10px;
+    margin-right: 20px;
+}
+
+.reservation .reservList .toolBar ul a.active {
+    font-weight: 600;
+}
+
+.reservation .reservList .toolBar ul a.active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #888888;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* 검색창 */
+.reservation .reservList .toolBar .searchBox {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reservation .reservList .toolBar .searchBox input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 16px;
+}
+
+.reservation .reservList .toolBar .searchBox button.searchBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.reservation .reservList .toolBar .searchBox button.searchBtn:hover {
+    background: #f0f0f0;
+}
+
 .reservation .reservList .listBox {
     flex: 9;
     /* height: 85%; */
@@ -163,4 +237,32 @@
     padding-left: 10px;
     font-size: 1.4rem;
     color: #444444;
+}
+
+.fc .fc-button-primary:focus,
+.fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc-button-primary:not(:disabled):active:focus {
+    box-shadow: unset !important;
+}
+
+.fc .fc-button {
+    border: none;
+}
+
+.fc-day-sun a {
+    color: rgb(252, 107, 107);
+}
+
+.fc-day-sat a {
+    color: #558BCF;
+}
+
+.fc .fc-button-primary {
+    background-color: #558BCF;
+}
+
+.fc .fc-button-primary:hover,
+.fc-button-primary:not(:disabled).fc-button-active,
+.fc-button-primary:not(:disabled):active {
+    background-color: #1268d4;
 }
