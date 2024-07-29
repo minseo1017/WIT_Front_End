@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주소록</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.main.css">
+    <link rel="stylesheet" href="mky.css">
+    <script defer src="mky.js"></script>
+</head>
+
+<body>
+    <!-- 공통영역 -->
+    <div class=" container">
+        <div class="sideBar">
+            <div class="top">
+                <i class="bx bx-menu" id="btn"></i>
+            </div>
+            <div class="user">
+                <img src="메인게임.webp" alt="me" class="userImg">
+                <div class="nickName">
+                    <p class="bold">Wit Works</p>
+                    <p></p>
+                </div>
+            </div>
+
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-home-alt-2'></i>
+                        <span class="navItem">홈</span>
+                    </a>
+                    <span class="toolTip">홈</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-paperclip'></i>
+                        <span class="navItem">주소록</span>
+                    </a>
+                    <span class="toolTip">주소록</span>
+                </li>
+                <li>
+                    <a href="board2.html">
+                        <i class="bx bxs-grid-alt"></i>
+                        <span class="navItem">게시판</span>
+                    </a>
+                    <span class="toolTip">게시판</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-calendar-alt'></i>
+                        <span class="navItem">캘린더</span>
+                    </a>
+                    <span class="toolTip">캘린더</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-message-dots'></i>
+                        <span class="navItem">메신저</span>
+                    </a>
+                    <span class="toolTip">메신저</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-clipboard'></i>
+                        <span class="navItem">전자결재</span>
+                    </a>
+                    <span class="toolTip">전자결재</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-briefcase-alt-2'></i>
+                        <span class="navItem">근태관리</span>
+                    </a>
+                    <span class="toolTip">근태관리</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bxs-check-square'></i>
+                        <span class="navItem">예약</span>
+                    </a>
+                    <span class="toolTip">예약</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-sitemap'></i>
+                        <span class="navItem">조직도</span>
+                    </a>
+                    <span class="toolTip">조직도</span>
+                </li>
+
+            </ul>
+        </div>
+        <!-- 공통역역 끝 -->
+
+        <div class="main-content">
+            <div class="header">
+                <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
+                <!--마이페이지로 이동-->
+                <span class="myName">
+                    <img src=""><a href=" #">문경원 부장</a></span>
+                <span class="logOut"><a href="#">LogOut</a></span>
+            </div>
+            <div class="contents">
+                <div class="sideAbout">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">주소록</h2>
+                    </div>
+                    <div class="sideBtnBox">
+                        <button class="plusBtn sideBtn">연락처 추가</button>
+                    </div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">개인 주소록</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;" class="active">주 거래처</a></li>
+                                    <li><a href="javascript:;">스터디</a></li>
+                                    <li class="newList"><a href="javascript:;">연락처 주소록 추가</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addressListGroup">
+                        <ul class="GroupList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">그룹 주소록</h3>
+                                <ul class="subList">
+                                    <li><a href="javascript:;" class="active">경영팀</a></li>
+                                    <li><a href="javascript:;">인사팀</a></li>
+                                    <li><a href="javascript:;">마케팅팀</a></li>
+                                    <li><a href="javascript:;">개발팀</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sideContents addressCont">
+                    <div class="mainTitle addressTit">주소록 수정</div>
+                    <form class="addressForm">
+                        <div class="formGroup">
+                            <label for="photo">사진</label>
+                            <div class="photoWrapper">
+                                <img src="placeholder.jpg" alt="사진" id="photo">
+                                <button type="button" onclick="removePhoto()">삭제</button>
+                                <input type="file" id="photoUpload" accept="image/*" onchange="previewPhoto(event)">
+                                <label for="photoUpload">등록</label>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="formGroup">
+                            <label for="company">회사</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="formGroup">
+                            <label for="group">그룹</label>
+                            <input type="text" id="group" name="group">
+                        </div>
+                        <div class="formGroup">
+                            <label for="position">직위</label>
+                            <input type="text" id="position" name="position">
+                        </div>
+                        <div class="formGroup">
+                            <label for="email">이메일</label>
+                            <input type="text" id="email" name="email">
+                        </div>
+                        <div class="formGroup">
+                            <label for="phone">휴대폰</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="formGroup">
+                            <label for="address">주소</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                        <div class="actions">
+                            <button type="button" class="save">저장</button>
+                            <button type="button" class="delete">삭제</button>
+                            <button type="button">목록</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- sidebar 공통요소 script -->
+<script>
+    let btn = document.querySelector("#btn")
+    let sideBar = document.querySelector(".sideBar")
+
+    btn.onclick = function () {
+        sideBar.classList.toggle("active")
+    };
+
+</script>
+
+</html>
