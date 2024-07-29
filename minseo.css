@@ -1,3 +1,245 @@
+.membership_body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.membership, .find_id_container, .registration_container,
+	.profile_update_container {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	display: none;
+}
+
+.membership.active, .find_id_container.active, .registration_container.active,
+	.profile_update_container.active {
+	display: block;
+	width: 25%;
+	margin : auto;
+	margin-top: 10%;
+}
+
+.membership.active{
+	margin-top: 12%;
+}
+
+.find_id_container.active{
+	margin-top: 15%;
+}
+
+.membership h2, .find_id_container h2, .registration_container h2,
+	.profile_update_container h2 {
+	margin-bottom: 20px;
+}
+
+.membership input[type="text"], .membership input[type="password"],
+	.find_id_container input[type="text"], .find_id_container input[type="email"],
+	.registration_container input[type="text"], .registration_container input[type="password"],
+	.registration_container select, .profile_update_container input[type="text"],
+	.profile_update_container input[type="email"] {
+	width: 85%;
+	padding: 15px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	font-size: 18px;
+}
+
+.registration_container select {
+	width: 90%;
+}
+
+.profile_update_container .address-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	margin: 10px 0;
+}
+
+.profile_update_container .address-container input[type="text"] {
+	width: 85%;
+	padding: 15px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.profile_update_container .address-container input[type="button"] {
+	width: 20%;
+	padding: 10px;
+	background-color: #558BCF;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 15px;
+}
+
+.membership button, .find_id_container button, .registration_container button,
+	.profile_update_container button {
+	width: 85%;
+	padding: 10px;
+	background-color: #558BCF;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-top: 15px;
+}
+
+.registration_container button, .profile_update_container button {
+	width: 40%;
+}
+
+.membership button:hover, .find_id_container button:hover,
+	.registration_container button:hover, .profile_update_container button:hover
+	{
+	background-color: #558BCF;
+}
+
+.membership .find_id, .membership .find_pw, .employee_container .insert_employee,
+	.back_to_login a {
+	color: #558BCF;
+	text-decoration: none;
+	margin: 0 10px;
+}
+
+.membership .find_id:hover, .membership .find_pw:hover,
+	.employee_container .insert_employee:hover, .back_to_login a:hover {
+	text-decoration: underline;
+}
+
+.find_container {
+	text-align: right;
+	margin-bottom: 20px;
+	margin-right: 25px;
+}
+
+.employee_container {
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+}
+
+.hidden {
+	display: none;
+}
+
+#pwcheck, #checkpwcheck {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -23px;
+    margin-top: 1px;
+}
+
+/* 추가정보 입력 */
+.popup {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 20%;
+	padding: 20px;
+	background-color: white;
+	border: 1px solid #ccc;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+}
+
+.popup h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.popup input {
+	width: 85%;
+	padding: 15px;
+	margin: 10px 0;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+	font-size: 18px;
+}
+
+.popup button {
+	width: 35%;
+	padding: 10px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.popup .address-button {
+	background-color: #558BCF;
+	color: white;
+}
+
+.popup .address-button:hover {
+	background-color: #558BCF;
+}
+
+.popup .nickname-button {
+	background-color: #558BCF;
+	color: white;
+}
+
+.popup .submit-button {
+	background-color: #558BCF;
+	color: white;
+}
+
+.popup .submit-button:hover {
+	background-color: #558BCF;
+}
+
+.popup label {
+	display: block;
+	font-size: 12px;
+}
+
+.input-container {
+	position: relative;
+	width: 100%;
+}
+
+.valid-check {
+	display: none;
+	font-size: 20px;
+	position: absolute;
+	top: 20px;
+	right: 50px;
+}
+
+.valid-check.show {
+	display: inline;
+}
+
+.valid-check.error {
+	color: red;
+}
+
+.valid-check.success {
+	color: green;
+}
+
+.membership img {
+    width: 155px;
+}
+
+
+/* 근태관리 */
 .Attendance_container {
     display: flex;
     flex-direction: column;
@@ -96,7 +338,24 @@
     text-align: center;
 }
 
-/*마이페이지*/
+
+/* 마이페이지 스타일 */
+.resultpw, .resultcheckpw {
+    font-size: 10px;
+    display: block;
+    margin-top: 5px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+}
+
+.form-container #pwCheck,
+.form-container #checkpwCheck {
+    vertical-align: middle;
+    margin-left: -23px;
+    margin-top: 10px;
+}
 
 .form-container {
     padding: 5%;
@@ -106,14 +365,24 @@
 .form-group {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 30px;
     padding: auto;
+    position: relative;
+}
+
+.form-group span, .form-group-photo span {
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 .form-group label {
-    width: 100px;
+    width: 220px;
     font-size: 18px;
+    margin-left: 100px;
+    margin-top: 20px;
 }
 
 .form-group input {
@@ -128,14 +397,9 @@
     margin-bottom: 20px;
 }
 
-.form-group-photo label {
-    width: 100px;
-    font-size: 18px;
-}
-
 .form-group-photo img {
-    width: 100px;
-    height: 100px;
+    width: 105px;
+    height: 105px;
     border: 1px solid #000;
     margin-left: 10px;
     margin-bottom: 15px;
@@ -145,7 +409,7 @@
 .form-row {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .form-row .form-group {
@@ -157,7 +421,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
-    margin-right: 11%;
+    margin-right: 13%;
     gap: 10px;
 }
 
@@ -166,25 +430,43 @@
     border-radius: 10px;
     background-color: #558BCF;
     color: white;
+   	font-size: 15px;
 }
 
 .form-container input[type="text"],
 .form-container input[type="password"] {
     width: 60%;
-    height: 120%;
+    height: 50px;
 }
 
-.hidden {
+.form-container .hidden {
     display: none;
 }
 
 .edit-nickname-button {
     position: absolute;
-    top: -55px;
-    right: 120px;
+    top: -65px;
+    right: 185px;
     padding: 10px 10px;
     border-radius: 10px;
     background-color: #558BCF;
     color: white;
+    font-size: 15px;
+}
+
+.form-container .show {
+    display: inline;
+}
+
+.form-container .hidden {
+    display: none;
+}
+
+.form-container .success {
+    color: green;
+}
+
+.form-container .error {
+    color: red;
 }
 

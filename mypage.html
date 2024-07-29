@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="mky.css">
     <link rel="stylesheet" href="minseo.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="/resources/js/employee.js"></script>
 </head>
 
 <body>
@@ -19,7 +21,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="메인게임.webp" alt="me" class="userImg">
+                <img src="/resources/images/메인게임.webp" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -27,69 +29,24 @@
             </div>
 
             <ul>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-home-alt-2'></i>
-                        <span class="navItem">홈</span>
-                    </a>
-                    <span class="toolTip">홈</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-paperclip'></i>
-                        <span class="navItem">주소록</span>
-                    </a>
-                    <span class="toolTip">주소록</span>
-                </li>
-                <li>
-                    <a href="board2.html">
-                        <i class="bx bxs-grid-alt"></i>
-                        <span class="navItem">게시판</span>
-                    </a>
-                    <span class="toolTip">게시판</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-calendar-alt'></i>
-                        <span class="navItem">캘린더</span>
-                    </a>
-                    <span class="toolTip">캘린더</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-message-dots'></i>
-                        <span class="navItem">메신저</span>
-                    </a>
-                    <span class="toolTip">메신저</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-clipboard'></i>
-                        <span class="navItem">전자결재</span>
-                    </a>
-                    <span class="toolTip">전자결재</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-briefcase-alt-2'></i>
-                        <span class="navItem">근태관리</span>
-                    </a>
-                    <span class="toolTip">근태관리</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-check-square'></i>
-                        <span class="navItem">예약</span>
-                    </a>
-                    <span class="toolTip">예약</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class='bx bx-sitemap'></i>
-                        <span class="navItem">조직도</span>
-                    </a>
-                    <span class="toolTip">조직도</span>
-                </li>
+                <li><a href="#"><i class='bx bxs-home-alt-2'></i><span class="navItem">홈</span></a><span
+                        class="toolTip">홈</span></li>
+                <li><a href="#"><i class='bx bx-paperclip'></i><span class="navItem">주소록</span></a><span
+                        class="toolTip">주소록</span></li>
+                <li><a href="board2.html"><i class="bx bxs-grid-alt"></i><span class="navItem">게시판</span></a><span
+                        class="toolTip">게시판</span></li>
+                <li><a href="#"><i class='bx bx-calendar-alt'></i><span class="navItem">캘린더</span></a><span
+                        class="toolTip">캘린더</span></li>
+                <li><a href="#"><i class='bx bxs-message-dots'></i><span class="navItem">메신저</span></a><span
+                        class="toolTip">메신저</span></li>
+                <li><a href="#"><i class='bx bx-clipboard'></i><span class="navItem">전자결재</span></a><span
+                        class="toolTip">전자결재</span></li>
+                <li><a href="#"><i class='bx bxs-briefcase-alt-2'></i><span class="navItem">근태관리</span></a><span
+                        class="toolTip">근태관리</span></li>
+                <li><a href="#"><i class='bx bxs-check-square'></i><span class="navItem">예약</span></a><span
+                        class="toolTip">예약</span></li>
+                <li><a href="#"><i class='bx bx-sitemap'></i><span class="navItem">조직도</span></a><span
+                        class="toolTip">조직도</span></li>
             </ul>
         </div>
         <!-- 공통영역 끝 -->
@@ -97,10 +54,10 @@
         <div class="main-content">
             <div class="header">
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
-                <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="메인게임.webp"><a href="#">백민주 사원</a></span>
-                <span class="logOut"><a href="#">LogOut</a></span>
+                    <img src="/resources/images/메인게임.webp"><a href="/employee/mypage">인사부 백민주 사장</a>
+                </span>
+                <span class="logOut"><a href="/employee/logout">LogOut</a></span>
             </div>
             <div class="contents">
                 <div class="sideAbout">
@@ -108,63 +65,77 @@
                     <div class="aboutContents">aboutContents</div>
                 </div>
                 <div class="sideContents">
-                    <h2>마이페이지</h2>
+                    <h1>내 정보</h1>
                     <div class="form-container">
-                        <form>
+                        <form id="updateForm">
                             <div class="form-group-photo">
-                                <label for="photo">프로필</label>
-                                <img src="푸바오.png" alt="photo preview">
+                                <span>프로필</span>
+                                <img src="푸바오.png" alt="푸바오 이미지">
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="name">이름</label>
+                                    <span>이름</span>
                                     <input type="text" value="백민주" readonly>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nickname">닉네임</label>
-                                    <input type="text" name="nickname" value="다붙어밍쥬당" readonly>
-                                    <button type="button" id="editNicknameButton"
+                                    <span>닉네임</span>
+                                    <input type="text" name="nickname" id="nickname" value="다붙어밍쥬당" readonly>
+                                    <button type="button" id="checkNickname"
                                         class="edit-nickname-button hidden">중복체크</button>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="birthdate">생년월일</label>
-                                    <input type="text" readonly>
+                                    <span>생년월일</span>
+                                    <input type="text" value="2000년00월00일" readonly>
                                 </div>
                                 <div class="form-group">
-                                    <label for="phone">휴대폰</label>
-                                    <input type="text" readonly>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">이메일</label>
-                                    <input type="text" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <label for="address">주소</label>
-                                    <input type="text" readonly>
+                                    <span>휴대폰</span>
+                                    <input type="text" value="010-3824-6685" readonly>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="detailAddress">상세주소</label>
-                                    <input type="text" readonly>
+                                    <span>이메일</span>
+                                    <input type="text" value="wan7078@naver.com" readonly>
                                 </div>
                                 <div class="form-group">
-                                    <label for="startdate">입사일</label>
-                                    <input type="text" readonly>
+                                    <span>주소</span>
+                                    <input type="text" value="한빛로12" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <span>상세주소</span>
+                                    <input type="text" value="남서울 평생교육원" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <span>입사일</span>
+                                    <input type="text" value="2024월 7월 29일" readonly>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <span>부서</span>
+                                    <input type="text" value="인사부" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <span>직급</span>
+                                    <input type="text" value="사장" readonly>
                                 </div>
                             </div>
                             <div class="form-row hidden" id="passwordRow">
                                 <div class="form-group">
-                                    <label for="pw">패스워드</label>
-                                    <input type="password" name="pw" readonly>
+                                    <span>PW변경</span>
+                                    <input type="password" name="pw" id="pw">
+                                    <label id="resultpw" class="resultpw"></label>
+                                    <span id="pwCheck"></span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="checkpw">패스워드 확인</label>
-                                    <input type="password" name="checkpw" readonly>
+                                    <span>PW확인</span>
+                                    <input type="password" name="checkpw" id="checkpw">
+                                    <label id="resultcheckpw" class="resultcheckpw"></label>
+                                    <span id="checkpwCheck"></span>
                                 </div>
                             </div>
                             <div class="form-actions">
@@ -187,13 +158,16 @@
             sideBar.classList.toggle("active");
         };
 
+        let nicknameChecked = false;
+        const originalNickname = "${employee.nickname}";
+
         function toggleEdit() {
             const isEditing = !document.getElementById('editButton').classList.contains('hidden');
             document.getElementById('editButton').classList.toggle('hidden');
             document.getElementById('saveButton').classList.toggle('hidden');
             document.getElementById('cancelButton').classList.toggle('hidden');
             document.getElementById('passwordRow').classList.toggle('hidden');
-            document.getElementById('editNicknameButton').classList.toggle('hidden');
+            document.getElementById('checkNickname').classList.toggle('hidden');
 
             const nicknameField = document.querySelector('input[name="nickname"]');
             const passwordField = document.querySelector('input[name="pw"]');
