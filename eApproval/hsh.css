@@ -149,11 +149,8 @@
     height: 100%;
 }
 
-.eApproval .docuList .listBox .rows .cols span.emer {
-    color: rgb(245, 115, 115);
-    width: 45%;
-    border: 1px solid rgb(245, 115, 115);
-    border-radius: 25px;
+.eApproval .docuList .listBox .rows .cols .emer {
+    height: 28px;
 }
 
 .eApproval .docuList .listBox.doneList .rows:not(.listHeader) .cols:last-child span {

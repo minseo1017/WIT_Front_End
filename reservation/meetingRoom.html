@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../style.main.css">
-    <link rel="stylesheet" href="reserv.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="reserv.css">
 </head>
 
 <body>
@@ -65,7 +65,7 @@
                     <span class="toolTip">메신저</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../eApproval/home.html">
                         <i class='bx bx-clipboard'></i>
                         <span class="navItem">전자결재</span>
                     </a>
@@ -108,17 +108,19 @@
             <div class="contents">
                 <div class="sideAbout">
                     <div class="sideTxt">
-                        <h2 class="sideTit">예약관리</h2>
+                        <a href="#">
+                            <h2 class="sideTit">예약관리</h2>
+                        </a>
                     </div>
                     <div class="addressListPrivate">
                         <ul class="privateList">
                             <li class="toggleItem">
                                 <h3 class="toggleTit">회의실</h3>
                                 <ul class="subList">
-                                    <li><a href="javascript:;">1층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">2층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">3층 회의실 예약</a></li>
-                                    <li><a href="javascript:;">4층 회의실 예약</a></li>
+                                    <li><a href="meetingRoom.html">회의실 1</a></li>
+                                    <li><a href="meetingRoom.html">회의실 2</a></li>
+                                    <li><a href="meetingRoom.html">회의실 3</a></li>
+                                    <li><a href="meetingRoom.html">회의실 4</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -128,172 +130,19 @@
                             <li class="toggleItem">
                                 <h3 class="toggleTit">차량</h3>
                                 <ul class="subList">
-                                    <li><a href="javascript:;">차량 예약</a></li>
+                                    <li><a href="vehicle.html">BMW X6_9688</a></li>
+                                    <li><a href="vehicle.html">싼타페_7574</a></li>
+                                    <li><a href="vehicle.html">마이바흐_1106</a></li>
+                                    <li><a href="vehicle.html">G90_9720</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="sideContents reservation">
-                    <div class="mainTitle">회의실</div>
+                <div class="sideContents reservation meetingRooms">
+                    <div class="mainTitle">회의실 [ 회의실1 ]</div>
                     <div class="reservBox">
-                        <div class="reservInfo">
-                            <div class="infoTitle">회의실 이용 안내</div>
-                            <div class="infoCont">
-                                <div class="infoList">
-                                    1. 예약이 장난이야 ?
-                                </div>
-                                <div class="infoList">
-                                    2. 쓰레기 무슨일이야
-                                </div>
-                                <div class="infoList">
-                                    3. 불 좀 꺼라 ~~~
-                                </div>
-                                <div class="infoList">
-                                    4. 이것은 숙취인가 피로인가
-                                </div>
-                                <div class="infoList">
-                                    5. 시험같은 소리하네 ,,
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reservChoice reservList">
-                            <div class="listBox">
-                                <div class="rows listHeader">
-                                    <div class="cols">
-                                        <span>항목</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 일시</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 목적</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약 상태</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>예약</span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실1</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실2</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실3</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 가능
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="rows">
-                                    <div class="cols">
-                                        <span>회의실4</span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="date" name="" id="">
-                                            &nbsp;
-                                            <input type="time">
-                                            <span>&nbsp;~&nbsp;</span>
-                                            <input type="time">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <input type="text">
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            예약 불가
-                                        </span>
-                                    </div>
-                                    <div class="cols">
-                                        <span>
-                                            <button disabled>예약</button>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div class="calendar" id="calendar"></div>
                     </div>
                 </div>
             </div>
@@ -320,6 +169,76 @@
             subList.classList.toggle('active');
             toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
         });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialDate: '2024-07-29',
+            editable: true,
+            selectable: true,
+            businessHours: true,
+            dayMaxEvents: true
+            // events: [
+            //     {
+            //         title: 'All Day Event',
+            //         start: '2023-01-01'
+            //     },
+            //     {
+            //         title: 'Long Event',
+            //         start: '2023-01-07',
+            //         end: '2023-01-10'
+            //     },
+            //     {
+            //         groupId: 999,
+            //         title: 'Repeating Event',
+            //         start: '2023-01-09T16:00:00'
+            //     },
+            //     {
+            //         groupId: 999,
+            //         title: 'Repeating Event',
+            //         start: '2023-01-16T16:00:00'
+            //     },
+            //     {
+            //         title: 'Conference',
+            //         start: '2023-01-11',
+            //         end: '2023-01-13'
+            //     },
+            //     {
+            //         title: 'Meeting',
+            //         start: '2023-01-12T10:30:00',
+            //         end: '2023-01-12T12:30:00'
+            //     },
+            //     {
+            //         title: 'Lunch',
+            //         start: '2023-01-12T12:00:00'
+            //     },
+            //     {
+            //         title: 'Meeting',
+            //         start: '2023-01-12T14:30:00'
+            //     },
+            //     {
+            //         title: 'Happy Hour',
+            //         start: '2023-01-12T17:30:00'
+            //     },
+            //     {
+            //         title: 'Dinner',
+            //         start: '2023-01-12T20:00:00'
+            //     },
+            //     {
+            //         title: 'Birthday Party',
+            //         start: '2023-01-13T07:00:00'
+            //     },
+            //     {
+            //         title: 'Click for Google',
+            //         url: 'http://google.com/',
+            //         start: '2023-01-28'
+            //     }
+            // ]
+        });
+
+        calendar.render();
     });
 
 </script>
