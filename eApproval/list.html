@@ -172,10 +172,24 @@
                 <div class="sideContents eApproval">
                     <div class="mainTitle">문서함</div>
                     <div class="docuList docuBox">
-                        <div class="choiBox">
-                            <button>업무 기안</button>
-                            <button>휴가 신청서</button>
-                            <button>지각 사유서</button>
+                        <div class="toolBar">
+                            <ul>
+                                <li>
+                                    <a href="javascript:;">업무 기안</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">휴가 신청서</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">지각 사유서</a>
+                                </li>
+                            </ul>
+                            <div class="searchBox">
+                                <input type="text" placeholder="검색">
+                                <button class="searchBtn">
+                                    <i class="bx bx-search"></i>
+                                </button>
+                            </div>
                         </div>
                         <div class="listBox progList">
                             <div class="rows listHeader">
@@ -462,6 +476,17 @@
             toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
         });
     });
+
+    // 툴바 활성화
+    const links = document.querySelectorAll('.toolBar a')
+    links.forEach(function (link) {
+        link.addEventListener('click', function () {
+            links.forEach(function (link) {
+                link.classList.remove('active') // 모든 링크에서 active 클래스 제거
+            })
+            this.classList.add('active') // 클릭한 링크에 active 클래스 추가
+        })
+    })
 </script>
 
 </html>
