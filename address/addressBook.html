@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주소록</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="mky.css">
-    <script defer src="mky.js"></script>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="../style/mky.css">
+    <script defer src="../app/mky.js"></script>
+    <style>
+
+    </style>
 </head>
 
 <body>
@@ -19,7 +22,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="./images/logo/WIT_logo1.png" alt="logo" class="userImg">
+                <img src="../images/logo/WIT_logo1.png" alt="logo" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -100,7 +103,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="./images/프로필.jpg"><a href=" #">문경원 부장</a></span>
+                    <img src="../images/프로필.jpg"><a href=" #">문경원 부장</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -109,7 +112,7 @@
                         <h2 class="sideTit">주소록</h2>
                     </div>
                     <div class="sideBtnBox">
-                        <button class="plusBtn sideBtn">연락처 추가</button>
+                        <button class="plusBtn sideBtn" onclick="openAddContactPopup()">연락처 추가</button>
                     </div>
                     <div class="addressListPrivate">
                         <ul class="privateList">
@@ -118,7 +121,9 @@
                                 <ul class="subList">
                                     <li><a href="javascript:;" class="active">주 거래처</a></li>
                                     <li><a href="javascript:;">스터디</a></li>
-                                    <li class="newList"><a href="javascript:;">연락처 주소록 추가</a></li>
+                                    <li class="newList"><a href="javascript:;"><i
+                                                class='bx bx-plus-medical'></i><span>연락처 주소록</span>
+                                            추가</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -220,7 +225,7 @@
                                     <span>그룹</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -237,7 +242,7 @@
                                     <span>마케팅팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -254,7 +259,7 @@
                                     <span>개발팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -271,7 +276,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -288,7 +293,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -305,7 +310,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -322,7 +327,7 @@
                                     <span>마케팅팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -339,7 +344,7 @@
                                     <span>개발팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -356,7 +361,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -373,7 +378,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows">
+                            <div class="rows" onclick="editContact(this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -405,6 +410,61 @@
             </div>
         </div>
     </div>
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <div class="popTit" id="popupTitle"></div>
+            <form class="addressForm" id="addressForm">
+                <div class="formBox">
+                    <div class="leftForm">
+                        <div class="formGroup">
+                            <label for="photo">사진</label>
+                            <div class="photoWrapper">
+                                <img src="placeholder.jpg" alt="사진" id="photo">
+                                <button type="button" onclick="removePhoto()">삭제</button>
+                                <input type="file" id="photoUpload" accept="image/*" onchange="previewPhoto(event)">
+                                <label for="photoUpload">등록</label>
+                            </div>
+                        </div>
+                        <div class="formGroup">
+                            <label for="name">이름</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="formGroup">
+                            <label for="company">회사</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        <div class="formGroup">
+                            <label for="group">그룹</label>
+                            <input type="text" id="group" name="group">
+                        </div>
+                    </div>
+                    <div class="rightForm">
+                        <div class="formGroup">
+                            <label for="position">직위</label>
+                            <input type="text" id="position" name="position">
+                        </div>
+                        <div class="formGroup">
+                            <label for="email">이메일</label>
+                            <input type="text" id="email" name="email">
+                        </div>
+                        <div class="formGroup">
+                            <label for="phone">휴대폰</label>
+                            <input type="text" id="phone" name="phone">
+                        </div>
+                        <div class="formGroup">
+                            <label for="address">주소</label>
+                            <input type="text" id="address" name="address">
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button type="button" class="save">저장</button>
+                    <button type="button" class="delete" style="display:none;">삭제</button>
+                    <button type="button" onclick="closePopup()">목록</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
 </body>
 <!-- sidebar 공통요소 script -->
@@ -416,7 +476,45 @@
         sideBar.classList.toggle("active")
     };
 
+    let editingRow = null;
+    // 팝업 열기 함수 (수정용)
+    function editContact(row) {
+        editingRow = row;
+        var cols = row.getElementsByClassName('cols');
+        var name = cols[1].innerText;
+        var phone = cols[2].innerText;
+        var email = cols[3].innerText;
+        var group = cols[4].innerText;
 
+        document.getElementById('name').value = name;
+        document.getElementById('phone').value = phone;
+        document.getElementById('email').value = email;
+        document.getElementById('group').value = group;
+
+        document.getElementById('popupTitle').innerHTML = '연락처 수정';
+        document.querySelector('.delete').style.display = 'inline-block';
+        openPopup();
+    }
+    // 팝업 열기 함수 (추가용)
+    function openAddContactPopup() {
+        editingRow = null;
+        document.getElementById('addressForm').reset();
+        document.getElementById('photo').src = 'placeholder.jpg';
+        document.querySelector('.delete').style.display = 'none';
+        document.getElementById('popupTitle').innerHTML = '연락처 추가';
+        // 폼 초기화
+        openPopup();
+    }
+    // 공통 팝업 열기 함수
+    function openPopup() {
+        var modal = document.getElementById("popupModal");
+        modal.style.display = "block";
+    }
+    // 팝업 닫기 함수
+    function closePopup() {
+        var modal = document.getElementById("popupModal");
+        modal.style.display = "none";
+    }
 </script>
 
 </html>
