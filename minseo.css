@@ -483,3 +483,7 @@
 .mypage h2 {
      margin: 7px;
 }
+
+.cancel button{
+	background-color: #c51221;
+}
