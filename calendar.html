@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../WIT_Front_End/style.main.css">
+    <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="board2.css">
     <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="lwh.css">
@@ -240,7 +240,7 @@
         <!-- event 클릭 시 모달 -->
         <div id="eventModal" class="modal">
             <div class="modalContent">
-                <h1>일정 내용<span class="modalClose">&times</span></h1>
+                <h1>일정 내용<span class="modalClose" id="eventModalClose">&times</span></h1>
                 <div class="eventCheck">
                     <ul>
                         <li>
@@ -273,7 +273,7 @@
                         <li>
                             <div class="btns">
                                 <button id="editBtn">수정</button><button id="confirmBtn" class="okBtn">확인</button><button
-                                    class="cancelBtn">취소</button>
+                                    class="deleteBtn">삭제</button><button class="cancelBtn editCancelBtn">취소</button>
                             </div>
                         </li>
                     </ul>
@@ -331,8 +331,15 @@
         var $inputs = $('.eventCheck input, .eventCheck select, .eventCheck textarea');
         $inputs.prop('disabled', false);
         $('#editBtn').hide();
+        $('.deleteBtn').hide();
         $('#confirmBtn').show();
+        $('.cancelBtn').show();
     });
+
+    // 이벤트 모달창에서 X버튼 눌렀을 시
+    $('#eventModalClose').on('click', function () {
+        location.reload();
+    })
 
     // 모달창에서 확인 버튼 눌렀을 시
     $('#confirmBtn').on('click', function () {
@@ -345,6 +352,10 @@
 
     $('.cancelBtn').on('click', function () {
         location.reload();
+    })
+
+    $('.deleteBtn').on('click', function () {
+
     })
 
     $('#addBtn').on('click', function () {
@@ -419,15 +430,20 @@
             },
             eventClick: function (info) {
                 // 이벤트 클릭 시 발생할 이벤트
-
+                let eventTitle = info.event._def.title;
                 // 이벤트 시작 날짜를 ISO 형식으로 변환
                 let eventStartDate = info.event.start.toISOString().split('T')[0];
                 let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
                 // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
                 let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
+                let eventContent = info.event.content;
+
+                $('.eventName').val(eventTitle);
                 $('.startDate').val(eventStartDate);
                 $('.startTime').val(eventStartTime);
                 $('.endDate').val(eventEndDate);
+                $('#eventText').val(eventContent);
+
 
                 $("#eventModal").show();
                 $(".modalClose").on("click", function () {
