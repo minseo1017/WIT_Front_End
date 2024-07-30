@@ -18,7 +18,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="메인게임.webp" alt="me" class="userImg">
+                <img src="../메인게임.webp" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -99,7 +99,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
+                    <img src="../메인게임.webp"><a href=" #">백민주 사원</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -139,13 +139,13 @@
                     </div>
                 </div>
                 <div class="sideContents eApprWrite">
-                    <div class="mainTitle">문서 작성 ( 업무 기안 )</div>
+                    <div class="mainTitle">문서 작성 ( 지각 사유서 )</div>
 
                     <div class="document">
                         <div class="choiBox">
-                            <button class="ok">결재 요청</button>
-                            <button class="save">임시 저장</button>
-                            <button class="cancel">취소</button>
+                            <button class="ok">결재</button>
+                            <button class="save">전결</button>
+                            <button class="cancel">목록</button>
                             <button class="modi">결재선</button>
                             <span class="emerBtn">
                                 <input type="checkbox" name="" id=""> 긴급
@@ -194,18 +194,9 @@
                                             </tr>
                                             <tr>
                                                 <th>결재자</th>
-                                                <td>
-                                                    <img src="../images/icon/stamp.png" alt=""><br>
-                                                    김00
-                                                </td>
-                                                <td>
-                                                    <img src="../images/icon/stamp1.png"><br>
-                                                    이00
-                                                </td>
-                                                <td>
-                                                    <img src="../images/icon/stamp2.png" alt=""><br>
-                                                    박00
-                                                </td>
+                                                <td>김00</td>
+                                                <td>이00</td>
+                                                <td>박00</td>
                                             </tr>
                                             <tr>
                                                 <th>결재일</th>
@@ -217,29 +208,20 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="docuWrite docuProp">
+                            <div class="docuWrite docuLateness">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>시행일자</th>
+                                            <th>지각 일시</th>
                                             <td>
-                                                <input type="date" name="" id="">
-                                            </td>
-                                            <th>협조부서</th>
-                                            <td>
-                                                <input type="text">
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th>제목</th>
-                                            <td colspan="3">
-                                                <input type="text">
+                                                <input type="date" max="2024-07-27">
                                             </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td colspan="4">
+                                            <th>지각 사유</th>
+                                            <td>
                                                 <textarea name="" id=""></textarea>
                                             </td>
                                         </tr>
