@@ -147,9 +147,6 @@
                             <button class="save">임시 저장</button>
                             <button class="cancel">취소</button>
                             <button class="modi">결재선</button>
-                            <span class="emerBtn">
-                                <input type="checkbox" name="" id=""> 긴급
-                            </span>
                         </div>
                         <div class="docuCont">
                             <div class="docuInfo">
@@ -216,12 +213,19 @@
                                             <td>
                                                 <input type="date" max="2024-07-27">
                                             </td>
+                                            <th>긴급</th>
+                                            <td>
+                                                <div>
+                                                    <input type="checkbox" name="" id="emerCheck">
+                                                    <label for="emerCheck">긴급 문서</label>
+                                                </div>
+                                            </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th>지각 사유</th>
-                                            <td>
+                                            <td colspan="3">
                                                 <textarea name="" id=""></textarea>
                                             </td>
                                         </tr>
