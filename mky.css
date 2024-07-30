@@ -273,47 +273,7 @@
     border-radius: 25px;
 }
 
-/* 페이지네이션 */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin: 20px 0; */
-    height: 5%;
-    gap: 5px;
-}
 
-.pagination a {
-    padding: 10px 15px;
-    cursor: pointer;
-    color: #333;
-}
-
-.pagination a.active {
-    background-color: #558BCF;
-    color: white;
-    border-radius: 100%;
-}
-
-.pagination a.prev,
-.pagination a.next {
-    font-size: 24px;
-    color: #ccc;
-    font-weight: bold;
-}
-
-.pagination a.prev,
-.pagination a.next {
-    background-color: unset;
-    border: none;
-    font-size: 24px;
-    padding: 5px 10px;
-}
-
-.pagination a.prev.active,
-.pagination a.next.active {
-    color: #333;
-}
 
 /* 주소록 수정/등록 */
 .sideContents.addressContDetail {
