@@ -530,3 +530,7 @@ button:active {
 .fc-button-primary:not(:disabled):active:focus {
     box-shadow: unset !important;
 }
+
+.fc-theme-standard .fc-popover-header {
+    background-color: #c51221;
+}
