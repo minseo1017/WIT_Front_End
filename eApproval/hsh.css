@@ -300,6 +300,14 @@ td {
     height: 70%;
 }
 
+.eApprWrite .document .docuCont .docuInfo .apprTable table tbody tr:nth-child(2) td {
+    width: 90px;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable table tbody tr:nth-child(2) td img {
+    width: 70px;
+}
+
 .eApprWrite .document .docuCont .docuInfo .apprTable {
     flex: 6;
 }
@@ -320,14 +328,27 @@ td {
 
 .eApprWrite .document .docuCont .docuWrite.docuProp table thead td input {
     width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuProp table thead td input[type="date"] {
+    width: 35%;
     padding: 5px;
+    margin: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
 }
 
 .eApprWrite .document .docuCont .docuWrite table tbody td textarea {
     width: 100%;
     height: 100%;
     resize: none;
-    padding: 10px;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
 
 /* .docuWrite.docuLeave => 휴가 신청서 문서 작성 양식 */
@@ -340,17 +361,31 @@ td {
 }
 
 .eApprWrite .document .docuCont .docuWrite.docuLeave table thead td select {
-    height: 70%;
-    width: 60%;
+    width: 90%;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
 
-.eApprWrite .document .docuCont .docuWrite.docuLeave table thead td input:not([type="checkbox"]) {
-    height: 70%;
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead tr:first-child td input {
     width: 23%;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
 
 .eApprWrite .document .docuCont .docuWrite.docuLeave table thead td span {
     padding: 0 15px;
+}
+
+.eApprWrite .document .docuCont .docuWrite.docuLeave table thead tr:nth-child(3) td input {
+    width: 10%;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
 
 /* .docuWrite.docuLateness => 지각 사유서 문서 작성 양식 */
@@ -361,8 +396,11 @@ td {
 
 .eApprWrite .document .docuCont .docuWrite.docuLateness table thead td input {
     margin-left: 10px;
-    height: 80%;
     width: 20%;
+    padding: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
 }
 
 .eApprWrite .document .docuCont .docuFiles {
