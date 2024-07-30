@@ -147,9 +147,6 @@
                             <button class="save">임시 저장</button>
                             <button class="cancel">취소</button>
                             <button class="modi">결재선</button>
-                            <span class="emerBtn">
-                                <input type="checkbox" name="" id=""> 긴급
-                            </span>
                         </div>
                         <div class="docuCont">
                             <div class="docuInfo">
@@ -228,24 +225,36 @@
                                                 <span>~</span>
                                                 <input type="date" min="2024-07-27">
                                             </td>
+                                            <th>긴급</th>
+                                            <td>
+                                                <div>
+                                                    <input type="checkbox" name="" id="emerCheck">
+                                                    <label for="emerCheck">긴급 문서</label>
+                                                </div>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <th>반차 여부</th>
-                                            <td colspan="3">
+                                            <td colspan="5">
                                                 <span>
-                                                    <input type="checkbox"> 시작일
-                                                </span> ( <span><input type="checkbox"> 오전</span>
-                                                <span><input type="checkbox"> 오후</span> )
+                                                    <input type="checkbox" id="startDay"> <label
+                                                        for="startDay">시작일</label>
+                                                </span> ( <span><input type="checkbox" id="startDayAM"> <label
+                                                        for="startDayAM">오전</label></span>
+                                                <span><input type="checkbox" id="startDayPM"> <label
+                                                        for="startDayPM">오후</label></span> )
                                                 <br>
                                                 <span>
-                                                    <input type="checkbox"> 종료일
-                                                </span> ( <span><input type="checkbox"> 오전</span>
-                                                <span><input type="checkbox"> 오후</span> )
+                                                    <input type="checkbox" id="endDay"> <label for="endDay">종료일</label>
+                                                </span> ( <span><input type="checkbox" id="endDayAM"> <label
+                                                        for="endDayAM">오전</label></span>
+                                                <span><input type="checkbox" id="endDayPM"> <label
+                                                        for="endDayPM">오후</label></span> )
                                             </td>
                                         </tr>
                                         <tr>
                                             <th>연차 일수</th>
-                                            <td colspan="3">
+                                            <td colspan="5">
                                                 <span>
                                                     잔여 연차 :&nbsp;&nbsp;<input type="text" readonly>
                                                 </span>
@@ -258,7 +267,7 @@
                                     <tbody>
                                         <tr>
                                             <th>휴가 사유</th>
-                                            <td colspan="3">
+                                            <td colspan="5">
                                                 <textarea name="" id=""></textarea>
                                             </td>
                                         </tr>
