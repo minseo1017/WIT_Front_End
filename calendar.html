@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="../WIT_Front_End/style.main.css">
+    <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="board2.css">
     <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="lwh.css">
@@ -136,14 +136,15 @@
                                             <span class="myCalendarAdd">내 캘린더 추가</span>
                                             <div class="myCalendarPopup">
                                                 <header>
-                                                    <h3>내 캘린더 추가<span class="popupClose">&times</span></h3>
+                                                    <h3>내 캘린더 추가<span class="myPopupClose">&times</span></h3>
                                                 </header>
                                                 <div class="content">
                                                     <input type="text">
                                                 </div>
                                                 <footer>
                                                     <div class="btns">
-                                                        <button>확인</button><button>취소</button>
+                                                        <button id="sideMyAdd" class="okBtn">확인</button><button
+                                                            id="sideMyCancel" class="cancelBtn">취소</button>
                                                     </div>
                                                 </footer>
                                             </div>
@@ -157,7 +158,7 @@
                         <ul class="GroupList">
                             <li class="toggleItem">
                                 <h3 class="toggleTit">부서 캘린더</h3>
-                                <ul class="subList">
+                                <ul class="subList calendarList">
                                     <li><input type="checkbox" id="deptMeeting" name="deptMeeting">
                                         <label for="deptMeeting">회의 일정(기본)</label>
                                     </li>
@@ -168,6 +169,20 @@
                                         <span class="sideCalendarAdd">
                                             <i class='bx bx-plus-medical'></i>
                                             <span class="deptCalendarAdd">부서 캘린더 추가</span>
+                                            <div class="deptCalendarPopup">
+                                                <header>
+                                                    <h3>부서 캘린더 추가<span class="deptPopupClose">&times</span></h3>
+                                                </header>
+                                                <div class="content">
+                                                    <input type="text">
+                                                </div>
+                                                <footer>
+                                                    <div class="btns">
+                                                        <button id="sideDeptAdd" class="okBtn">확인</button><button
+                                                            id="sideDeptCancel" class="cancelBtn">취소</button>
+                                                    </div>
+                                                </footer>
+                                            </div>
                                         </span>
                                     </div>
                                 </ul>
@@ -193,8 +208,9 @@
                         <li>
                             <span>일정기간</span>
                             <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                                    class="startDate dateInput" step="600">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput"
+                                    step="600">
                             </div>
                         </li>
                         <li>
@@ -214,7 +230,7 @@
                         </li>
                         <li>
                             <div class="btns">
-                                <button id="addBtn">완료</button><button class="cancelBtn">취소</button>
+                                <button id="addBtn" class="okBtn">완료</button><button class="cancelBtn">취소</button>
                             </div>
                         </li>
                     </ul>
@@ -224,7 +240,7 @@
         <!-- event 클릭 시 모달 -->
         <div id="eventModal" class="modal">
             <div class="modalContent">
-                <h1>일정 내용<span class="modalClose">&times</span></h1>
+                <h1>일정 내용<span class="modalClose" id="eventModalClose">&times</span></h1>
                 <div class="eventCheck">
                     <ul>
                         <li>
@@ -233,9 +249,10 @@
                         </li>
                         <li>
                             <span>일정기간</span>
-                            <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                            <div><input type="date" class="startDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
+                                    class="startDate dateInput" disabled>&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
+                                    class="endDate dateInput" disabled>
                             </div>
                         </li>
                         <li>
@@ -255,8 +272,8 @@
                         </li>
                         <li>
                             <div class="btns">
-                                <button id="editBtn">수정</button><button id="confirmBtn">확인</button><button
-                                    class="cancelBtn">취소</button>
+                                <button id="editBtn">수정</button><button id="confirmBtn" class="okBtn">확인</button><button
+                                    class="deleteBtn">삭제</button><button class="cancelBtn editCancelBtn">취소</button>
                             </div>
                         </li>
                     </ul>
@@ -288,21 +305,41 @@
         });
     });
 
-    $('.sideCalendarAdd').on('click', function () {
+    $('.myCalendarAdd').on('click', function () {
         $('.myCalendarPopup').show();
     })
 
-    $('.popupClose').on('click', function () {
-        $('.')
+    $('.myPopupClose').on('click', function () {
+        $('.myCalendarPopup').hide();
     })
+
+    $('.deptCalendarAdd').on('click', function () {
+        $('.deptCalendarPopup').show();
+    })
+
+    $('.deptPopupClose').on('click', function () {
+        $('.deptCalendarPopup').hide();
+    })
+
+
+
+
+
 
     // 이벤트 클릭해서 수정 버튼 눌렀을 시
     $('#editBtn').on('click', function () {
         var $inputs = $('.eventCheck input, .eventCheck select, .eventCheck textarea');
         $inputs.prop('disabled', false);
         $('#editBtn').hide();
+        $('.deleteBtn').hide();
         $('#confirmBtn').show();
+        $('.cancelBtn').show();
     });
+
+    // 이벤트 모달창에서 X버튼 눌렀을 시
+    $('#eventModalClose').on('click', function () {
+        location.reload();
+    })
 
     // 모달창에서 확인 버튼 눌렀을 시
     $('#confirmBtn').on('click', function () {
@@ -315,6 +352,10 @@
 
     $('.cancelBtn').on('click', function () {
         location.reload();
+    })
+
+    $('.deleteBtn').on('click', function () {
+
     })
 
     $('#addBtn').on('click', function () {
@@ -343,6 +384,13 @@
         $('#calendarModal').hide();
     })
 
+    $('.plusBtn.sideBtn').on('click', function () {
+        $("#calendarModal").show();
+        $(".modalClose").on("click", function () {
+            $("#calendarModal").hide();
+        })
+    })
+
 
 
 
@@ -368,17 +416,35 @@
             navLinks: true, // can click day/week names to navigate views
             businessHours: true, // display business hours
             editable: true,
+            dayMaxEvents: true, // allow "more" link when too many events
             selectable: true,
             dateClick: function (info) {
                 //날짜 클릭 시 발생할 이벤트
                 console.log(info.dateStr);
+                $('.startDate').val(info.dateStr);
                 $("#calendarModal").show();
+
                 $(".modalClose").on("click", function () {
                     $("#calendarModal").hide();
                 });
             },
             eventClick: function (info) {
                 // 이벤트 클릭 시 발생할 이벤트
+                let eventTitle = info.event._def.title;
+                // 이벤트 시작 날짜를 ISO 형식으로 변환
+                let eventStartDate = info.event.start.toISOString().split('T')[0];
+                let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
+                // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
+                let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
+                let eventContent = info.event.content;
+
+                $('.eventName').val(eventTitle);
+                $('.startDate').val(eventStartDate);
+                $('.startTime').val(eventStartTime);
+                $('.endDate').val(eventEndDate);
+                $('#eventText').val(eventContent);
+
+
                 $("#eventModal").show();
                 $(".modalClose").on("click", function () {
                     $("#eventModal").hide();
@@ -398,6 +464,21 @@
 
 
             events: [
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
                 {
                     title: 'Business Lunch',
                     start: '2024-07-03T13:00:00',
@@ -439,14 +520,16 @@
                     end: '2024-07-28',
                     overlap: false,
                     display: 'background',
-                    color: '#ff9f89'
+                    color: '#ff9f89',
+                    clickable: false  // 클릭 비활성화
                 },
                 {
                     start: '2024-07-06',
                     end: '2024-07-08',
                     overlap: false,
                     display: 'background',
-                    color: '#ff9f89'
+                    color: '#ff9f89',
+                    clickable: false  // 클릭 비활성화
                 },
             ]
 

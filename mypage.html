@@ -61,11 +61,14 @@
             </div>
             <div class="contents">
                 <div class="sideAbout">
-                    <div class="aboutTitle">Main Title</div>
-                    <div class="aboutContents">aboutContents</div>
+                    <div class="sideTxt">
+                        <h2 class="sideTit">마이페이지</h2>
+                    </div>
                 </div>
-                <div class="sideContents">
-                    <h1>내 정보</h1>
+                <div class="sideContents mypage">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">마이페이지</h2>
+                    </div>
                     <div class="form-container">
                         <form id="updateForm">
                             <div class="form-group-photo">
@@ -141,8 +144,10 @@
                             <div class="form-actions">
                                 <button type="button" id="editButton" onclick="toggleEdit()">수정</button>
                                 <button type="submit" id="saveButton" class="hidden">완료</button>
-                                <button type="button" id="cancelButton" class="hidden"
-                                    onclick="toggleEdit()">취소</button>
+                                <div class="cancel">
+                                    <button type="button" id="cancelButton" class="hidden"
+                                        onclick="toggleEdit()">취소</button>
+                                </div>
                             </div>
                         </form>
                     </div>
