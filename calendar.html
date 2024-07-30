@@ -208,8 +208,9 @@
                         <li>
                             <span>일정기간</span>
                             <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                                    class="startDate dateInput" step="600">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput"
+                                    step="600">
                             </div>
                         </li>
                         <li>
@@ -248,9 +249,10 @@
                         </li>
                         <li>
                             <span>일정기간</span>
-                            <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                            <div><input type="date" class="startDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
+                                    class="startDate dateInput" disabled>&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
+                                    class="endDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
+                                    class="endDate dateInput" disabled>
                             </div>
                         </li>
                         <li>
@@ -318,6 +320,7 @@
     $('.deptPopupClose').on('click', function () {
         $('.deptCalendarPopup').hide();
     })
+
 
 
 
@@ -402,17 +405,30 @@
             navLinks: true, // can click day/week names to navigate views
             businessHours: true, // display business hours
             editable: true,
+            dayMaxEvents: true, // allow "more" link when too many events
             selectable: true,
             dateClick: function (info) {
                 //날짜 클릭 시 발생할 이벤트
                 console.log(info.dateStr);
+                $('.startDate').val(info.dateStr);
                 $("#calendarModal").show();
+
                 $(".modalClose").on("click", function () {
                     $("#calendarModal").hide();
                 });
             },
             eventClick: function (info) {
                 // 이벤트 클릭 시 발생할 이벤트
+
+                // 이벤트 시작 날짜를 ISO 형식으로 변환
+                let eventStartDate = info.event.start.toISOString().split('T')[0];
+                let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
+                // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
+                let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
+                $('.startDate').val(eventStartDate);
+                $('.startTime').val(eventStartTime);
+                $('.endDate').val(eventEndDate);
+
                 $("#eventModal").show();
                 $(".modalClose").on("click", function () {
                     $("#eventModal").hide();
@@ -432,6 +448,21 @@
 
 
             events: [
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
+                {
+                    title: 'Business Lunch',
+                    start: '2024-07-03T13:00:00',
+                    constraint: 'businessHours'
+                },
                 {
                     title: 'Business Lunch',
                     start: '2024-07-03T13:00:00',
@@ -473,14 +504,16 @@
                     end: '2024-07-28',
                     overlap: false,
                     display: 'background',
-                    color: '#ff9f89'
+                    color: '#ff9f89',
+                    clickable: false  // 클릭 비활성화
                 },
                 {
                     start: '2024-07-06',
                     end: '2024-07-08',
                     overlap: false,
                     display: 'background',
-                    color: '#ff9f89'
+                    color: '#ff9f89',
+                    clickable: false  // 클릭 비활성화
                 },
             ]
 
