@@ -23,6 +23,33 @@ links.forEach(function (link) {
     })
 })
 
+// 주소록 체크박스
+// 전체 선택 체크박스
+const checkAll = document.getElementById('checkAll')
+// 개별 선택 체크박스들
+const individualChecks = document.querySelectorAll('.individual')
+
+// 전체 선택 체크박스 클릭 이벤트
+checkAll.addEventListener('change', () => {
+    individualChecks.forEach(checkbox => {
+        checkbox.checked = checkAll.checked
+    })
+})
+
+// 개별 선택 체크박스 클릭 이벤트
+individualChecks.forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+        if (!checkbox.checked) {
+            checkAll.checked = false
+        } else {
+            const allChecked = Array.from(individualChecks).every(
+                cb => cb.checked
+            )
+            checkAll.checked = allChecked
+        }
+    })
+})
+
 // 주소록 사진 변경
 function removePhoto() {
     document.getElementById('photo').src = 'placeholder.jpg' // 사진 제거
