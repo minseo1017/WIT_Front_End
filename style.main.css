@@ -162,6 +162,10 @@ body {
     width: 100%;
     flex-wrap: wrap;
     height: 100%;
+<<<<<<< HEAD
+=======
+    font-size: 21px;
+>>>>>>> 1ff08b616e050e6d759040c39397bd2a28920c57
     overflow: hidden;
 }
 
