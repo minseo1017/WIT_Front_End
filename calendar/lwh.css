@@ -393,13 +393,13 @@
     padding: 10px 20px;
     border: 1px solid #c1c1c1;
     border-radius: 8px;
-    background-color: #26a626;
+    background-color: #558BCF;
     color: #fff;
 }
 
 #editBtn:hover {
     cursor: pointer;
-    background-color: #168216;
+    background-color: #1268d4;
 }
 
 .deleteBtn {
