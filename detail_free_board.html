@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="bmj.css">
@@ -111,35 +111,22 @@
                     <div class="sideTxt">
                         <h2 class="sideTit">게시판</h2>
                     </div>
-                    <div class="addressListGroup">
-                        <ul class="GroupList">
+                    <div class="sideBtnBox">
+                        <button class="plusBtn sideBtn">글 작성</button>
+                    </div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
                             <li class="toggleItem">
-                                <h3 class="toggleTit">공지 게시판</h3>
-                                <ul class="subList">
-                                    <li><a href="javascript:;">글 작성</a></li>
-                                    <li><a href="javascript:;">이동하기</a></li>
-                                </ul>
+                                <h3 class="toggle"><a href="board.html">공지사항</a></h3>
+
                             </li>
                         </ul>
                     </div>
                     <div class="addressListGroup">
                         <ul class="GroupList">
                             <li class="toggleItem">
-                                <h3 class="toggleTit">자유 게시판</h3>
-                                <ul class="subList">
-                                    <li><a href="javascript:;">글 작성</a></li>
-                                    <li><a href="javascript:;">이동하기</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="addressListGroup">
-                        <ul class="GroupList">
-                            <li class="toggleItem">
-                                <h3 class="toggleTit">신고현황</h3>
-                                <ul class="subList">
-                                    <li><a href="javascript:;">이동하기</a></li>
-                                </ul>
+                                <h3 class="toggle"><a href="free_board.html">자유 게시판</a></h3>
+
                             </li>
                         </ul>
                     </div>
@@ -151,15 +138,15 @@
                             <div class="detailTop">
                                 <div class="top">
                                     <div class="topTitle">집에 가고 싶어요 춥고 배고파요</div>
-                                    <div class="topFile">파일 첨부 영역입니다<i class='bx bx-message-square-x'></i>
+                                    <div class="topFile"><i class='bx bx-star'></i>
+                                        <i class='bx bx-file-blank'></i>
                                     </div>
                                 </div>
                                 <div class="top">
                                     <span>백민주</span>
                                     <span>2024-07-28</span>
-                                    <span>300</span>
+                                    <span><i class="fa-regular fa-eye"></i> 300</span>
                                 </div>
-                                <div class="top"><i class='bx bx-star'></i></div>
 
                             </div>
                             <div class="detailCen">
@@ -167,9 +154,9 @@
                             </div>
                             <div class="detailBott">
                                 <button type="button" class="btn btn-outline-danger" id="reportBtn">신고하기</button>
-                                <button type="button" class="btn btn-outline-success">수정</button>
-                                <button type="button" class="btn btn-outline-success">삭제</button>
-                                <button type="button" class="btn btn-outline-primary">목록으로</button>
+                                <button type="button" class="btn btn-outline-success" id="fboardUpd">수정</button>
+                                <button type="button" class="btn btn-outline-success" id="fboardDel">삭제</button>
+                                <button type="button" class="btn btn-outline-primary" id="fboardList">목록으로</button>
 
                             </div>
 
