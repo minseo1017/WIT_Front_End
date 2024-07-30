@@ -1,5 +1,9 @@
 /* 로그인 및 회원가입 */
 
+*{
+    box-sizing: border-box;
+}
+
 .membership_body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -35,6 +39,7 @@
 
 .membership.active {
     margin-top: 12%;
+    box-sizing: border-box;
 }
 
 .find_id_container.active {
@@ -57,12 +62,12 @@
 .registration_container select,
 .profile_update_container input[type="text"],
 .profile_update_container input[type="email"] {
-    width: 85%;
+    width: 100%;
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .registration_container select {
@@ -100,7 +105,7 @@
 .find_id_container button,
 .registration_container button,
 .profile_update_container button {
-    width: 85%;
+    width: 100%;
     padding: 10px;
     background-color: #558BCF;
     color: white;
@@ -108,7 +113,7 @@
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .registration_container button,
@@ -145,10 +150,19 @@
     margin-right: 25px;
 }
 
+.find_id_container.active img{
+	width: 155px;
+}
+
+
 .employee_container {
     display: flex;
     justify-content: center;
     margin-top: 15px;
+}
+
+.mypage h1{
+	margin-top: 10px;
 }
 
 .hidden {
@@ -264,15 +278,15 @@
 .Attendance_container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     width: 80%;
     margin: auto;
 }
 
-.Attendance {
+/* .Attendance {
     gap: 10px;
-}
+} */
 
 .Attendance_sections,
 .Attendance_vacation {
@@ -281,21 +295,21 @@
     justify-content: space-between;
     margin-bottom: 10px;
     gap: 150px;
-    padding: 35px;
+    /* padding: 35px; */
 }
 
 .status_container,
 .hours_container,
 .week_status,
 .vacation_status {
-    width: 110%;
-    padding: 20px;
+    width: 100%;
+    /* padding: 20px; */
     border-radius: 10px;
 }
 
 .vacation_container {
     width: 35%;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 10px;
 }
 
@@ -361,10 +375,10 @@
 }
 
 .month_status {
-    width: 110%;
-    padding: 20px;
+    width: 100%;
+    /* padding: 20px; */
     border-radius: 10px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .Attendance_navi {
@@ -428,14 +442,15 @@
 .form-group-photo {
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 .form-group-photo img {
-    width: 105px;
-    height: 105px;
+    width: 100px;
+    height: 100px;
     border: 1px solid #000;
     margin-left: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     border-radius: 10px;
 }
 
@@ -452,8 +467,7 @@
 .form-actions {
     display: flex;
     justify-content: flex-end;
-    margin-top: 10px;
-    margin-right: 13%;
+    margin-right: 12%;
     gap: 10px;
 }
 
@@ -469,6 +483,7 @@
 .form-container input[type="password"] {
     width: 60%;
     height: 50px;
+    margin-bottom: 35px;
 }
 
 .form-container .hidden {
@@ -478,7 +493,7 @@
 .edit-nickname-button {
     position: absolute;
     top: -65px;
-    right: 185px;
+    right: 150px;
     padding: 10px 10px;
     border-radius: 10px;
     background-color: #558BCF;
