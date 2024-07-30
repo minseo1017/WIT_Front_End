@@ -2,6 +2,48 @@
     border: 1px solid black;
 } */
 
+/* 버튼 */
+button {
+    padding: 10px 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+button.cancel {
+    background-color: #dc3545;
+}
+
+button.modi {
+    background-color: #888;
+}
+
+button.save {
+    background-color: #c058f0;
+}
+
+button:hover,
+button:active {
+    cursor: pointer;
+    background-color: #1268d4;
+}
+
+button.cancel:hover,
+button.cancel:active {
+    background-color: #c51221;
+}
+
+button.save:hover,
+button.save:active {
+    background-color: #9733c5;
+}
+
+button.modi:hover,
+button.modi:active {
+    background-color: #555;
+}
+
 /* 사이드 메뉴 토글 효과 */
 .sideAbout .addressListPrivate {
     padding-bottom: 30px;
@@ -154,7 +196,7 @@
 }
 
 .eApproval .docuList .listBox.doneList .rows:not(.listHeader) .cols:last-child span {
-    background-color: rgb(17 190 17);
+    background-color: #26a626;
     width: 30%;
     border-radius: 5px;
     color: #fff;
@@ -164,7 +206,7 @@
 }
 
 .eApproval .docuList .listBox.progList .rows:not(.listHeader) .cols:last-child span {
-    background-color: rgb(255 232 42);
+    background-color: rgb(255 154 42);
     width: max-content;
     border-radius: 5px;
     color: #fff;
@@ -179,18 +221,13 @@
 }
 
 .eApprWrite .choiBox button {
-    padding: 10px 20px;
     margin-right: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: #add2ffcc;
 }
 
-.eApprWrite .choiBox button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #558BCF;
-    color: #fff;
+.eApprWrite .choiBox .emerBtn {
+    position: relative;
+    bottom: -10px;
+    right: -62px;
 }
 
 .eApprWrite .document {
@@ -393,18 +430,7 @@ td {
 }
 
 .eApprModal .modalBtnBox button {
-    padding: 10px 20px;
     margin-right: 5px;
-    border: none;
-    border-radius: 10px;
-    background-color: #add2ffcc;
-}
-
-.eApprModal .modalBtnBox button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #558BCF;
-    color: #fff;
 }
 
 .eApprModal .eApprModalTitle {
@@ -442,23 +468,78 @@ button:active {
     gap: 7px;
 }
 
-.eApproval .docuBox .choiBox {
+.eApproval .docuBox .toolBar {
     flex: .5;
+    padding-bottom: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 2px solid #c1c1c1;
 }
 
-.eApproval .docuBox .choiBox button {
-    padding: 10px 20px;
-    margin-right: 5px;
+.eApproval .docuBox .toolBar ul {
+    flex: 8;
+    display: flex;
+}
+
+.eApproval .docuBox .toolBar ul a {
+    padding: 10px 0;
+    position: relative;
+    bottom: -10px;
+    margin-right: 20px;
+}
+
+.eApproval .docuBox .toolBar ul a.active {
+    font-weight: 600;
+}
+
+.eApproval .docuBox .toolBar ul a.active::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #888888;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* 검색창 */
+.eApproval .docuBox .toolBar .searchBox {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.eApproval .docuBox .toolBar .searchBox input {
     border: none;
-    border-radius: 10px;
-    background-color: #add2ffcc;
+    outline: none;
+    flex-grow: 1;
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 16px;
 }
 
-.eApproval .docuBox .choiBox button:hover,
-button:active {
+.eApproval .docuBox .toolBar .searchBox button.searchBtn {
+    background: none;
+    border: none;
     cursor: pointer;
-    background-color: #558BCF;
-    color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.eApproval .docuBox .toolBar .searchBox button.searchBtn:hover {
+    background: #f0f0f0;
 }
 
 .eApproval .docuList.docuBox .listBox {
@@ -470,7 +551,12 @@ button:active {
 }
 
 .eApproval .docuList.docuBox .listBox .rows .cols:nth-child(4) {
-    width: 30%;
+    width: 34%;
+}
+
+.eApproval .docuList.docuBox .listBox .rows .cols:nth-child(7) {
+    width: 8%;
+    justify-content: flex-start;
 }
 
 .eApproval .docuBox .docuBoxNavi {
