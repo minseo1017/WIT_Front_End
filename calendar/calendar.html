@@ -440,7 +440,7 @@
                 let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
                 // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
                 let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
-                let eventContent = info.event.content; ㄴㅌㅈ2ㄱㅊ
+                let eventContent = info.event.content;
 
                 $('.eventName').val(eventTitle);
                 $('.startDate').val(eventStartDate);

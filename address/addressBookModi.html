@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>주소록</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="mky.css">
-    <script defer src="mky.js"></script>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="../style/mky.css">
+    <script defer src="../app/mky.js"></script>
 </head>
 
 <body>
@@ -204,7 +204,38 @@
     btn.onclick = function () {
         sideBar.classList.toggle("active")
     };
+    // 팝업 열기 함수 (수정용)
+    function editContact(row) {
+        // var cols = row.getElementsByClassName('cols');
+        // var name = cols[1].innerText;
+        // var phone = cols[2].innerText;
+        // var email = cols[3].innerText;
+        // var group = cols[4].innerText;
 
+        // document.getElementById('name').value = name;
+        // document.getElementById('phone').value = phone;
+        // document.getElementById('email').value = email;
+        // document.getElementById('group').value = group;
+
+        openPopup();
+    }
+    // 팝업 열기 함수 (추가용)
+    function openAddContactPopup() {
+        // 폼 초기화
+        document.getElementById('addressForm').reset();
+        document.getElementById('photo').src = 'placeholder.jpg';
+        openPopup();
+    }
+    // 공통 팝업 열기 함수
+    function openPopup() {
+        var modal = document.getElementById("popupModal");
+        modal.style.display = "block";
+    }
+    // 팝업 닫기 함수
+    function closePopup() {
+        var modal = document.getElementById("popupModal");
+        modal.style.display = "none";
+    }
 </script>
 
 </html>

@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이 페이지</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="mky.css">
-    <link rel="stylesheet" href="minseo.css">
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="../mky.css">
+    <link rel="stylesheet" href="../minseo/minseo.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="/resources/js/employee.js"></script>
 </head>
 
 <body>
@@ -70,86 +69,84 @@
                         <h2 class="sideTit">마이페이지</h2>
                     </div>
                     <div class="form-container">
-                        <form id="updateForm">
-                            <div class="form-group-photo">
-                                <span>프로필</span>
-                                <img src="푸바오.png" alt="푸바오 이미지">
+                        <div class="form-group-photo">
+                            <span>프로필</span>
+                            <img src="푸바오.png" alt="푸바오 이미지">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <span>이름</span>
+                                <input type="text" value="백민주" readonly>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <span>이름</span>
-                                    <input type="text" value="백민주" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <span>닉네임</span>
-                                    <input type="text" name="nickname" id="nickname" value="다붙어밍쥬당" readonly>
-                                    <button type="button" id="checkNickname"
-                                        class="edit-nickname-button hidden">중복체크</button>
-                                </div>
+                            <div class="form-group">
+                                <span>닉네임</span>
+                                <input type="text" name="nickname" id="nickname" value="다붙어밍쥬당" readonly>
+                                <button type="button" id="checkNickname"
+                                    class="edit-nickname-button hidden">중복체크</button>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <span>생년월일</span>
-                                    <input type="text" value="2000년00월00일" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <span>휴대폰</span>
-                                    <input type="text" value="010-3824-6685" readonly>
-                                </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <span>생년월일</span>
+                                <input type="text" value="2000년00월00일" readonly>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <span>이메일</span>
-                                    <input type="text" value="wan7078@naver.com" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <span>주소</span>
-                                    <input type="text" value="한빛로12" readonly>
-                                </div>
+                            <div class="form-group">
+                                <span>휴대폰</span>
+                                <input type="text" value="010-3824-6685" readonly>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <span>상세주소</span>
-                                    <input type="text" value="남서울 평생교육원" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <span>입사일</span>
-                                    <input type="text" value="2024월 7월 29일" readonly>
-                                </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <span>이메일</span>
+                                <input type="text" value="wan7078@naver.com" readonly>
                             </div>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <span>부서</span>
-                                    <input type="text" value="인사부" readonly>
-                                </div>
-                                <div class="form-group">
-                                    <span>직급</span>
-                                    <input type="text" value="사장" readonly>
-                                </div>
+                            <div class="form-group">
+                                <span>주소</span>
+                                <input type="text" value="한빛로12" readonly>
                             </div>
-                            <div class="form-row hidden" id="passwordRow">
-                                <div class="form-group">
-                                    <span>PW변경</span>
-                                    <input type="password" name="pw" id="pw">
-                                    <label id="resultpw" class="resultpw"></label>
-                                    <span id="pwCheck"></span>
-                                </div>
-                                <div class="form-group">
-                                    <span>PW확인</span>
-                                    <input type="password" name="checkpw" id="checkpw">
-                                    <label id="resultcheckpw" class="resultcheckpw"></label>
-                                    <span id="checkpwCheck"></span>
-                                </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <span>상세주소</span>
+                                <input type="text" value="남서울 평생교육원" readonly>
                             </div>
-                            <div class="form-actions">
-                                <button type="button" id="editButton" onclick="toggleEdit()">수정</button>
-                                <button type="submit" id="saveButton" class="hidden">완료</button>
-                                <div class="cancel">
-                                    <button type="button" id="cancelButton" class="hidden"
-                                        onclick="toggleEdit()">취소</button>
-                                </div>
+                            <div class="form-group">
+                                <span>입사일</span>
+                                <input type="text" value="2024월 7월 29일" readonly>
                             </div>
-                        </form>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <span>부서</span>
+                                <input type="text" value="인사부" readonly>
+                            </div>
+                            <div class="form-group">
+                                <span>직급</span>
+                                <input type="text" value="사장" readonly>
+                            </div>
+                        </div>
+                        <div class="form-row hidden" id="passwordRow">
+                            <div class="form-group">
+                                <span>PW변경</span>
+                                <input type="password" name="pw" id="pw">
+                                <label id="resultpw" class="resultpw"></label>
+                                <span id="pwCheck"></span>
+                            </div>
+                            <div class="form-group">
+                                <span>PW확인</span>
+                                <input type="password" name="checkpw" id="checkpw">
+                                <label id="resultcheckpw" class="resultcheckpw"></label>
+                                <span id="checkpwCheck"></span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" id="editButton" onclick="toggleEdit()">수정</button>
+                            <button type="submit" id="saveButton" class="hidden">완료</button>
+                            <div class="cancel">
+                                <button type="button" id="cancelButton" class="hidden"
+                                    onclick="toggleEdit()">취소</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
