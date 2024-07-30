@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style.main.css">
     <link rel="stylesheet" href="hsh.css">
 </head>
@@ -19,7 +18,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="../메인게임.webp" alt="me" class="userImg">
+                <img src="메인게임.webp" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -100,7 +99,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="../메인게임.webp"><a href=" #">백민주 사원</a></span>
+                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -140,26 +139,14 @@
                     </div>
                 </div>
                 <div class="sideContents eApprWrite">
-                    <div class="mainTitle">문서 결재 ( 지각 사유서 )</div>
+                    <div class="mainTitle">문서 작성 ( 휴가 신청서 )</div>
 
                     <div class="document">
                         <div class="choiBox">
-                            <button class="ok">결재</button>
-                            <button class="save">전결</button>
-                            <button class="cancel">반려</button>
-                            <div class="cancelModal">
-                                <div class="cancelModalTitle">
-                                    반려 코멘트 작성
-                                </div>
-                                <div class="cancelComm">
-                                    <textarea name="" id=""></textarea>
-                                </div>
-                                <div class="modalBtnBox">
-                                    <button>완료</button>
-                                    <button class="cancel">취소</button>
-                                </div>
-                            </div>
-                            <button class="modi">목록</button>
+                            <button class="ok">결재 요청</button>
+                            <button class="save">임시 저장</button>
+                            <button class="cancel">취소</button>
+                            <button class="modi">결재선</button>
                         </div>
                         <div class="docuCont">
                             <div class="docuInfo">
@@ -168,15 +155,15 @@
                                         <tbody>
                                             <tr>
                                                 <th>기안자</th>
-                                                <td>백밍쥬</td>
+                                                <td>이름</td>
                                             </tr>
                                             <tr>
                                                 <th>소속</th>
-                                                <td>귀요밍</td>
+                                                <td>부서</td>
                                             </tr>
                                             <tr>
                                                 <th>기안일</th>
-                                                <td>2024-07-30</td>
+                                                <td>2024-07-27</td>
                                             </tr>
                                             <tr>
                                                 <th>문서번호</th>
@@ -218,37 +205,87 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="docuWrite docuLateness">
+                            <div class="docuWrite docuLeave">
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>지각 일시</th>
+                                            <th>휴가 종류</th>
                                             <td>
-                                                <input type="date" max="2024-07-27" value="2024-07-30" disabled>
+                                                <select name="" id="">
+                                                    <option value="">연차</option>
+                                                    <option value="">지각</option>
+                                                    <option value="">조퇴</option>
+                                                    <option value="">경조사</option>
+                                                    <option value="">병가</option>
+                                                </select>
+                                            </td>
+                                            <th>기간 및 일시</th>
+                                            <td>
+                                                <input type="date" min="2024-07-27">
+                                                <span>~</span>
+                                                <input type="date" min="2024-07-27">
                                             </td>
                                             <th>긴급</th>
                                             <td>
                                                 <div>
-                                                    <input type="checkbox" name="" id="emerCheck" checked disabled>
+                                                    <input type="checkbox" name="" id="emerCheck">
                                                     <label for="emerCheck">긴급 문서</label>
                                                 </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>반차 여부</th>
+                                            <td colspan="5">
+                                                <span>
+                                                    <input type="checkbox" id="startDay"> <label
+                                                        for="startDay">시작일</label>
+                                                </span> ( <span><input type="checkbox" id="startDayAM"> <label
+                                                        for="startDayAM">오전</label></span>
+                                                <span><input type="checkbox" id="startDayPM"> <label
+                                                        for="startDayPM">오후</label></span> )
+                                                <br>
+                                                <span>
+                                                    <input type="checkbox" id="endDay"> <label for="endDay">종료일</label>
+                                                </span> ( <span><input type="checkbox" id="endDayAM"> <label
+                                                        for="endDayAM">오전</label></span>
+                                                <span><input type="checkbox" id="endDayPM"> <label
+                                                        for="endDayPM">오후</label></span> )
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>연차 일수</th>
+                                            <td colspan="5">
+                                                <span>
+                                                    잔여 연차 :&nbsp;&nbsp;<input type="text" readonly>
+                                                </span>
+                                                <span>
+                                                    신청 연차 :&nbsp;&nbsp;<input type="text" readonly>
+                                                </span>
                                             </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th>지각 사유</th>
-                                            <td colspan="3">
-                                                <textarea name="" id="" readonly>사람이 살다보면 그럴 수도 있지 !</textarea>
+                                            <th>휴가 사유</th>
+                                            <td colspan="5">
+                                                <textarea name="" id=""></textarea>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="docuFiles">
-                                <label for="file">🔗 파일 선택</label>
+                                <span>파일 첨부</span>
+                                <label for="file">파일 선택</label>
                                 <input type="file" id="file" multiple>
                                 <span class="uploadFiles">
+                                    <span>파일 1
+                                        <span class="delFileBtn">X</span>
+                                    </span>
+                                    <span>파일 2
+                                        <span class="delFileBtn">X</span>
+                                    </span>
+
                                 </span>
                             </div>
                         </div>
@@ -280,22 +317,6 @@
             toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
         });
     });
-
-    // File upload script
-    $("#file").on("change", (e) => {
-        console.log(e.target.files);
-        let files = e.target.files;
-
-        for (let i = 0; i < files.length; i++) {
-            let span = $("<span>");
-            span.text(files[i].name + " ");
-            let delSpan = $("<span>");
-            delSpan.addClass("delFileBtn");
-            delSpan.text("X");
-            span.append(delSpan);
-            $(".uploadFiles").append(span);
-        }
-    })
 </script>
 
 </html>
