@@ -39,8 +39,7 @@ body {
 .userImg {
     width: 70px;
     border-radius: 100%;
-    border: 3px solid #eee;
-    /* \: 50px; */
+    border: 3px solid #fff;
     transition: all 0.5s ease;
 }
 
@@ -219,6 +218,10 @@ body {
     white-space: nowrap;
     background-color: white;
     font-size: 20px;
+    transition: opacity 0.3s ease;
+    /* 부드러운 전환 효과 추가 */
+    pointer-events: none;
+    /* 툴팁에 마우스 이벤트가 전달되지 않도록 설정 */
 }
 
 .sideBar ul li:hover .toolTip {
@@ -260,6 +263,10 @@ body {
     font-size: 18px;
 }
 
+.header span i {
+    font-size: 1.6rem;
+}
+
 .alert,
 .logOut,
 .myName {
@@ -272,8 +279,10 @@ body {
 }
 
 .header .myName img {
-    max-height: 50px;
+    height: 50px;
     border-radius: 100%;
+    border: 2px solid #fff;
+    width: 50px;
 }
 
 .contents {
@@ -293,18 +302,24 @@ body {
     border-radius: 20px;
     flex: 1 1 0%;
     background-color: rgb(255, 255, 255);
+    border: 3px solid #558BCF;
+    padding: 20px;
 }
 
 .leftBottom {
     flex: 1 1 0%;
     border-radius: 20px;
     background-color: rgb(255, 255, 255);
+    border: 3px solid #558BCF;
+    padding: 20px;
 }
 
 .center {
     flex: 2 1 0%;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
+    border: 3px solid #558BCF;
+    padding: 20px;
 }
 
 .right {
@@ -318,20 +333,19 @@ body {
     flex: 1 1 0%;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
+    border: 3px solid #558BCF;
+    padding: 20px;
 }
 
 .rightBottom {
     flex: 1 1 0%;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
+    border: 3px solid #558BCF;
+    padding: 20px;
 }
 
-.sideAbout {
-    flex: 1 1 0%;
-    background-color: rgb(255, 255, 255);
-    border: 3px solid rgb(85, 139, 207);
-    border-radius: 25px;
-}
+
 
 .sideContents {
     flex: 6 1 0%;
@@ -344,24 +358,13 @@ body {
 }
 
 .sideContents .mainTitle {
-    flex: 1;
+    /* flex: 1; */
     font-size: 28px;
     font-weight: 700;
     display: flex;
     align-items: center;
 }
 
-.rightTop {
-    flex: 1;
-    background-color: #fff;
-    border-radius: 20px;
-}
-
-.rightBottom {
-    flex: 1;
-    background-color: #fff;
-    border-radius: 20px;
-}
 
 /* sideBar 오른쪽에 sub sideBar */
 /* 사이드 영역 CSS */
