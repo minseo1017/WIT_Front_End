@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="mky.css">
     <link rel="stylesheet" href="minseo.css">
+    <script defer src="mky.js"></script>
 
 </head>
 
@@ -104,15 +105,21 @@
             </div>
             <div class="contents">
                 <div class="sideAbout">
-                    <a href="Attendance.html">
-                        <h3>근태관리</h3>
-                    </a>
-                    <div style="padding: 5px;">
+                    <div class="sideTxt">
+                        <h2 class="sideTit">근태관리</h2>
                     </div>
-                    <a href="Attendance_week.html"><span>월간 근무 확인</span></a>
-                    <div style="padding: 10px;"></div>
+                    <div class="addressListPrivate">
+                        <ul class="privateList">
+                            <li class="toggleItem">
+                                <h3 class="toggleTit">근태관리</h3>
+                                <ul class="subList">
+                                    <li><a href="Attendance_week.html" class="active">월간 근무현황</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <a href="Attendance_vacation.html">
-                        <h3>휴가관리</h3>
+                        <h3 class="toggleTit">휴가 관리</h3>
                     </a>
                 </div>
                 <div class="sideContents Attendance">

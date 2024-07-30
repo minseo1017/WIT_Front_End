@@ -173,8 +173,7 @@
 #checkpwCheck {
     display: inline-block;
     vertical-align: middle;
-    margin-left: -23px;
-    margin-top: 1px;
+    /* margin-top: 1px; */
 }
 
 /* 추가정보 입력 */
@@ -198,13 +197,13 @@
 }
 
 .popup input {
-    width: 85%;
+    width: 100%;
     padding: 15px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 10px;
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .popup button {
@@ -263,10 +262,12 @@
 
 .valid-check.error {
     color: red;
+    left: 92%;
 }
 
 .valid-check.success {
     color: green;
+    left: 92%;
 }
 
 .membership img {
@@ -280,7 +281,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
 
@@ -434,9 +435,9 @@
 }
 
 .form-group input {
-    padding: 7px;
-    border-radius: 10px;
-    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 .form-group-photo {
@@ -448,7 +449,7 @@
 .form-group-photo img {
     width: 100px;
     height: 100px;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     margin-left: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
