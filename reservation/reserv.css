@@ -307,6 +307,9 @@
     float: right;
     font-size: 25px;
     font-weight: bold;
+    position: relative;
+    top: -12px;
+    right: -8px;
 }
 
 .modalClose:hover,

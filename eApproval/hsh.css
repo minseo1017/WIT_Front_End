@@ -300,6 +300,14 @@ td {
     height: 70%;
 }
 
+.eApprWrite .document .docuCont .docuInfo .apprTable table tbody tr:nth-child(2) td {
+    width: 90px;
+}
+
+.eApprWrite .document .docuCont .docuInfo .apprTable table tbody tr:nth-child(2) td img {
+    width: 70px;
+}
+
 .eApprWrite .document .docuCont .docuInfo .apprTable {
     flex: 6;
 }
