@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.main.css">
+    <link rel="stylesheet" href="../style.main.css">
     <link rel="stylesheet" href="bmj.css">
 </head>
 
@@ -112,7 +112,7 @@
                         <h2 class="sideTit">게시판</h2>
                     </div>
                     <div class="sideBtnBox">
-                        <a href="wirte_free_board.html"><button class="plusBtn sideBtn">글 작성</button></a>
+                        <button class="plusBtn sideBtn">글 작성</button>
                     </div>
                     <div class="addressListPrivate">
                         <ul class="privateList">
@@ -132,12 +132,13 @@
                     </div>
                 </div>
                 <div class="sideContents board">
-                    <!-- <div class="pentagon-arrow mainTitle">공지사항 홈</div> -->
-                    <div class="mainTitle">공지사항 홈</div>
+                    <div class="mainTitle">
+                        자유 게시판
+                    </div>
                     <div class="boardList">
                         <div class="controls">
                             <div class="search">
-                                <select id="searchOpt">
+                                <select class="form-select" aria-label="Default select example" id="searchOpt">
                                     <option selected>제목</option>
                                     <option value="1">내용</option>
                                 </select>
@@ -150,12 +151,14 @@
                                 </div>
                             </div>
 
+
                             <div class="sort">
-                                <select class="formSelect" id="sortOpt">
+                                <select class="form-select" aria-label="Default select example" id="sortOpt">
                                     <option selected>최신순</option>
                                     <option value="1">조회수</option>
                                 </select>
                             </div>
+
                         </div>
 
                         <div class="notiList">
@@ -252,7 +255,7 @@
                         </div>
 
                         <div class="pageNavi">
-                            <&nbsp;&nbsp;1 2 3 4 5 6 7 8 9 10&nbsp;&nbsp;>
+                            <&nbsp;&nbsp;1 2 3 4 5&nbsp;&nbsp;>
                         </div>
                     </div>
                 </div>
