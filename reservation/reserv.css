@@ -2,6 +2,11 @@
     border: 1px solid black;
 } */
 
+.sideContents .mainTitle {
+    flex: unset;
+    align-items: flex-start;
+}
+
 /* 사이드 메뉴 토글 효과 */
 .sideAbout .addressListPrivate {
     padding-bottom: 30px;
@@ -217,11 +222,7 @@
 
 /* 차량 & 회의실 예약 페이지 */
 .sideContents.reservation {
-    padding: 40px 30px;
-}
-
-.sideContents.reservation .mainTitle {
-    display: block;
+    gap: 20px;
 }
 
 .sideContents.reservation .reservBox {
