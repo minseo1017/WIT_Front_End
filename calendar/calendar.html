@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="board2.css">
-    <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="lwh.css">
+    <link rel="stylesheet" href="../style.main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.global.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/6.1.15/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -26,7 +24,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="메인게임.webp" alt="me" class="userImg">
+                <img src="../images/logo/WIT_logo1.png" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -107,7 +105,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="메인게임.webp"><a href=" #">이원희 사원</a></span>
+                    <img src="../images/프로필.jpg"><a href=" #">이원희 사원</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -406,18 +404,24 @@
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
             },
-            // '일 제거'
+            // '일 제거' 안뇽~~~~~~~~~~~~~나누구겡 ㅋㅋ
             dayCellContent: function (e) {
                 return e.dayNumberText.replace('일', '');
             },
             locale: "ko", // 한국어로 변경
             initialDate: new Date(), // 캘린더 처음 들어갔을 때 오늘 날짜 기준으로 지정 ex) 7월 1일이면 7월 1일에 포커스
-
             navLinks: true, // can click day/week names to navigate views
             businessHours: true, // display business hours
             editable: true,
             dayMaxEvents: true, // allow "more" link when too many events
             selectable: true,
+            buttonText: {
+                today: '오늘',
+                month: '월간',
+                week: '주간',
+                day: '일간',
+                list: '목록'
+            },
             dateClick: function (info) {
                 //날짜 클릭 시 발생할 이벤트
                 console.log(info.dateStr);
@@ -436,7 +440,7 @@
                 let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
                 // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
                 let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
-                let eventContent = info.event.content;
+                let eventContent = info.event.content; ㄴㅌㅈ2ㄱㅊ
 
                 $('.eventName').val(eventTitle);
                 $('.startDate').val(eventStartDate);

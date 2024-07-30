@@ -258,7 +258,7 @@
 	flex-direction: column;
 	gap: 20px;
 	align-items: center;
-	width: 80%;
+	width: 90%;
 	margin: auto;
 }
 
@@ -467,7 +467,7 @@
 	right: 150px;
 	padding: 10px 10px;
 	border-radius: 10px;
-	background-color: #558BCF;
+	background-color: #9733c5;
 	color: white;
 	font-size: 15px;
 	border: 1px solid #ccc;
