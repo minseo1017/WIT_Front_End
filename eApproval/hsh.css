@@ -456,6 +456,7 @@ td {
     height: 500px;
     padding: 30px 25px;
     flex-wrap: wrap;
+    z-index: 2;
 }
 
 .eApprModal>div:not(.modalBtnBox) {
@@ -475,7 +476,7 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 10px;
 }
 
 .eApprModal .modalBtnBox button {
