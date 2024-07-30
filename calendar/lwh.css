@@ -61,7 +61,7 @@
     display: block;
     width: 20px;
     height: 23px;
-    background-image: url(../WIT_Front_End/images/icon/toggle.png);
+    background-image: url(../images/icon/toggle.png);
     background-size: 10px 8px;
     background-repeat: no-repeat;
     background-position: center;
@@ -95,8 +95,6 @@
     color: #558BCF;
     font-weight: 600;
 }
-
-
 
 /* 내 캘린더 부서 캘린더 추가 공통 */
 .subList.calendarList {
@@ -389,24 +387,6 @@ button:active {
     gap: 30px;
 }
 
-/* .modal .eventCheck .btns button {
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: #86bcff;
-    border: none;
-    font-size: 16px;
-}
-
-.modal .eventCheck .btns button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #3372be;
-    border: none;
-} */
-
-
-
-
 .cancelBtn {
     padding: 10px 20px;
     border: 1px solid #c1c1c1;
@@ -473,30 +453,17 @@ button:active {
     background-color: #1268d4;
 }
 
-
-
 /* 캘린더 */
-
 .calendarBox {
     width: 100%;
     height: 780px;
 }
-
-/* #calendar {
-    background-color: #80bfff41;
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 100%;
-} */
 
 .calendar {
     padding: 20px;
     width: 100%;
     height: 100%;
 }
-
-
 
 /* 일요일 날짜 빨간색 */
 .fc-day-sun a {
