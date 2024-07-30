@@ -30,7 +30,7 @@
     border-radius: 10px;
     font-size: 18px;
     font-weight: 600;
-    color: #333;
+    color: #558BCF;
 }
 
 /* 버튼 효과 */
@@ -98,8 +98,9 @@
 
 /* 주소록 메인 콘텐츠 */
 .sideContents.addressCont {
-    gap: 30px;
+    gap: 10px;
 }
+
 
 .sideContents.addressCont .mainTitle {
     flex: unset;
@@ -112,7 +113,7 @@
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    border-radius: 25px;
+    border-radius: 8px;
     padding: 5px 10px;
     width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -159,7 +160,7 @@
     flex: 1;
     display: flex;
     width: 100%;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .toolBar ul {
@@ -201,10 +202,10 @@
     display: block;
     color: #333;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 20px 0;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -242,7 +243,6 @@
 }
 
 .listBox .rows .cols {
-    padding: 7px 0;
     display: flex;
     justify-content: center;
 }
@@ -280,38 +280,82 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    /* margin: 20px 0; */
     height: 5%;
+    gap: 5px;
 }
 
-.pagination button {
-    border: 1px solid #ccc;
+.pagination a {
     padding: 10px 15px;
-    margin: 0 5px;
     cursor: pointer;
+    color: #333;
 }
 
-.pagination button.active {
+.pagination a.active {
     background-color: #558BCF;
     color: white;
+    border-radius: 100%;
 }
 
-.pagination button.prev,
-.pagination button.next {
-    background-color: #f4f4f4;
+.pagination a.prev,
+.pagination a.next {
+    font-size: 24px;
+    color: #ccc;
+    font-weight: bold;
+}
+
+.pagination a.prev,
+.pagination a.next {
+    background-color: unset;
+    border: none;
+    font-size: 24px;
+    padding: 5px 10px;
+}
+
+.pagination a.prev.active,
+.pagination a.next.active {
+    color: #333;
 }
 
 /* 주소록 수정/등록 */
+.sideContents.addressContDetail {
+    gap: 30px;
+}
+
+.sideContents.addressContDetail .mainTitle {
+    flex: unset;
+    color: #333;
+    height: 5%;
+}
+
 .addressForm {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 50px;
+}
+
+.formBox {
+    display: flex;
+    gap: 10px;
+}
+
+.leftForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.rightForm {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 58px;
 }
 
 .formGroup {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .formGroup label {
@@ -367,15 +411,19 @@
 .actions {
     text-align: center;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .actions button {
     padding: 10px 20px;
-    margin: 0 10px;
     border: 1px solid #c1c1c1;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
+    background: #555;
+    color: #fff;
 }
 
 .actions button.save {
@@ -407,7 +455,7 @@
 .toggleBtn,
 .createChatBtn,
 .createChatConfirmBtn {
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
     background-color: #558BCF;
     color: white;
@@ -416,20 +464,26 @@
     margin-left: 10px;
 }
 
+.toggleBtn:hover,
+.createChatBtn:hover,
+.createChatConfirmBtn:hover {
+    background-color: #1268d4;
+}
+
 .addressList li:first-child {
     display: flex;
     justify-content: end;
 }
 
 .createChatBtn {
-    margin-left: 0px;
-    margin-bottom: 15px;
+    font-size: 20px;
+    padding: 8px 20px;
 }
 
 .toggleBtn.active,
-.createChatBtn:hover,
-.createChatConfirmBtn:hover {
-    background-color: #558BCF;
+.createChatBtn:active,
+.createChatConfirmBtn:active {
+    background-color: #1268d4;
 }
 
 .chatList,
@@ -440,6 +494,7 @@
     max-height: 600px;
     overflow-y: auto;
     height: 100%;
+    padding-bottom: 10px;
 }
 
 .chatList li,
@@ -462,17 +517,21 @@
     padding: 20px;
 }
 
-.chatList .notiBox {
+.chatList .chatEtc {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
+.chatList .notiBox {}
+
 .notificationCount {
-    color: #333;
+    color: #fff;
     border-radius: 50%;
     font-size: 12px;
     font-weight: 600;
+    background-color: #558BCF;
+    padding: 3px 6px;
 }
 
 .exitBtn {
@@ -492,17 +551,18 @@
     background-color: #fff;
     position: relative;
     height: 86vh;
+    gap: 15px;
 }
 
 .chatHeader {
-    padding: 15px;
+    /* padding: 15px; */
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .chatHeader .title {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: bold;
 }
 
@@ -577,6 +637,12 @@
     cursor: pointer;
 }
 
+.chatFooter button:hover,
+.chatFooter button:active,
+.chatFooter button:focus {
+    background-color: #1268d4;
+}
+
 .chatFooter .icon {
     font-size: 24px;
     margin-right: 10px;
@@ -596,6 +662,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: white;
     gap: 10px;
+    position: relative;
 }
 
 .emojiContainer img {
@@ -609,7 +676,7 @@
     font-size: 18px;
     cursor: pointer;
     position: absolute;
-    right: 10px;
+    right: 20px;
 }
 
 .filePopup {
@@ -628,6 +695,13 @@
     padding: 60px;
     border-radius: 10px;
     text-align: center;
+}
+
+.popupBox {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 
 .popupContent button {
@@ -677,6 +751,7 @@
     height: 100px;
     border-radius: 50%;
     display: block;
+    object-fit: cover;
 }
 
 .profilePopup .profileInfo {
@@ -709,6 +784,11 @@
     color: #333;
 }
 
+.profilePopup .profilebtnBox {
+    display: flex;
+    gap: 10px;
+}
+
 .profilePopup .chatButton {
     display: inline-block;
     padding: 10px 20px;
@@ -717,20 +797,24 @@
     text-align: center;
     border-radius: 5px;
     text-decoration: none;
-    text-align: right;
     width: 100px;
 }
 
 .profilePopup .chatButton:hover {
-    background-color: #0056b3;
+    background-color: #1268d4;
 }
 
 .profilePopup .closeButton {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    width: 100px;
+}
+
+.profilePopup .closeButton:hover {
+    background-color: #c51221;
 }
