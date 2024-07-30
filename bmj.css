@@ -154,7 +154,7 @@
 /* board css start */
 .board .boardList {
     flex: 8;
-    padding: 0 30px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     /* background-color: red; */
@@ -178,20 +178,34 @@
 
 .boardList .controls .search #searchOpt {
     /* flex: 1; */
-    width: 60px;
-    border-radius: 10px;
-    height: 40px;
+    width: 80px;
+    /* border-radius: 10px; */
+    height: 100%;
     border: none;
     font-weight: bold;
+}
 
+.boardList .controls .sort {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardList .controls .sort #sortOpt {
-    width: 60px;
-    border-radius: 10px;
-    height: 40px;
-    font-weight: bold;
-    border: none;
+    padding: 10px 20px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.boardList .controls .sort #sortOpt:focus {
+    border-color: #555;
+    outline: none;
+    box-shadow: 0 0 5px rgba(51, 93, 159, 0.5);
 }
 
 /* board list css start */
@@ -209,7 +223,7 @@
 
 .boardList .notiList .notiConts:hover {
     transition: 0.2s;
-    background-color: #558bcf1a;
+    background-color: #96a8bf1a;
 }
 
 .boardList .notiList .notiHeader {
@@ -241,7 +255,7 @@
 
 /* detail_board.html css start */
 .boardDetail {
-    max-height: 650px;
+    /* max-height: 650px; */
     flex: 8;
     padding: 0 30px;
     display: flex;
@@ -382,33 +396,77 @@
 /* write page css start */
 .writeWrapper {
     flex: 7;
-    background-color: #bfd9ff;
+    background-color: #ebf3fda3;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    border-radius: 10px;
 }
 
 .writeWrapper .writeTitle {
     /* flex: 1; */
     height: 40px;
     border: 3px solid #558BCF;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 0 20px;
     font-size: 20px;
 }
 
-.writeWrapper .writeFile {
-    padding: 10px;
+/* input type file 커스터마이징 */
+.writeWrapper .formInputFileWrap {
+    display: flex;
+    margin-top: 20px;
 }
 
+.writeWrapper .formInputFileWrap .labelFile {
+    width: 80px;
+    height: 40px;
+    line-height: 30px;
+    background: #999;
+    border-radius: 3px;
+    color: #fff;
+    /* font-weight: bold; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.writeWrapper .formInputFileWrap .spanFile {
+    padding: 0 5px 0 10px;
+    margin-left: 5px;
+    display: block;
+    width: 500px;
+    min-height: 40px;
+    border: 1px solid #e7e7e7;
+    border-radius: 3px;
+    line-height: 40px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+}
+
+.writeWrapper .formInputFileWrap input[type="file"] {
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/**/
+
 .writeWrapper .writeCont {
-    flex: 5;
+    flex: 8;
     background-color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 20px;
     /* margin: 20px; */
+    max-height: 700px;
 }
 
 .writeWrapper .writeBtns button {
@@ -421,9 +479,32 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    height: 50px;
+    height: 70px;
 }
 
+.writeWrapper .writeBtns #writeList {
+    padding: 10px 20px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    background-color: #888;
+    color: #fff;
+}
+
+.writeWrapper .writeBtns #writeList:hover {
+    background-color: #555;
+}
+
+.writeWrapper .writeBtns #writeInsert {
+    padding: 10px 20px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #558BCF;
+    color: white
+}
+
+.writeWrapper .writeBtns #writeInsert:hover {
+    background-color: #1268d4;
+}
 
 /* detail page reply css start */
 .replyWrapper {
@@ -442,7 +523,7 @@
 
 .replyWrapper .replyList {
     /* overflow-y: scroll; */
-    height: 500px;
+    height: 600px;
     overflow: auto;
 }
 
@@ -596,4 +677,26 @@
     border: 3px solid #bfd9ff;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+/* main 게시판 개인 영역 */
+.center .boardList {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pentagon-arrow {
+    width: 200px;
+    /* 너비를 원하는 크기로 조정하세요 */
+    height: 50px;
+    /* 높이를 원하는 크기로 조정하세요 */
+    background-color: #558BCF;
+    color: white;
+    /* 배경색을 이미지의 색상과 맞춤 */
+    clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+
+.mainTitle {
+    padding: 10px;
 }

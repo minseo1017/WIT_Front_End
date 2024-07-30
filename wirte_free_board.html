@@ -8,6 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.main.css">
     <link rel="stylesheet" href="bmj.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 
@@ -131,18 +132,18 @@
                 <div class="sideContents board">
                     <div class="mainTitle">글 작성</div>
                     <div class="writeWrapper">
-                        <div class="writeTitle">제목</div>
-                        <div class="writeFile">
-                            <input type="file">
+                        <input class="writeTitle" placeholder="제목을 입력하세요."></input>
+
+                        <div class="formInputFileWrap">
+                            <input class="inputFile" id="upload" type="file" multiple>
+                            <label class="labelFile" for="upload">파일선택</label>
+                            <span class="spanFile">선택된 파일이 없습니다.</span>
                         </div>
                         <div class="writeCont">게시판 글 작성 입력</div>
                         <div class="writeBtns">
                             <button type="button" class="btn btn-secondary" id="writeList">뒤로가기</button>
                             <button type="button" class="btn btn-primary" id="writeInsert">등록하기</button>
-
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -159,17 +160,34 @@
         sideBar.classList.toggle("active")
     };
 
-    const toggleItems = document.querySelectorAll('.toggleItem');
+    // const toggleItems = document.querySelectorAll('.toggleItem');
 
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
+    // toggleItems.forEach(function (toggleItem) {
+    //     const toggleTit = toggleItem.querySelector('.toggleTit');
+    //     const subList = toggleItem.querySelector('.subList');
 
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
+    //     toggleTit.addEventListener('click', function () {
+    //         subList.classList.toggle('active');
+    //         toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+    //     });
+    // });
+
+
+    // File upload script
+    document.getElementById('upload').addEventListener('change', function () {
+        // 선택된 파일 목록(this.files)을 배열로 변환, 각 파일 객체 이름(file.name)을 추출하여 새 배열 만듬
+        // 이 배열을 콤마와 공백으로 연결된 문자열로 만듬.
+        var fileNames = Array.from(this.files).map(file => file.name).join('<br>');
+
+        // 파일 이름들이 문자열에 포함되어 있으면 해당 문자열을 spanFile클래스를 가진 요소의 콘텐츠로 설정
+        if (fileNames) {
+            //document.querySelector('.spanFile').textContent = fileNames;
+            $('.spanFile').html(fileNames);
+        } else {
+            document.querySelector('.spanFile').textContent = '선택된 파일이 없습니다.';
+        }
     });
+
 </script>
 
 </html>

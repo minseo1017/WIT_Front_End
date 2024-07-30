@@ -134,6 +134,7 @@ body {
 }
 
 .sideBar.active .userImg {
+    border: 5px solid #fff;
     width: 150px;
 }
 
@@ -160,6 +161,7 @@ body {
     width: 100%;
     flex-wrap: wrap;
     height: 100%;
+    overflow: hidden;
 }
 
 .sideBar.active ul li a {
