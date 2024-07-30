@@ -22,6 +22,19 @@ links.forEach(function (link) {
         this.classList.add('active') // 클릭한 링크에 active 클래스 추가
     })
 })
+// 주소록 연락처 추가 팝업
+
+// 팝업 열기
+function openPopup() {
+    var modal = document.getElementById('popupModal')
+    modal.style.display = 'block'
+}
+
+// 팝업 닫기 함수
+function closePopup() {
+    var modal = document.getElementById('popupModal')
+    modal.style.display = 'none'
+}
 
 // 주소록 체크박스
 // 전체 선택 체크박스

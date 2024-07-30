@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>메신저</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.main.css">
-    <link rel="stylesheet" href="mky.css">
-    <script defer src="mky.js"></script>
+    <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="../style/mky.css">
+    <script defer src="../app/mky.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="./images/logo/WIT_logo1.png" alt="logo" class="userImg">
+                <img src="../images/logo/WIT_logo1.png" alt="logo" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -100,7 +100,7 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="./images/프로필.jpg"><a href=" #">문경원 부장</a></span>
+                    <img src="../images/프로필.jpg"><a href=" #">문경원 부장</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
@@ -116,38 +116,47 @@
                     <ul class="chatList" id="chatList" style="display: none;">
                         <li>
                             <a href="javascript:;">
-                                채팅방 1
-                                <div class="chatEtc">
+                                <div class="chatTitle">
+                                    <span>문경원</span>
                                     <span class="notificationCount">3</span>
-                                    <button class="exitBtn"><i class='bx bx-exit'></i></button>
                                 </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                채팅방 2
-                                <div class="chatEtc">
-                                    <span class="notificationCount">1</span>
-                                    <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                                <div class="chatTitle">
+                                    <span>한승혜</span>
+                                    <span class="notificationCount">2</span>
                                 </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                채팅방 3
-                                <div class="chatEtc">
+                                <div class="chatTitle">
+                                    <span>이원희</span>
                                     <span class="notificationCount">4</span>
-                                    <button class="exitBtn"><i class='bx bx-exit'></i></button>
                                 </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
                             </a>
                         </li>
                         <li>
                             <a href="javascript:;">
-                                채팅방 4
-                                <div class="chatEtc">
+                                <div class="chatTitle">
+                                    <span>손민서</span>
                                     <span class="notificationCount">3</span>
-                                    <button class="exitBtn"><i class='bx bx-exit'></i></button>
                                 </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="chatTitle">
+                                    <span>백민주</span>
+                                    <span class="notificationCount">3</span>
+                                </div>
+                                <button class="exitBtn"><i class='bx bx-exit'></i></button>
                             </a>
                         </li>
                     </ul>
@@ -194,17 +203,17 @@
                         <div class="message received">내일은 좀 더 편안한 하루가 되길</div>
                     </div>
                     <div class="emojiContainer" id="emojiContainer">
-                        <img src="./images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
-                        <img src="./images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
-                        <button class="closeBtn" onclick="toggleEmojiContainer()">X</button>
+                        <img src="../images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt1.png" alt="emt1" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt2.png" alt="emt2" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt3.png" alt="emt3" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt4.png" alt="emt4" onclick="addEmojiToMessageInput(this)">
+                        <img src="../images/message/emt5.png" alt="emt5" onclick="addEmojiToMessageInput(this)">
+                        <button class="closeBtn" onclick="toggleEmojiContainer()">x</button>
                     </div>
                     <div class="chatFooter">
                         <i class='bx bx-smile icon' onclick="toggleEmojiContainer()"></i>
