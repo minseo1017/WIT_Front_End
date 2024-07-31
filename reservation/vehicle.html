@@ -193,13 +193,16 @@
                         </li>
                         <li>
                             <span>예약자</span>
-                            <div><input type="text" value="인사부" readonly><input type="text" value="이웡히" readonly></div>
+                            <div><input type="text" value="인사부" readonly>&nbsp;&nbsp;<input type="text" value="이웡히"
+                                    readonly></div>
                         </li>
                         <li>
                             <span>예약 기간</span>
-                            <div><input type="date" class="startDate dateInput">&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput">&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput">&nbsp;&nbsp;<input type="time" class="endDate dateInput">
+                            <div><input type="date" id="startDate" class="startDate dateInput"
+                                    readonly>&nbsp;&nbsp;<input type="time" id="startTime" class="startDate dateInput"
+                                    readonly>&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date" id="endDate"
+                                    class="endDate dateInput" readonly>&nbsp;&nbsp;<input type="time" id="endTime"
+                                    class="endDate dateInput" readonly>
                             </div>
                         </li>
                         <li>
@@ -238,6 +241,10 @@
         });
     });
 
+    $('.cancelBtn').on('click', function () {
+        location.reload();
+    })
+
     $('#addBtn').on('click', function () {
         // 입력 필드값 변수에 저장
         let eventName = $('#eventName').val();
@@ -274,7 +281,8 @@
             },
             locale: "ko", // 한국어로 변경
             initialDate: new Date(),
-            editable: true,
+            timeZone: 'Asia/Seoul',
+            editable: false,
             selectable: true,
             businessHours: true,
             dayMaxEvents: true,
@@ -283,7 +291,7 @@
             },
             dateClick: function (info) {
                 //날짜 클릭 시 발생할 이벤트
-                console.log(info.dateStr);
+                $('.startDate').val(info.dateStr);
                 $("#reservModal").show();
                 $(".modalClose").on("click", function () {
                     $("#reservModal").hide();
@@ -291,6 +299,33 @@
             },
             eventClick: function (info) {
                 // 이벤트 클릭 시 발생할 이벤트
+                let eventTitle = info.event._def.title;
+                // 이벤트 시작 날짜를 ISO 형식으로 변환
+                // 이벤트의 시작과 종료 시간을 한국 시간으로 변환
+                let eventStartUTC = new Date(info.event.start);
+                let eventEndUTC = info.event.end ? new Date(info.event.end) : new Date(eventStartUTC.getTime() + 24 * 60 * 60 * 1000);
+
+                // 한국 표준시(KST)로 변환
+                let eventStartKST = new Date(eventStartUTC.toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+                let eventEndKST = new Date(eventEndUTC.toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+
+                // 날짜와 시간 분리
+                let eventStartDate = eventStartKST.toISOString().split('T')[0];
+                let eventStartTime = eventStartKST.toISOString().split('T')[1].substring(0, 5);
+                let eventEndDate = eventEndKST.toISOString().split('T')[0];
+                let eventEndTime = eventEndKST.toISOString().split('T')[1].substring(0, 5);
+                let eventContent = info.event.extendedProps.content;
+
+                console.log(eventStartDate + ' : ' + eventStartTime);
+                // console.log(new Date(info.event.start.getTime() - 9 - (info.event.start.getTimezoneOffset() * 60000)).toISOString().split('T')[1].substring(0, 5));
+
+                $('.eventName').val(eventTitle);
+                $('#startDate').val(eventStartDate);
+                $('#startTime').val(eventStartTime);
+                $('#endDate').val(eventEndDate);
+                $('#endTime').val(eventEndTime);
+                $('#eventText').val(eventContent);
+
                 $("#eventModal").show();
                 $(".modalClose").on("click", function () {
                     $("#eventModal").hide();
@@ -321,6 +356,10 @@
                 //         start: '2023-01-11',
                 //         end: '2023-01-13'
                 //     },
+                {
+                    title: 'All Day Event',
+                    start: '2024-07-30'
+                },
                 {
                     title: 'Drive',
                     start: '2024-07-12T10:30:00',
