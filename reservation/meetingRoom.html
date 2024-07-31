@@ -193,7 +193,10 @@
                         </li>
                         <li>
                             <span>예약자</span>
-                            <div><input type="text" value="인사부" readonly><input type="text" value="이웡히" readonly></div>
+                            <div>
+                                <input type="text" value="인사부" readonly>&nbsp;&nbsp;<input type="text" value="이웡히"
+                                    readonly>
+                            </div>
                         </li>
                         <li>
                             <span>예약 기간</span>
@@ -268,11 +271,18 @@
         var calendarEl = document.getElementById('calendar');
 
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialDate: '2024-07-29',
-            editable: true,
+            dayCellContent: function (e) {
+                return e.dayNumberText.replace('일', '');
+            },
+            locale: "ko",
+            initialDate: new Date(),
+            editable: false,
             selectable: true,
             businessHours: true,
             dayMaxEvents: true,
+            buttonText: {
+                today: '오늘'
+            },
             dateClick: function (info) {
                 //날짜 클릭 시 발생할 이벤트
                 console.log(info.dateStr);

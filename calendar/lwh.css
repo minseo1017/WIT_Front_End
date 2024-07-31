@@ -277,7 +277,7 @@
 .modal .calendarAdd input:not(.dateInput) {
     padding: 10px 15px;
     margin-top: 7px;
-    width: 70%;
+    width: 100%;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -285,8 +285,8 @@
 
 .modal .calendarAdd .dateInput {
     margin-top: 7px;
-    padding: 15px;
-    width: 22%;
+    padding: 15px 10px;
+    width: 23%;
     height: 35px;
     font-size: 14px;
     border-radius: 8px;
@@ -317,24 +317,8 @@
 .modal .calendarAdd .btns {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
-
-/* .modal .calendarAdd .btns button {
-    padding: 10px 30px;
-    border-radius: 10px;
-    background-color: #86bcff;
-    border: none;
-    font-size: 16px;
-} */
-
-/* .modal .calendarAdd .btns button:hover,
-button:active {
-    cursor: pointer;
-    background-color: #3372be;
-    border: none;
-} */
-
 
 /* 이벤트 클릭 시 */
 .modal .eventCheck li {
@@ -344,7 +328,7 @@ button:active {
 .modal .eventCheck input:not(.dateInput) {
     padding: 10px 15px;
     margin-top: 7px;
-    width: 70%;
+    width: 100%;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -352,8 +336,8 @@ button:active {
 
 .modal .eventCheck .dateInput {
     margin-top: 7px;
-    padding: 15px;
-    width: 22%;
+    padding: 15px 10px;
+    width: 23%;
     height: 35px;
     font-size: 14px;
     border-radius: 8px;
@@ -384,7 +368,7 @@ button:active {
 .modal .eventCheck .btns {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 10px;
 }
 
 .cancelBtn {
@@ -409,13 +393,13 @@ button:active {
     padding: 10px 20px;
     border: 1px solid #c1c1c1;
     border-radius: 8px;
-    background-color: #26a626;
+    background-color: #558BCF;
     color: #fff;
 }
 
 #editBtn:hover {
     cursor: pointer;
-    background-color: #168216;
+    background-color: #1268d4;
 }
 
 .deleteBtn {
@@ -498,6 +482,18 @@ button:active {
     box-shadow: unset !important;
 }
 
+.fc-theme-standard .fc-popover {
+    border-radius: 20px;
+}
+
 .fc-theme-standard .fc-popover-header {
-    background-color: #c51221;
+    border-radius: 20px;
+    padding: 7px;
+    background-color: #558BCF;
+    color: #fff;
+}
+
+.fc-popover-close.fc-icon.fc-icon-x {
+    color: white;
+    opacity: 1;
 }
