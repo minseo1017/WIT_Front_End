@@ -127,6 +127,7 @@
                                     </li>
                                     <li><input type="checkbox" id="travelCheckBox" name="travelCheckBox">
                                         <label for="travelCheckBox">여행</label>
+                                        <span class="sideSelectDel">&times</span>
                                     </li>
                                     <div>
                                         <span class="sideCalendarAdd">
@@ -247,9 +248,10 @@
                         </li>
                         <li>
                             <span>일정기간</span>
-                            <div><input type="date" class="startDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
-                                    class="startDate dateInput" disabled>&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date"
-                                    class="endDate dateInput" disabled>&nbsp;&nbsp;<input type="time"
+                            <div><input type="date" id="startDate" class="startDate dateInput"
+                                    disabled>&nbsp;&nbsp;<input type="time" id="startTime" class="startDate dateInput"
+                                    disabled>&nbsp;&nbsp;~&nbsp;&nbsp;<input type="date" id="endDate"
+                                    class="endDate dateInput" disabled>&nbsp;&nbsp;<input type="time" id="endTime"
                                     class="endDate dateInput" disabled>
                             </div>
                         </li>
@@ -408,8 +410,11 @@
             dayCellContent: function (e) {
                 return e.dayNumberText.replace('일', '');
             },
+
+
             locale: "ko", // 한국어로 변경
             initialDate: new Date(), // 캘린더 처음 들어갔을 때 오늘 날짜 기준으로 지정 ex) 7월 1일이면 7월 1일에 포커스
+            timeZone: 'Asia/Seoul',
             navLinks: true, // can click day/week names to navigate views
             businessHours: true, // display business hours
             editable: true,
@@ -436,16 +441,29 @@
                 // 이벤트 클릭 시 발생할 이벤트
                 let eventTitle = info.event._def.title;
                 // 이벤트 시작 날짜를 ISO 형식으로 변환
-                let eventStartDate = info.event.start.toISOString().split('T')[0];
-                let eventStartTime = info.event.start.toISOString().split('T')[1].substring(0, 5);
-                // 이벤트 종료 날짜를 ISO 형식으로 변환 하지만 당일 이벤트라면 startDate로 출력
-                let eventEndDate = info.event.end ? info.event.end.toISOString().split('T')[0] : eventStartDate;
-                let eventContent = info.event.content;
+                // 이벤트의 시작과 종료 시간을 한국 시간으로 변환
+                let eventStartUTC = new Date(info.event.start);
+                let eventEndUTC = info.event.end ? new Date(info.event.end) : new Date(eventStartUTC.getTime() + 24 * 60 * 60 * 1000);
+
+                // 한국 표준시(KST)로 변환
+                let eventStartKST = new Date(eventStartUTC.toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+                let eventEndKST = new Date(eventEndUTC.toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
+
+                // 날짜와 시간 분리
+                let eventStartDate = eventStartKST.toISOString().split('T')[0];
+                let eventStartTime = eventStartKST.toISOString().split('T')[1].substring(0, 5);
+                let eventEndDate = eventEndKST.toISOString().split('T')[0];
+                let eventEndTime = eventEndKST.toISOString().split('T')[1].substring(0, 5);
+                let eventContent = info.event.extendedProps.content;
+
+                console.log(eventStartDate + ' : ' + eventStartTime);
+                // console.log(new Date(info.event.start.getTime() - 9 - (info.event.start.getTimezoneOffset() * 60000)).toISOString().split('T')[1].substring(0, 5));
 
                 $('.eventName').val(eventTitle);
-                $('.startDate').val(eventStartDate);
-                $('.startTime').val(eventStartTime);
-                $('.endDate').val(eventEndDate);
+                $('#startDate').val(eventStartDate);
+                $('#startTime').val(eventStartTime);
+                $('#endDate').val(eventEndDate);
+                $('#endTime').val(eventEndTime);
                 $('#eventText').val(eventContent);
 
 
@@ -465,12 +483,11 @@
                     textColor: 'red'
                 }],
 
-
-
             events: [
                 {
                     title: 'Business Lunch',
-                    start: '2024-07-03T13:00:00',
+                    start: '2024-07-03T02:00:00',
+                    end: '2024-07-05T23:00:00',
                     constraint: 'businessHours'
                 },
                 {
@@ -480,7 +497,7 @@
                 },
                 {
                     title: 'Business Lunch',
-                    start: '2024-07-03T13:00:00',
+                    start: '2024-07-03',
                     constraint: 'businessHours'
                 },
                 {
@@ -490,7 +507,7 @@
                 },
                 {
                     title: 'Meeting',
-                    start: '2024-07-13T11:00:00',
+                    start: '2024-07-13T11:07 m887 58mn80:00',
                     constraint: 'availableForMeeting', // defined below
                     color: '#257e4a'
                 },
@@ -498,11 +515,12 @@
                 {
                     title: 'Conference',
                     start: '2024-07-17T09:00:00',
-                    end: '2024-07-20T11:12:00'
+                    end: '2024-07-19T11:12:00'
                 },
                 {
                     title: 'Party',
-                    start: '2024-07-29T20:00:00'
+                    start: '2024-07-29T20:00:00',
+                    end: '2024-07-29T22:00:00'
                 },
 
                 // areas where "Meeting" must be dropped
@@ -520,22 +538,22 @@
                 },
 
                 // red areas where no events can be dropped
-                {
-                    start: '2024-07-24',
-                    end: '2024-07-28',
-                    overlap: false,
-                    display: 'background',
-                    color: '#ff9f89',
-                    clickable: false  // 클릭 비활성화
-                },
-                {
-                    start: '2024-07-06',
-                    end: '2024-07-08',
-                    overlap: false,
-                    display: 'background',
-                    color: '#ff9f89',
-                    clickable: false  // 클릭 비활성화
-                },
+                // {
+                //     start: '2024-07-24',
+                //     end: '2024-07-28',
+                //     overlap: false,
+                //     display: 'background',
+                //     color: '#ff9f89',
+                //     clickable: false  // 클릭 비활성화
+                // },
+                // {
+                //     start: '2024-07-06',
+                //     end: '2024-07-08',
+                //     overlap: false,
+                //     display: 'background',
+                //     color: '#ff9f89',
+                //     clickable: false  // 클릭 비활성화
+                // },
             ]
 
 
