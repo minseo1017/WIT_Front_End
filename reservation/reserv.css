@@ -71,7 +71,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 30px;
-    gap: 5px;
+    gap: 15px;
 }
 
 .reservation .reservList .subTitle {
@@ -266,10 +266,18 @@
     background-color: #558BCF;
 }
 
+.fc .fc-button-primary.fc-today-button {
+    background-color: #c058f0;
+}
+
 .fc .fc-button-primary:hover,
 .fc-button-primary:not(:disabled).fc-button-active,
 .fc-button-primary:not(:disabled):active {
     background-color: #1268d4;
+}
+
+.fc .fc-button-primary.fc-today-button:hover {
+    background-color: #9733c5;
 }
 
 /* 예약 페이지 모달창 */
@@ -326,7 +334,7 @@
 .modal .calendarAdd input:not(.dateInput) {
     padding: 10px;
     margin-top: 7px;
-    width: 70%;
+    width: 100%;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -335,7 +343,7 @@
 .modal .calendarAdd .dateInput {
     margin-top: 7px;
     padding: 10px;
-    width: 22%;
+    width: 23%;
     font-size: 15px;
     border-radius: 8px;
     border: 1px solid #ccc;
@@ -356,7 +364,7 @@
 .modal .calendarAdd .btns {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: 10px;
 }
 
 /* 이벤트 클릭 시 */
@@ -366,8 +374,7 @@
 }
 
 .modal#eventModal .modalContent ul li:nth-child(2) input {
-    width: 25%;
-    margin-right: 10px;
+    width: 49%;
 }
 
 .cancelBtn {

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style.main.css">
     <link rel="stylesheet" href="hsh.css">
 </head>
@@ -139,17 +140,26 @@
                     </div>
                 </div>
                 <div class="sideContents eApprWrite">
-                    <div class="mainTitle">문서 작성 ( 지각 사유서 )</div>
+                    <div class="mainTitle">문서 결재 ( 지각 사유서 )</div>
 
                     <div class="document">
                         <div class="choiBox">
                             <button class="ok">결재</button>
                             <button class="save">전결</button>
-                            <button class="cancel">목록</button>
-                            <button class="modi">결재선</button>
-                            <span class="emerBtn">
-                                <input type="checkbox" name="" id=""> 긴급
-                            </span>
+                            <button class="cancel">반려</button>
+                            <div class="cancelModal">
+                                <div class="cancelModalTitle">
+                                    반려 코멘트 작성
+                                </div>
+                                <div class="cancelComm">
+                                    <textarea name="" id=""></textarea>
+                                </div>
+                                <div class="modalBtnBox">
+                                    <button>완료</button>
+                                    <button class="cancel">취소</button>
+                                </div>
+                            </div>
+                            <button class="modi">목록</button>
                         </div>
                         <div class="docuCont">
                             <div class="docuInfo">
@@ -158,15 +168,15 @@
                                         <tbody>
                                             <tr>
                                                 <th>기안자</th>
-                                                <td>이름</td>
+                                                <td>백밍쥬</td>
                                             </tr>
                                             <tr>
                                                 <th>소속</th>
-                                                <td>부서</td>
+                                                <td>귀요밍</td>
                                             </tr>
                                             <tr>
                                                 <th>기안일</th>
-                                                <td>2024-07-27</td>
+                                                <td>2024-07-30</td>
                                             </tr>
                                             <tr>
                                                 <th>문서번호</th>
@@ -214,32 +224,31 @@
                                         <tr>
                                             <th>지각 일시</th>
                                             <td>
-                                                <input type="date" max="2024-07-27">
+                                                <input type="date" max="2024-07-27" value="2024-07-30" disabled>
+                                            </td>
+                                            <th>긴급</th>
+                                            <td>
+                                                <div>
+                                                    <input type="checkbox" name="" id="emerCheck" checked disabled>
+                                                    <label for="emerCheck">긴급 문서</label>
+                                                </div>
                                             </td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <th>지각 사유</th>
-                                            <td>
-                                                <textarea name="" id=""></textarea>
+                                            <td colspan="3">
+                                                <textarea name="" id="" readonly>사람이 살다보면 그럴 수도 있지 !</textarea>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <div class="docuFiles">
-                                <span>파일 첨부</span>
-                                <label for="file">파일 선택</label>
+                                <label for="file">🔗 파일 선택</label>
                                 <input type="file" id="file" multiple>
                                 <span class="uploadFiles">
-                                    <span>파일 1
-                                        <span class="delFileBtn">X</span>
-                                    </span>
-                                    <span>파일 2
-                                        <span class="delFileBtn">X</span>
-                                    </span>
-
                                 </span>
                             </div>
                         </div>
@@ -271,6 +280,22 @@
             toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
         });
     });
+
+    // File upload script
+    $("#file").on("change", (e) => {
+        console.log(e.target.files);
+        let files = e.target.files;
+
+        for (let i = 0; i < files.length; i++) {
+            let span = $("<span>");
+            span.text(files[i].name + " ");
+            let delSpan = $("<span>");
+            delSpan.addClass("delFileBtn");
+            delSpan.text("X");
+            span.append(delSpan);
+            $(".uploadFiles").append(span);
+        }
+    })
 </script>
 
 </html>
