@@ -111,46 +111,6 @@
     font-weight: 600;
 }
 
-/* 주소록 검색창 */
-.searchBox {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 5px 10px;
-    width: 300px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* height: 5%; */
-    height: 40px;
-}
-
-.searchBox input {
-    border: none;
-    outline: none;
-    flex-grow: 1;
-    padding: 5px 10px;
-    border-radius: 25px;
-    font-size: 16px;
-}
-
-.searchBox button.searchBtn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: #333;
-    border-radius: 50%;
-    transition: background 0.3s;
-}
-
-.searchBox button.searchBtn:hover {
-    background: #f0f0f0;
-}
-
 /* board css start */
 .board .boardList {
     flex: 8;
@@ -280,8 +240,8 @@
 }
 
 .boardDetail .detail {
-    /* flex: 8; */
-    flex: 6;
+    flex: 8;
+    /* flex: 6; */
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
@@ -296,11 +256,7 @@
     flex-direction: column;
 }
 
-.boardDetail .detail .detailCen {
-    background-color: rgb(249, 222, 226);
-    border: 3px solid black;
-    margin: 20px;
-}
+
 
 .boardDetail .detail .detailTop .top {
     display: flex;
@@ -310,13 +266,13 @@
     align-items: center;
 }
 
-.boardDetail .detail .detailTop .top span {
-    /* padding: 20px; */
-}
+
 
 .boardDetail .detail .detailTop .top .topTitle {
     flex: 7;
     font-size: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .boardDetail .detail .detailTop .top .topFile {
@@ -336,51 +292,58 @@
     font-size: 1.5rem;
 }
 
+.boardDetail .detail .detailTop .top .writeAbout {
+    flex: 9;
+}
+
+.boardDetail .detail .detailTop .top .writeAbout span {
+    margin-right: 20px;
+}
+
+.boardDetail .detail .detailTop .top .writeReport {
+    /* flex: 1; */
+}
+
 .boardDetail .detail .detailCen {
     flex: 7;
     background-color: rgb(255 255 255);
-    border: 3px solid #555;
+    border: 3px solid #eee;
     margin: 10px 0 10px 0;
-    border-radius: 10px;
     padding: 20px;
+    border-radius: 10px;
 }
 
-/* free board buttons css  */
+/* board & fboard buttons css start */
 .boardDetail .detail .detailBott {
     padding: 0 20px 0 20px;
     height: 50px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
     justify-content: flex-end;
 }
 
-.boardDetail .detail .detailBott #reportBtn {
-    padding: 10px 20px;
-    border: 1px solid #dc3545;
-    border-radius: 8px;
-    background-color: #dc3545;
-    color: white
+.boardDetail img {
+    width: 16px;
+    height: 16px;
 }
 
-.boardDetail .detail .detailBott #reportBtn:hover {
-    background-color: #c51221;
-}
-
+/*수정 버튼*/
 .boardDetail .detail .detailBott #fboardUpd,
 .boardDetail .detail .detailBott #boardUpd {
     padding: 10px 20px;
-    border: 1px solid #26a626;
+    border: 1px solid #c1c1c1;
     border-radius: 8px;
-    background-color: #26a626;
+    background-color: #558BCF;
     color: white
 }
 
 .boardDetail .detail .detailBott #fboardUpd:hover,
 .boardDetail .detail .detailBott #boardUpd:hover {
-    background-color: #168216;
+    background-color: #1268d4;
 }
 
+/*삭제 버튼*/
 .boardDetail .detail .detailBott #fboardDel,
 .boardDetail .detail .detailBott #boardDel {
     padding: 10px 20px;
@@ -395,6 +358,7 @@
     background-color: #c51221;
 }
 
+/*목록 이동 버튼*/
 .boardDetail .detail .detailBott #fboardList,
 .boardDetail .detail .detailBott #boardList {
     padding: 10px 20px;
@@ -409,10 +373,79 @@
     background-color: #555;
 }
 
+/* free detail reply btn css start */
+.boardDetail .replyBtn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.replyWrapper .replyBtn #replyInst {
+    padding: 5px 10px;
+    border: 1px solid #26a626;
+    border-radius: 8px;
+    background-color: #26a626;
+    color: white;
+    font-size: 14px;
+}
+
+.replyWrapper .replyBtn #replyInst:hover {
+    background-color: #168216;
+}
+
+.replyWrapper .replyBtn #replyUpd {
+    padding: 5px 10px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #558BCF;
+    color: white;
+    font-size: 14px;
+    height: 30px;
+}
+
+.replyWrapper .replyBtn #replyUpd:hover {
+    background-color: #1268d4;
+}
+
+.replyWrapper .replyBtn #replyDel {
+    padding: 5px 10px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+    height: 30px;
+}
+
+.replyWrapper .replyBtn #replyDel:hover {
+    background-color: #c51221;
+}
+
+/*reply btn css end*/
+/*report btn css start*/
+.boardDetail .detail .detailTop .top #reportBtn {
+    padding: 5px 20px;
+    border: 1px solid #c8c8c8;
+    border-radius: 10px;
+    background-color: #c8c8c8;
+    color: white;
+    font-size: 14px;
+}
+
+.boardDetail .detail .detailTop .top #reportBtn:hover {
+    border: 1px solid #f63b4b;
+    background-color: #f63b4b;
+    transition: 0.2s;
+}
+
+/* board & fboard buttons css end */
+
+
 /* write page css start */
 .writeWrapper {
     flex: 7;
-    background-color: #ebf3fda3;
+    background-color: #f6f6f6;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -421,19 +454,23 @@
 
 .writeWrapper .writeTitle {
     /* flex: 1; */
-    height: 40px;
-    border: 3px solid #558BCF;
+    height: 50px;
+    border: none;
     border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 0 20px;
-    font-size: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 3px solid #555;
+    /* background-color: #555;
+    color: #fff; */
 }
 
 /* input type file 커스터마이징 */
 .writeWrapper .formInputFileWrap {
     display: flex;
-    margin-top: 20px;
+    /* margin-top: 10px; */
 }
 
 .writeWrapper .formInputFileWrap .labelFile {
@@ -477,12 +514,15 @@
 /**/
 
 .writeWrapper .writeCont {
-    flex: 8;
+    /* flex: 8; */
     background-color: white;
     /* border-radius: 10px; */
-    padding: 20px;
+    /* padding: 20px; */
     /* margin: 20px; */
     max-height: 700px;
+    /* border: 3px solid #555; */
+    border-radius: 8px;
+    margin-bottom: 5px;
 }
 
 .writeWrapper .writeBtns button {
@@ -524,23 +564,39 @@
 
 /* detail page reply css start */
 .replyWrapper {
-    flex: 4;
+    display: flex;
+    flex: 3;
     height: calc(100% - 60px);
     overflow: hidden;
+    flex-direction: column;
+}
+
+.replyWrapper .replyTxt {
+    font-weight: bold;
+    display: flex;
+    gap: 5px;
+}
+
+.replyWrapper .replyTxt i {
+    font-size: 24px;
 }
 
 .replyWrapper .replyCount {
-    flex: 1;
+    margin: 20px 0 10px 0;
+    color: #555;
 }
 
 .replyWrapper .replyCount span {
     font-weight: bold;
+
 }
 
 .replyWrapper .replyList {
     /* overflow-y: scroll; */
     height: 600px;
     overflow: auto;
+    padding: 0 10px;
+    flex: 3;
 }
 
 .replyWrapper .replyList::-webkit-scrollbar {
@@ -548,54 +604,66 @@
 }
 
 .replyWrapper .replyList::-webkit-scrollbar-thumb {
-    background-color: #2f3542;
+    background-color: #969cb3a5;
     border-radius: 10px;
     background-clip: padding-box;
     border: 2px solid transparent;
 }
 
 .replyWrapper .replyList::-webkit-scrollbar-track {
-    background-color: gray;
+    background-color: rgb(204, 204, 204);
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px white;
 }
 
 .boardDetail .reply {
-    flex: 2;
-    /* background-color: rgb(242, 245, 211); */
+    flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    border: 3px solid #555;
+    padding: 10px;
+    /* border-top: 3px solid #ececec; */
     border-radius: 10px;
-    margin-bottom: 20px;
-    gap: 10px;
+    margin-bottom: 10px;
+    gap: 5px;
+    background-color: #eee;
 }
 
 .boardDetail .replyCont {
     flex: 4;
     /* background-color: aqua; */
-
-
 }
 
 .boardDetail .replyCont .writeRly {
-    background-color: #eee;
+    background-color: #fffdfd;
     width: 100%;
     /* height: 100%; */
     height: 100px;
     padding: 5px;
+    /* border-radius: 10px; */
+    border-radius: 10px;
+    /* margin-bottom: 20px; */
+    border: none;
 }
 
-.boardDetail .replyBtn {
-    flex: 1;
+.replyList .replyTxt {
     display: flex;
-    justify-content: flex-end;
-    gap: 4px
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 5px;
+}
+
+.replyList .replyTxt img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.replyList .replyTxt .replyDate {
+    font-size: 12px;
 }
 
 /* report modal css start */
-.replyControls {
+.reportControls {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -672,8 +740,8 @@
 .dialog .ct .reportNick,
 .dialog .ct .sort {
     flex: 1;
-    font-weight: 900;
-    color: #0d6efd;
+    /* font-weight: 900; */
+    /* color: #0d6efd; */
 }
 
 .dialog .ct .reportInput,
@@ -684,15 +752,41 @@
 
 
 .dialog .ct .reportInput {
-    border: 3px solid #bfd9ff;
+    border: 3px solid #eee;
     padding: 10px 20px;
     border-radius: 10px;
 }
 
 .dialog .ct .reportSort select {
-    border: 3px solid #bfd9ff;
+    border: 3px solid #eee;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+.reportControls #report {
+    padding: 5px 20px;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    background-color: #dc3545;
+    color: white;
+    font-size: 14px;
+}
+
+.reportControls #report:hover {
+    background-color: #c51221;
+}
+
+.reportControls .rClose #reportClose {
+    padding: 5px 10px;
+    border: 1px solid #26a626;
+    border-radius: 8px;
+    background-color: #26a626;
+    color: white;
+    font-size: 14px;
+}
+
+.reportControls .rClose #reportClose:hover {
+    background-color: #168216;
 }
 
 /* main 게시판 개인 영역 */
@@ -715,4 +809,50 @@
 
 .mainTitle {
     padding: 10px;
+}
+
+/* 댓글 작성칸 scroll css */
+.writeRly {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto;
+    /* 세로 스크롤 활성화 */
+    overflow-x: hidden;
+    /* 가로 스크롤 비활성화 */
+}
+
+/* 커스텀 스크롤바 스타일링 (크롬, 엣지, 사파리 등 웹킷 브라우저) */
+.writeRly::-webkit-scrollbar {
+    width: 8px;
+}
+
+.writeRly::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.writeRly::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.writeRly::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#summernote {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.note-editable {
+    height: 100%;
+    overflow: hidden;
+}
+
+.note-statusbar {
+    display: none !important;
 }

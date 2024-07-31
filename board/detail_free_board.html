@@ -137,15 +137,21 @@
                         <div class="detail">
                             <div class="detailTop">
                                 <div class="top">
-                                    <div class="topTitle">집에 가고 싶어요 춥고 배고파요</div>
+                                    <div class="topTitle">집에 가고 싶어요 춥고 배고파요
+                                    </div>
                                     <div class="topFile"><i class='bx bx-star'></i>
                                         <i class='bx bx-file-blank'></i>
                                     </div>
                                 </div>
                                 <div class="top">
-                                    <span>백민주</span>
-                                    <span>2024-07-28</span>
-                                    <span><i class="fa-regular fa-eye"></i> 300</span>
+                                    <div class="writeAbout">
+                                        <span>백민주</span>
+                                        <span>2024-07-28</span>
+                                        <span><i class="fa-regular fa-eye"></i> 300</span>
+                                    </div>
+                                    <div class="writeReport">
+                                        <button id="reportBtn"><i class='bx bx-message-alt-error'></i> 신고하기</button>
+                                    </div>
                                 </div>
 
                             </div>
@@ -153,7 +159,6 @@
                                 게시판 글 내용 영역입니다.
                             </div>
                             <div class="detailBott">
-                                <button type="button" class="btn btn-outline-danger" id="reportBtn">신고하기</button>
                                 <button type="button" class="btn btn-outline-success" id="fboardUpd">수정</button>
                                 <button type="button" class="btn btn-outline-success" id="fboardDel">삭제</button>
                                 <button type="button" class="btn btn-outline-primary" id="fboardList">목록으로</button>
@@ -162,69 +167,121 @@
 
                         </div>
                         <div class="replyWrapper">
-                            <div class="replyCount"><span>댓글 수 : </span><span>0</span></div>
+                            <span class="replyTxt"><i class='bx bx-message-alt-dots'></i> 댓글 달기</span>
                             <div class="reply">
                                 <div class="replyCont">
-                                    <div class="writeRly">댓글 작성칸</div>
+                                    <textarea class="writeRly" contenteditable="true"
+                                        placeholder="입력가능한 글자수는 최대 300자임~"></textarea>
                                 </div>
-                                <div class="replyBtn"><button type="button"
-                                        class="btn btn-outline-secondary">작성하기</button>
+                                <div class="replyBtn"><button type="button" class="btn btn-outline-secondary"
+                                        id="replyInst">작성하기</button>
                                 </div>
                             </div>
+
+                            <div class="replyCount"><span>댓글 수 : </span><span>0</span></div>
+
                             <div class="replyList">
-                                <div class="reply">
-                                    <div class="replyTxt">
-                                        <span>백민주</span>
-                                        <span>2024-07-08</span>
-                                    </div>
-                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
-                                    <div class="replyBtn">
-                                        <button type="button" class="btn btn-outline-success">수정</button>
-                                        <button type="button" class="btn btn-outline-success">삭제</button>
-                                    </div>
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
                                 </div>
                                 <div class="reply">
-                                    <div class="replyTxt">
-                                        <span>백민주</span>
-                                        <span>2024-07-08</span>
-                                    </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
-                                        <button type="button" class="btn btn-outline-success">수정</button>
-                                        <button type="button" class="btn btn-outline-success">삭제</button>
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
                                     </div>
                                 </div>
-                                <div class="reply">
-                                    <div class="replyTxt">
-                                        <span>백민주</span>
-                                        <span>2024-07-08</span>
-                                    </div>
-                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
-                                    <div class="replyBtn">
-                                        <button type="button" class="btn btn-outline-success">수정</button>
-                                        <button type="button" class="btn btn-outline-success">삭제</button>
-                                    </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
                                 </div>
                                 <div class="reply">
-                                    <div class="replyTxt">
-                                        <span>백민주</span>
-                                        <span>2024-07-08</span>
-                                    </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
-                                        <button type="button" class="btn btn-outline-success">수정</button>
-                                        <button type="button" class="btn btn-outline-success">삭제</button>
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
                                     </div>
                                 </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
                                 <div class="reply">
-                                    <div class="replyTxt">
-                                        <span>백민주</span>
-                                        <span>2024-07-08</span>
-                                    </div>
                                     <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
                                     <div class="replyBtn">
-                                        <button type="button" class="btn btn-outline-success">수정</button>
-                                        <button type="button" class="btn btn-outline-success">삭제</button>
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
+                                <div class="reply">
+                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
+                                    <div class="replyBtn">
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
+                                <div class="reply">
+                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
+                                    <div class="replyBtn">
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
+                                <div class="reply">
+                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
+                                    <div class="replyBtn">
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
+                                <div class="reply">
+                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
+                                    <div class="replyBtn">
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
+                                    </div>
+                                </div>
+
+                                <div class="replyTxt">
+                                    <img src="../images/프로필.jpg" alt="">
+                                    <span>백민주</span>
+                                    <span class="replyDate">2024-07-08</span>
+                                </div>
+                                <div class="reply">
+                                    <div class="replyPrint">이건 자유게시판에만 들어가는 댓글 디자인이에유</div>
+                                    <div class="replyBtn">
+                                        <img src="../images/pen-to-square-solid.svg" alt="">
+                                        <img src="../images/trash-solid.svg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -261,12 +318,12 @@
                                 </div>
 
                             </div>
-                            <div class="replyControls">
+                            <div class="reportControls">
                                 <a href="#" class="rClose">
-                                    <button type="button" class="btn btn-primary">닫기</button>
+                                    <button type="button" class="btn btn-primary" id="reportClose">닫기</button>
                                 </a>
                                 <a href="#">
-                                    <button type="button" class="btn btn-danger">신고하기</button>
+                                    <button type="button" class="btn btn-danger" id="report">신고하기</button>
                                 </a>
                             </div>
 
@@ -281,24 +338,24 @@
 </body>
 <!--sidebar 공통요소 script-->
 <script>
-    let btn = document.querySelector("#btn")
-    let sideBar = document.querySelector(".sideBar")
+    // let btn = document.querySelector("#btn")
+    // let sideBar = document.querySelector(".sideBar")
 
-    btn.onclick = function () {
-        sideBar.classList.toggle("active")
-    };
+    // btn.onclick = function () {
+    //     sideBar.classList.toggle("active")
+    // };
 
-    const toggleItems = document.querySelectorAll('.toggleItem');
+    // const toggleItems = document.querySelectorAll('.toggleItem');
 
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
+    // toggleItems.forEach(function (toggleItem) {
+    //     const toggleTit = toggleItem.querySelector('.toggleTit');
+    //     const subList = toggleItem.querySelector('.subList');
 
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
-    });
+    //     toggleTit.addEventListener('click', function () {
+    //         subList.classList.toggle('active');
+    //         toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
+    //     });
+    // });
 
     // modal script
     const modal = document.querySelector("#modal");
@@ -312,6 +369,19 @@
     close.onclick = function () {
         modal.style.display = "none"
     }
+
+    // 댓글 글자 수 제한 script
+    document.addEventListener("DOMContentLoaded", function () {
+        const textarea = document.querySelector(".writeRly");
+        const maxLength = 300;
+
+        textarea.addEventListener("input", function () {
+            if (textarea.value.length > maxLength) {
+                textarea.value = textarea.value.slice(0, maxLength);
+                alert("300자 초과함");
+            }
+        })
+    })
 
 </script>
 
