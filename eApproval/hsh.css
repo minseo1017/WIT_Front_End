@@ -25,7 +25,7 @@ button.modi {
 }
 
 button.save {
-    background-color: #26a626;
+    background-color: #168216;
 }
 
 button:hover,
@@ -41,7 +41,7 @@ button.cancel:active {
 
 button.save:hover,
 button.save:active {
-    background-color: #168216;
+    background-color: #096309;
 }
 
 button.modi:hover,
@@ -447,6 +447,9 @@ td {
 
 .eApprWrite .document .docuCont .docuFiles {
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .eApprWrite .document .docuCont .docuFiles input[type="file"] {
@@ -460,18 +463,41 @@ td {
 
 .eApprWrite .document .docuCont .docuFiles label {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 13px;
     color: #fff;
-    vertical-align: middle;
-    background-color: #999999;
+    background-color: #444;
     cursor: pointer;
-    height: 40px;
-    margin: 5px 10px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
-.eApprWrite .document .docuCont .docuFiles .uploadFiles>span {
-    margin: 0 5px;
+.eApprWrite .document .docuCont .docuFiles .uploadFiles {
+    border: 1px solid #e7e7e7;
+    overflow-x: auto;
+    width: 91%;
+    height: 80%;
+    padding: 0px 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-radius: 8px;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles::-webkit-scrollbar {
+    height: 5px;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles::-webkit-scrollbar-thumb {
+    background: rgb(255, 204, 214);
+    border-radius: 10px;
+}
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles::-webkit-scrollbar-track {
+    background: rgba(222, 151, 165, 0.1);
+}
+
+
+.eApprWrite .document .docuCont .docuFiles .uploadFiles span {
+    text-wrap: nowrap;
 }
 
 .eApprWrite .document .docuCont .docuFiles .uploadFiles .delFileBtn {
@@ -557,7 +583,7 @@ td {
 /* 전자 결재 문서함 */
 .eApproval .docuBox {
     flex: 9;
-    gap: 7px;
+    gap: 15px;
 }
 
 .eApproval .docuBox .toolBar {
@@ -652,9 +678,62 @@ td {
     justify-content: flex-start;
 }
 
-.eApproval .docuBox .docuBoxNavi {
+/* 페이지내비 */
+.eApproval .docuBox .pagination {
     flex: .5;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* 전자 결재 반려 모달창 */
+.cancelModal {
+    display: none;
+    /* display: flex; */
+    border: 1px solid black;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 32vh;
+    left: 45vw;
+    width: 400px;
+    height: 260px;
+    padding: 30px 25px;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.cancelModal .cancelModalTitle {
+    flex: 1;
+    font-size: 24px;
+}
+
+.cancelModal .cancelComm {
+    flex: 4;
+    width: 100%;
+}
+
+.cancelModal .cancelComm textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.cancelModal .modalBtnBox {
+    flex: 1;
+    display: flex;
+    align-items: end;
+    gap: 10px;
+}
+
+
+/* JS 적용 ( 모달창 띄우기 ) 후 수정할 코드 */
+.cancel:hover~.cancelModal {
+    display: flex;
 }
