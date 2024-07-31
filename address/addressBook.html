@@ -225,7 +225,7 @@
                                     <span>그룹</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -242,7 +242,7 @@
                                     <span>마케팅팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -259,7 +259,7 @@
                                     <span>개발팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -276,7 +276,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -293,7 +293,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -310,7 +310,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -327,7 +327,7 @@
                                     <span>마케팅팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -344,7 +344,7 @@
                                     <span>개발팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -361,7 +361,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -378,7 +378,7 @@
                                     <span>경영팀</span>
                                 </div>
                             </div>
-                            <div class="rows" onclick="editContact(this)">
+                            <div class="rows" onclick="handleRowClick(event, this)">
                                 <div class="cols">
                                     <span><input type="checkbox" class="individual"></span>
                                 </div>
@@ -478,6 +478,17 @@
 
     let editingRow = null;
     // 팝업 열기 함수 (수정용)
+    function handleRowClick(event, row) {
+        if (event.target.type === 'checkbox') {
+            // 체크박스 클릭 시에는 행 수정 이벤트를 발생시키지 않음
+            event.stopPropagation();
+        } else {
+            // 체크박스 외의 영역 클릭 시 수정 이벤트 발생
+            editContact(row);
+        }
+    }
+
+
     function editContact(row) {
         editingRow = row;
         var cols = row.getElementsByClassName('cols');
