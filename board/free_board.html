@@ -10,7 +10,8 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.main.css">
-    <link rel="stylesheet" href="bmj.css">
+    <link rel="stylesheet" href="../wit.css">
+    <script defer src="../app/wit.js"></script>
 </head>
 
 
@@ -265,26 +266,6 @@
     </div>
 
 </body>
-<!--sidebar 공통요소 script-->
-<script>
-    let btn = document.querySelector("#btn")
-    let sideBar = document.querySelector(".sideBar")
 
-    btn.onclick = function () {
-        sideBar.classList.toggle("active")
-    };
-
-    const toggleItems = document.querySelectorAll('.toggleItem');
-
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
-
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
-    });
-</script>
 
 </html>

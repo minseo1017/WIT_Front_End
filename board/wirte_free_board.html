@@ -11,8 +11,9 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <link rel="stylesheet" href="bmj.css"> <!-- bmj.css를 마지막에 로드 -->
     <link rel="stylesheet" href="../style.main.css">
+    <link rel="stylesheet" href="../wit.css">
+    <script defer src="../app/wit.js"></script>
 
 </head>
 
@@ -115,12 +116,12 @@
                         <h2 class="sideTit">게시판</h2>
                     </div>
                     <div class="sideBtnBox">
-                        <a href="wirte_free_board.html"><button class="plusBtn sideBtn">글 작성</button></a>
+                        <button class="plusBtn sideBtn">글 작성</button>
                     </div>
                     <div class="addressListPrivate">
                         <ul class="privateList">
                             <li class="toggleItem">
-                                <h3 class="toggleTit"><a href="board.html">공지사항</a></h3>
+                                <h3 class="toggle"><a href="board.html">공지사항</a></h3>
 
                             </li>
                         </ul>
@@ -128,7 +129,7 @@
                     <div class="addressListGroup">
                         <ul class="GroupList">
                             <li class="toggleItem">
-                                <h3 class="toggleTit"><a href="free_board.html">자유 게시판</a></h3>
+                                <h3 class="toggle"><a href="free_board.html">자유 게시판</a></h3>
 
                             </li>
                         </ul>
@@ -157,58 +158,5 @@
         </div>
     </div>
 </body>
-<!--sidebar 공통요소 script-->
-<script>
-    let btn = document.querySelector("#btn")
-    let sideBar = document.querySelector(".sideBar")
-
-    btn.onclick = function () {
-        sideBar.classList.toggle("active")
-    };
-
-    // const toggleItems = document.querySelectorAll('.toggleItem');
-
-    // toggleItems.forEach(function (toggleItem) {
-    // const toggleTit = toggleItem.querySelector('.toggleTit');
-    // const subList = toggleItem.querySelector('.subList');
-
-    // toggleTit.addEventListener('click', function () {
-    // subList.classList.toggle('active');
-    // toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-    // });
-    // });
-
-
-    // File upload script
-    document.getElementById('upload').addEventListener('change', function () {
-        // 선택된 파일 목록(this.files)을 배열로 변환, 각 파일 객체 이름(file.name)을 추출하여 새 배열 만듬
-        // 이 배열을 콤마와 공백으로 연결된 문자열로 만듬.
-        var fileNames = Array.from(this.files).map(file => file.name).join('<br>');
-
-        // 파일 이름들이 문자열에 포함되어 있으면 해당 문자열을 spanFile클래스를 가진 요소의 콘텐츠로 설정
-        if (fileNames) {
-            //document.querySelector('.spanFile').textContent = fileNames;
-            $('.spanFile').html(fileNames);
-        } else {
-            document.querySelector('.spanFile').textContent = '선택된 파일이 없습니다.';
-        }
-    });
-
-    $(document).ready(function () {
-        $('#summernote').summernote({
-            height: 400, // 기본 높이 설정
-            minHeight: null, // 최소 높이 설정
-            maxHeight: null, // 최대 높이 설정
-            focus: true, // 페이지 로드 시 포커스
-            callbacks: {
-                onInit: function () {
-                    // summernote 초기화 후 note-statusbar 요소 제거
-                    $('.note-statusbar').remove();
-                }
-            }
-        });
-    })
-
-</script>
 
 </html>
