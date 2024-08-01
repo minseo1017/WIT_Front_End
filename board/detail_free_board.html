@@ -10,7 +10,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../style.main.css">
-    <link rel="stylesheet" href="bmj.css">
+    <link rel="stylesheet" href="../wit.css">
+    <script defer src="../app/wit.js"></script>
 </head>
 
 
@@ -150,7 +151,9 @@
                                         <span><i class="fa-regular fa-eye"></i> 300</span>
                                     </div>
                                     <div class="writeReport">
-                                        <button id="reportBtn"><i class='bx bx-message-alt-error'></i> 신고하기</button>
+                                        <button id="reportBtn" onclick="openModal()">
+                                            <i class='bx bx-message-alt-error'></i> 신고하기
+                                        </button>
                                     </div>
                                 </div>
 
@@ -320,7 +323,8 @@
                             </div>
                             <div class="reportControls">
                                 <a href="#" class="rClose">
-                                    <button type="button" class="btn btn-primary" id="reportClose">닫기</button>
+                                    <button type="button" class="btn btn-primary" id="reportClose"
+                                        onclick="closeModal()">닫기</button>
                                 </a>
                                 <a href="#">
                                     <button type="button" class="btn btn-danger" id="report">신고하기</button>
@@ -336,53 +340,11 @@
     </div>
 
 </body>
-<!--sidebar 공통요소 script-->
 <script>
-    // let btn = document.querySelector("#btn")
-    // let sideBar = document.querySelector(".sideBar")
-
-    // btn.onclick = function () {
-    //     sideBar.classList.toggle("active")
-    // };
-
-    // const toggleItems = document.querySelectorAll('.toggleItem');
-
-    // toggleItems.forEach(function (toggleItem) {
-    //     const toggleTit = toggleItem.querySelector('.toggleTit');
-    //     const subList = toggleItem.querySelector('.subList');
-
-    //     toggleTit.addEventListener('click', function () {
-    //         subList.classList.toggle('active');
-    //         toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-    //     });
-    // });
-
-    // modal script
-    const modal = document.querySelector("#modal");
-    const reportBtn = document.querySelector("#reportBtn");
-    const close = document.querySelector(".rClose");
-    // 모달창 열기
-    reportBtn.onclick = function () {
-        modal.style.display = "block"
-    }
-    // 모달창 닫기
-    close.onclick = function () {
-        modal.style.display = "none"
-    }
-
     // 댓글 글자 수 제한 script
     document.addEventListener("DOMContentLoaded", function () {
-        const textarea = document.querySelector(".writeRly");
-        const maxLength = 300;
-
-        textarea.addEventListener("input", function () {
-            if (textarea.value.length > maxLength) {
-                textarea.value = textarea.value.slice(0, maxLength);
-                alert("300자 초과함");
-            }
-        })
+        reply();
     })
-
 </script>
 
 </html>
