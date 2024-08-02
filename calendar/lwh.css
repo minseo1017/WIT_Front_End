@@ -101,6 +101,11 @@
     overflow: visible;
 }
 
+.subList.calendarList li {
+    position: relative;
+}
+
+
 .sideCalendarAdd {
     cursor: pointer;
     display: inline-block;
@@ -173,6 +178,16 @@
     border-radius: 2px;
     color: #777;
     position: relative;
+}
+
+.sideSelectDel {
+    color: gray;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 7px;
+    top: -3px;
+    cursor: pointer;
 }
 
 .deptCalendarPopup {
@@ -496,4 +511,12 @@
 .fc-popover-close.fc-icon.fc-icon-x {
     color: white;
     opacity: 1;
+}
+
+.fc .fc-button-primary.fc-today-button {
+    background-color: #c058f0;
+}
+
+.fc .fc-button-primary.fc-today-button:hover {
+    background-color: #9733c5;
 }
