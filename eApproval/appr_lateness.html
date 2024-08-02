@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../style.main.css">
     <link rel="stylesheet" href="hsh.css">
+    <script src="hsh.js" defer></script>
 </head>
 
 <body>
@@ -144,9 +145,9 @@
 
                     <div class="document">
                         <div class="choiBox">
-                            <button class="ok">결재</button>
-                            <button class="save">전결</button>
-                            <button class="cancel">반려</button>
+                            <button class="ok apprBtn">결재</button>
+                            <button class="save apprBtn">전결</button>
+                            <button class="cancel noApprBtn">반려</button>
                             <div class="cancelModal">
                                 <div class="cancelModalTitle">
                                     반려 코멘트 작성
@@ -156,10 +157,27 @@
                                 </div>
                                 <div class="modalBtnBox">
                                     <button>완료</button>
-                                    <button class="cancel">취소</button>
+                                    <button class="cancel closeModal">취소</button>
                                 </div>
                             </div>
-                            <button class="modi">목록</button>
+                            <div class="apprModal">
+                                <div class="apprModalTitle">
+                                    결재 코멘트 작성
+                                </div>
+                                <div class="apprComm">
+                                    <textarea name="" id=""></textarea>
+                                </div>
+                                <div class="modalBtnBox">
+                                    <button>완료</button>
+                                    <button class="cancel closeModal">취소</button>
+                                </div>
+                            </div>
+                            <button class="modi">참조</button>
+                            <div class="refeModal">
+                                <ul>
+                                    <li>참조선 없음</li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="docuCont">
                             <div class="docuInfo">
@@ -260,42 +278,5 @@
     </div>
 
 </body>
-<!-- sidebar 공통요소 script -->
-<script>
-    let btn = document.querySelector("#btn")
-    let sideBar = document.querySelector(".sideBar")
-
-    btn.onclick = function () {
-        sideBar.classList.toggle("active")
-    };
-
-    const toggleItems = document.querySelectorAll('.toggleItem');
-
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
-
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
-    });
-
-    // File upload script
-    $("#file").on("change", (e) => {
-        console.log(e.target.files);
-        let files = e.target.files;
-
-        for (let i = 0; i < files.length; i++) {
-            let span = $("<span>");
-            span.text(files[i].name + " ");
-            let delSpan = $("<span>");
-            delSpan.addClass("delFileBtn");
-            delSpan.text("X");
-            span.append(delSpan);
-            $(".uploadFiles").append(span);
-        }
-    })
-</script>
 
 </html>

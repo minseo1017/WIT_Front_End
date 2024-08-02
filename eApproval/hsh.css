@@ -20,7 +20,8 @@ button.cancel {
     background-color: #dc3545;
 }
 
-button.modi {
+button.modi,
+button.prev {
     background-color: #888;
 }
 
@@ -45,7 +46,9 @@ button.save:active {
 }
 
 button.modi:hover,
-button.modi:active {
+button.modi:active,
+button.prev:hover,
+button.prev:active {
     background-color: #555;
 }
 
@@ -572,7 +575,7 @@ span:active {
 
 /* 전자 결재 모달창 ( 새 결재 진행 ) - 결재선 선택 */
 .eApprModal.apprChoiModal {
-    display: flex;
+    display: none;
     width: 745px;
     height: 560px;
 }
@@ -870,9 +873,9 @@ button:nth-child(5) img {
 }
 
 /* 전자 결재 반려 모달창 */
-.cancelModal {
+.cancelModal,
+.apprModal {
     display: none;
-    /* display: flex; */
     border: 1px solid black;
     box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
     background-color: #fff;
@@ -890,17 +893,20 @@ button:nth-child(5) img {
     gap: 15px;
 }
 
-.cancelModal .cancelModalTitle {
+.cancelModal .cancelModalTitle,
+.apprModal .apprModalTitle {
     flex: 1;
     font-size: 24px;
 }
 
-.cancelModal .cancelComm {
+.cancelModal .cancelComm,
+.apprModal .apprComm {
     flex: 4;
     width: 100%;
 }
 
-.cancelModal .cancelComm textarea {
+.cancelModal .cancelComm textarea,
+.apprModal .apprComm textarea {
     width: 100%;
     height: 100%;
     resize: none;
@@ -908,15 +914,29 @@ button:nth-child(5) img {
     border-radius: 8px;
 }
 
-.cancelModal .modalBtnBox {
+.cancelModal .modalBtnBox,
+.apprModal .modalBtnBox {
     flex: 1;
     display: flex;
     align-items: end;
     gap: 10px;
 }
 
-
-/* JS 적용 ( 모달창 띄우기 ) 후 수정할 코드 */
-.cancel:hover~.cancelModal {
+/* 전자 결재 참조 목록 확인용 모달창 */
+.refeModal {
     display: flex;
+    border: 1px solid #888;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    position: absolute;
+    top: 21vh;
+    left: 41vw;
+    width: 140px;
+    min-height: 66px;
+    padding: 20px 10px;
+    z-index: 2;
+    flex-direction: column;
+    align-items: center;
 }
