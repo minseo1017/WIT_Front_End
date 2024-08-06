@@ -29,10 +29,22 @@ $('#startApprBtn').on('click', () => {
         const docu = noMultiClick(this)
         console.log(docu)
     })
+
+    // 다음 버튼 클릭 시 결재선 선택 모달창 활성화
     $('.next').on('click', () => {
         $('.eApprModal.docuChoiModal').css({ display: 'none' })
         $('.eApprModal.apprChoiModal').css({ display: 'flex' })
+
+        // 완료 버튼 클릭 시
+
+        // 이전 버튼 클릭 시
+        $('.prev').on('click', () => {
+            $('.eApprModal.docuChoiModal').css({ display: 'flex' })
+            $('.eApprModal.apprChoiModal').css({ display: 'none' })
+        })
     })
+
+    // 취소 버튼 클릭 시 페이지 새로고침
     $('.cancel').on('click', () => location.reload())
 })
 
@@ -47,3 +59,32 @@ function noMultiClick(e) {
     $(e).prop('checked', true)
     return $(e).val()
 }
+
+// 모달창에서 X 버튼 클릭 시 페이지 새로고침
+$('.closeModal').on('click', () => location.reload())
+
+// 결재 or 전결 버튼 클릭 시 결재 코멘트 입력 모달창 활성화
+$('.apprBtn').on('click', () => {
+    $('.apprModal').css({ display: 'flex' })
+
+    // 반려 버튼 클릭 시 반려 코멘트 모달창 활성화
+    $('.noApprBtn').on('click', () => {
+        $('.apprModal').css({ display: 'none' })
+        $('.cancelModal').css({ display: 'flex' })
+    })
+
+    // 취소 버튼 클릭 시 해당 모달창 비활성화
+    $('.closeModal').on('click', () => {
+        $('.apprModal').css({ display: 'none' })
+    })
+})
+
+// 반려 버튼 클릭 시 반려 코멘트 모달창 활성화
+$('.noApprBtn').on('click', () => {
+    $('.cancelModal').css({ display: 'flex' })
+
+    // 취소 버튼 클릭 시 해당 모달창 비활성화
+    $('.closeModal').on('click', () => {
+        $('.cancelModal').css({ display: 'none' })
+    })
+})

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link rel="stylesheet" href="../style.main.css">
     <link rel="stylesheet" href="../wit.css">
     <script defer src="../app/wit.js"></script>
@@ -19,7 +20,7 @@
                 <i class="bx bx-menu" id="btn"></i>
             </div>
             <div class="user">
-                <img src="메인게임.webp" alt="me" class="userImg">
+                <img src="../images/logo/WIT_logo1.png" alt="me" class="userImg">
                 <div class="nickName">
                     <p class="bold">Wit Works</p>
                     <p></p>
@@ -100,45 +101,165 @@
                 <span class="alert"><a href=""><i class='bx bxs-bell'></i></a></span>
                 <!--마이페이지로 이동-->
                 <span class="myName">
-                    <img src="메인게임.webp"><a href=" #">백민주 사원</a></span>
+                    <img src="../images/logo/WIT_logo1.png"><a href=" #">백민주 사원</a></span>
                 <span class="logOut"><a href="#">LogOut</a></span>
             </div>
             <div class="contents">
                 <div class="sideAbout">
                     <div class="sideTxt">
-                        <h2 class="sideTit">전자 결재</h2>
+                        <a href="home.html">
+                            <h2 class="sideTit">전자 결재</h2>
+                        </a>
                     </div>
                     <div class="sideBtnBox">
-                        <button class="plusBtn sideBtn">새 결재 진행</button>
-                        <div class="eApprModal">
-                            <div>
-                                <div class="eApprModalTitle">
-                                    문서 양식 선택
-                                </div>
-                                <div class="docuChoi choiCont">
-                                    <ul>
-                                        <li><input type="checkbox" name="" id=""> 업무 기안</li>
-                                        <li><input type="checkbox" name="" id=""> 휴가 신청서</li>
-                                        <li><input type="checkbox" name="" id=""> 지각 사유서</li>
-                                    </ul>
-                                </div>
-
+                        <button class="plusBtn sideBtn" id="startApprBtn">새 결재 진행</button>
+                        <div class="eApprModal docuChoiModal">
+                            <div class="eApprModalTitle">
+                                문서 양식 선택
+                                <span class="closeModal">X</span>
                             </div>
-                            <div>
-                                <div class="eApprModalTitle">
-                                    결재선 선택
-                                </div>
-                                <div class="apprChoi choiCont">
+                            <div class="choiCont">
+                                <ul>
+                                    <li>
+                                        <input type="checkbox" name="docuName" id="prop" value="prop">
+                                        <label for="prop">업무 기안</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="docuName" id="leave" value="leave">
+                                        <label for="leave">휴가 신청서</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="docuName" id="lateness" value="lateness">
+                                        <label for="lateness">지각 사유서</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="modalBtnBox">
+                                <button class="next">다음</button>
+                                <button class="cancel">취소</button>
+                            </div>
+                        </div>
+                        <div class="eApprModal apprChoiModal">
+                            <div class="eApprModalTitle">
+                                결재선 선택
+                                <span class="closeModal">X</span>
+                            </div>
+                            <div class="choiCont">
+                                <div class="deptList">
                                     <ul>
-                                        <li>최초 결재자</li>
-                                        <li>중간 결재자</li>
-                                        <li>최종 결재자</li>
+                                        <li>
+                                            <input type="checkbox" name="" id="D1" hidden>
+                                            <label for="D1">인사부</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="D2" hidden>
+                                            <label for="D2">영업부</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="D3" hidden>
+                                            <label for="D3">IT부</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="D4" hidden>
+                                            <label for="D4">마케팅부</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="D5" hidden>
+                                            <label for="D5">기술지원부</label>
+                                        </li>
                                     </ul>
+                                </div>
+                                <div class="employeeList">
+                                    <ul>
+                                        <li>
+                                            <input type="checkbox" name="" id="1" hidden>
+                                            <label for="1">백밍쥬 사장</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="2" hidden>
+                                            <label for="2">손밍쏘 부장</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="3" hidden>
+                                            <label for="3">뭉타링 팀장</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="4" hidden>
+                                            <label for="4">이웡히 면접예정자</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="5" hidden>
+                                            <label for="5">승혜 체고 !!!</label>
+                                        </li>
+                                        <li>
+                                            <input type="checkbox" name="" id="6" hidden>
+                                            <label for="6">밍쥬귀요밍 인턴</label>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <div class="arrBtns">
+                                    <button>
+                                        <img src="../images/icon/toggle.png" alt="">
+                                    </button>
+                                    <button>
+                                        <img src="../images/icon/toggle.png" alt="">
+                                    </button>
+                                    <div style="padding: 30px 0;"></div>
+                                    <button>
+                                        <img src="../images/icon/toggle.png" alt="">
+                                    </button>
+                                    <button>
+                                        <img src="../images/icon/toggle.png" alt="">
+                                    </button>
+                                </div>
+                                <div class="resultAppr">
+                                    <div class="apprList list">
+                                        <p>결재 순서</p>
+                                        <ul>
+                                            <li>
+                                                <div>첫번째 결재자</div>
+                                                <input type="checkbox" name="" id="firstAppr" hidden>
+                                                <label for="firstAppr">백밍쥬 사장</label>
+                                            </li>
+                                            <li>
+                                                <div>두번째 결재자</div>
+                                                <input type="checkbox" name="" id="secondAppr" hidden>
+                                                <label for="secondAppr">백밍쥬 과장</label>
+                                            </li>
+                                            <li>
+                                                <div>세번째 결재자</div>
+                                                <input type="checkbox" name="" id="thirdAppr" hidden>
+                                                <label for="thirdAppr">백밍쥬 팀장</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="refeList list">
+                                        <p>참조 목록</p>
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" name="" id="13" hidden>
+                                                <label for="13">백밍쥬 사장</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="12" hidden>
+                                                <label for="12">손밍쏘 과장</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="11" hidden>
+                                                <label for="11">뭉타리 부장</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="10" hidden>
+                                                <label for="10">이웡히 면접예정자</label>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modalBtnBox">
-                                <button>완료</button>
-                                <button>취소</button>
+                                <button class="done">완료</button>
+                                <button class="prev">이전</button>
                             </div>
                         </div>
                     </div>
@@ -149,7 +270,6 @@
                                 <ul class="subList">
                                     <li><a href="javascript:;">결재 대기 문서</a></li>
                                     <li><a href="javascript:;">결재 수신 문서</a></li>
-                                    <li><a href="javascript:;">참조 / 열람 대기 문서</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -162,9 +282,7 @@
                                     <li><a href="javascript:;">기안 문서함</a></li>
                                     <li><a href="javascript:;">임시 저장함</a></li>
                                     <li><a href="javascript:;">결재 문서함</a></li>
-                                    <li><a href="javascript:;">참조 / 열람 문서함</a></li>
-                                    <li><a href="javascript:;">수신 문서함</a></li>
-                                    <li><a href="javascript:;">발송 문서함</a></li>
+                                    <li><a href="javascript:;">참조 문서함</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -463,37 +581,5 @@
     </div>
 
 </body>
-<!-- sidebar 공통요소 script -->
-<script>
-    let btn = document.querySelector("#btn")
-    let sideBar = document.querySelector(".sideBar")
-
-    btn.onclick = function () {
-        sideBar.classList.toggle("active")
-    };
-
-    const toggleItems = document.querySelectorAll('.toggleItem');
-
-    toggleItems.forEach(function (toggleItem) {
-        const toggleTit = toggleItem.querySelector('.toggleTit');
-        const subList = toggleItem.querySelector('.subList');
-
-        toggleTit.addEventListener('click', function () {
-            subList.classList.toggle('active');
-            toggleTit.classList.toggle('active'); // 이미지 회전을 위해 클래스 추가
-        });
-    });
-
-    // 툴바 활성화
-    const links = document.querySelectorAll('.toolBar a')
-    links.forEach(function (link) {
-        link.addEventListener('click', function () {
-            links.forEach(function (link) {
-                link.classList.remove('active') // 모든 링크에서 active 클래스 제거
-            })
-            this.classList.add('active') // 클릭한 링크에 active 클래스 추가
-        })
-    })
-</script>
 
 </html>
